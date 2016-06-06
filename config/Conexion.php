@@ -1,22 +1,22 @@
 <?php
+// Datos para la conexion
+$host = 'localhost';
+$database = 'mysql_database';
+$username = 'mysql_user';
+$password = 'mysql_pd';
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Conexion
- *
- * @author Andrew
- */
-class Conexion {
-    
-    var $url="";
-    var $driver="";
-    var $user="root";
-    var $pass="root";
-    
-    
+// Conectarse a MySQL
+$link = mysql_connect($host, $username, $password);
+if (!$link) {
+    die('Error al conectarse a mysql: ' . mysql_error());
 }
+
+// Seleccionar nuestra base de datos
+$db_selected = mysql_select_db($database, $link);
+if (!$db_selected) {
+    die ('Error al abrir la base de datos: ' . mysql_error());
+}
+else {
+ echo 'Conexion exitosa.';
+}
+?>
