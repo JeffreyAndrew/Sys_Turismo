@@ -1,9 +1,9 @@
 <?php
 // Datos para la conexion
 $host = 'localhost';
-$database = 'mysql_database';
-$username = 'mysql_user';
-$password = 'mysql_pd';
+$database = 'dbturismo';
+$username = 'root';
+$password = 'root';
 
 // Conectarse a MySQL
 $link = mysql_connect($host, $username, $password);
