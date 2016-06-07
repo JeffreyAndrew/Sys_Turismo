@@ -12,6 +12,7 @@ and open the template in the editor.
     <body>
         <?php
         // put your code here
+        echo "<h1>Zannier dice que no sirve tu huevada</h1>"
         ?>
     </body>
 </html>
