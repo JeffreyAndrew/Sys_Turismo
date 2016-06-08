@@ -8,4 +8,3 @@ if (!$link) {
 }
 
 echo "Éxito al conectar" . PHP_EOL;
-?>
