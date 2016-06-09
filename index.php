@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+f<!DOCTYPE html>
 <html lang="en">
     <head>
 
@@ -113,7 +113,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="slider-caption">
-                                        <h2>Vvie la aventura de viajar en  barcos de Totora</h2>
+                                        <h2>Vive la aventura de viajar en  barcos de Totora</h2>
                                         <p class="color-white">Puno te espera para que disfrutes del Lago Titicaca.</p>
                                     </div>
                                 </div>

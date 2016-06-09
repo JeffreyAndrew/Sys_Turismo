@@ -75,7 +75,7 @@ class AerolineaDAO {
         }
         $link->close();
     }
-    function SearchByName($nombre) {
+    function searchByName($nombre) {
         include '../config/Conexion.php';
         $sql = "SELECT * FROM aerolinea order by AER_ID "
                 . "WHERE AER_ID='".$nombre."'";
