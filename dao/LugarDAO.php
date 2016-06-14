@@ -7,16 +7,15 @@
  */
 
 /**
- * Description of AerolineaDAO
+ * Description of LugarDAO
  *
  * @author CESAR
  */
-class AerolineaDAO implements interfaceAerolinea{
-
+class LugarDAO {
     //put your code here
     function create($id,$nombre) {
         include "../config/Conexion.php";
-        $sql = "INSERT INTO aerolinea(AER_ID,AER_NOM)VALUES( '".$id."','".$nombre."')";
+        $sql = "INSERT INTO lugar(LUG_ID,LUG_NOM)VALUES( '".$id."','".$nombre."')";
         if ($link->query($sql) === TRUE) {
             echo "New record created successfully";
         } else {
@@ -28,10 +27,10 @@ class AerolineaDAO implements interfaceAerolinea{
 
     function readall() {
         include '../config/Conexion.php';
-        $sql = "SELECT AER_NOM FROM aerolinea order< by AER_ID";
+        $sql = "SELECT LUG_NOM FROM lugar order by LUG_ID";
         $result = $link->query($sql);
         echo "<table border = '1'> \n";
-        echo "<tr><td>Nombre</td><td>E-Mail</td></tr> \n";
+        echo "<tr><td>NOMBRE</td></tr> \n";
         while ($reg = mysqli_fetch_array($result)) {
             echo "<tr><td>$reg[0]</td><td>$reg[1]</td></tr> \n";
         }
@@ -40,8 +39,8 @@ class AerolineaDAO implements interfaceAerolinea{
     
     function delete($id) {
         include "../config/Conexion.php";
-        $sql = "DELETE FROM aerolinea"
-                . " WHERE AER_ID='".$id."'";
+        $sql = "DELETE FROM lugar"
+                . " WHERE LUG_ID='".$id."'";
         if ($link->query($sql) === TRUE) {
             echo "Record deleted successfully";
         } else {
@@ -52,9 +51,9 @@ class AerolineaDAO implements interfaceAerolinea{
     }
     function update($id,$nombre){
         include "../config/Conexion.php";
-        $sql = "UPDATE aerolinea"
-                . " SET AER_NOM='".$nombre."'"
-                . " WHERE AER_ID='".$id."'";
+        $sql = "UPDATE lugar"
+                . " SET LUG_NOM='".$nombre."'"
+                . " WHERE LUG_ID='".$id."'";
         if ($link->query($sql) === TRUE) {
             echo "Record updated successfully";
         } else {
@@ -65,11 +64,11 @@ class AerolineaDAO implements interfaceAerolinea{
     }
     function searchById($id) {
         include '../config/Conexion.php';
-        $sql = "SELECT AER_NOM FROM aerolinea order by AER_ID "
-                . "WHERE AER_ID='".$id."'";
+        $sql = "SELECT LUG_NOM FROM lugar order by LUG_ID "
+                . "WHERE LUG_ID='".$id."'";
         $result = $link->query($sql);
         echo "<table border = '1'> \n";
-        echo "<tr><td>Nombre</td><td>E-Mail</td></tr> \n";
+        echo "<tr><td>NOMBRE</td></tr> \n";
         while ($reg = mysqli_fetch_array($result)) {
             echo "<tr><td>$reg[0]</td><td>$reg[1]</td></tr> \n";
         }
@@ -77,11 +76,11 @@ class AerolineaDAO implements interfaceAerolinea{
     }
     function searchByName($nombre) {
         include '../config/Conexion.php';
-        $sql = "SELECT AER_NOM FROM aerolinea order by AER_ID "
-                . "WHERE AER_NOM='".$nombre."'";
+        $sql = "SELECT LUG_NOM FROM bus order by LUG_ID "
+                . "WHERE LUG_NOM='".$nombre."'";
         $result = $link->query($sql);
         echo "<table border = '1'> \n";
-        echo "<tr><td>Nombre</td><td>E-Mail</td></tr> \n";
+        echo "<tr><td>Nombre</td></tr> \n";
         while ($reg = mysqli_fetch_array($result)) {
             echo "<tr><td>$reg[0]</td><td>$reg[1]</td></tr> \n";
         }

@@ -7,16 +7,15 @@
  */
 
 /**
- * Description of AerolineaDAO
+ * Description of ClienteDAO
  *
  * @author CESAR
  */
-class AerolineaDAO implements interfaceAerolinea{
-
+class ClienteDAO {
     //put your code here
-    function create($id,$nombre) {
+    function create($id,$dni,$nombre,$app,$apm) {
         include "../config/Conexion.php";
-        $sql = "INSERT INTO aerolinea(AER_ID,AER_NOM)VALUES( '".$id."','".$nombre."')";
+        $sql = "INSERT INTO cliente(CLI_ID,CLI_NOM,CLI_DNI,CLI_APP,CLI_APM)VALUES( '".$id."','".$nombre."','".$dni."','".$app."','".$apm."')";
         if ($link->query($sql) === TRUE) {
             echo "New record created successfully";
         } else {
@@ -28,20 +27,20 @@ class AerolineaDAO implements interfaceAerolinea{
 
     function readall() {
         include '../config/Conexion.php';
-        $sql = "SELECT AER_NOM FROM aerolinea order< by AER_ID";
+        $sql = "SELECT CLI_NOM,CLI_APP,CLI_APM,CLI_DNI FROM cliente order by CLI_ID";
         $result = $link->query($sql);
         echo "<table border = '1'> \n";
-        echo "<tr><td>Nombre</td><td>E-Mail</td></tr> \n";
+        echo "<tr><td>Nombre</td><td>APELLIDO PATERNO</td><td>APELLIDO MATERNO</td><td>DNI</td></tr> \n";
         while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td></tr> \n";
+            echo "<tr><td>$reg[0]</td><td>$reg[1]</td><td>$reg[2]</td><td>$reg[3]</td></tr> \n";
         }
         $link->close();
     }
     
     function delete($id) {
         include "../config/Conexion.php";
-        $sql = "DELETE FROM aerolinea"
-                . " WHERE AER_ID='".$id."'";
+        $sql = "DELETE FROM cliente"
+                . " WHERE CLI_ID='".$id."'";
         if ($link->query($sql) === TRUE) {
             echo "Record deleted successfully";
         } else {
@@ -52,9 +51,9 @@ class AerolineaDAO implements interfaceAerolinea{
     }
     function update($id,$nombre){
         include "../config/Conexion.php";
-        $sql = "UPDATE aerolinea"
-                . " SET AER_NOM='".$nombre."'"
-                . " WHERE AER_ID='".$id."'";
+        $sql = "UPDATE cliente"
+                . " SET CLI_NOM='".$nombre."'"
+                . " WHERE CLI_ID='".$id."'";
         if ($link->query($sql) === TRUE) {
             echo "Record updated successfully";
         } else {
@@ -65,26 +64,29 @@ class AerolineaDAO implements interfaceAerolinea{
     }
     function searchById($id) {
         include '../config/Conexion.php';
-        $sql = "SELECT AER_NOM FROM aerolinea order by AER_ID "
-                . "WHERE AER_ID='".$id."'";
+        $sql = "SELECT CLI_NOM,CLI_APP,CLI_APM,CLI_DNI FROM cliente order by CLI_ID "
+                . "WHERE CLI_ID='".$id."'";
         $result = $link->query($sql);
         echo "<table border = '1'> \n";
-        echo "<tr><td>Nombre</td><td>E-Mail</td></tr> \n";
+        echo "<tr><td>Nombre</td><td>APELLIDO PATERNO</td><td>APELLIDO MATERNO</td><td>DNI</td></tr> \n";
         while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td></tr> \n";
+            echo "<tr><td>$reg[0]</td><td>$reg[1]</td><td>$reg[2]</td><td>$reg[3]</td></tr> \n";
         }
         $link->close();
     }
     function searchByName($nombre) {
         include '../config/Conexion.php';
-        $sql = "SELECT AER_NOM FROM aerolinea order by AER_ID "
-                . "WHERE AER_NOM='".$nombre."'";
+        $sql = "SELECT CLI_NOM,CLI_APP,CLI_APM,CLI_DNI FROM cliente order by CLI_ID "
+                . "WHERE CLI_NOM='".$nombre."'";
         $result = $link->query($sql);
         echo "<table border = '1'> \n";
-        echo "<tr><td>Nombre</td><td>E-Mail</td></tr> \n";
+        echo "<tr><td>Nombre</td><td>APELLIDO PATERNO</td><td>APELLIDO MATERNO</td><td>DNI</td></tr> \n";
         while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td></tr> \n";
+            echo "<tr><td>$reg[0]</td><td>$reg[1]</td><td>$reg[2]</td><td>$reg[3]</td></tr> \n";
         }
         $link->close();
     }
 }
+//$hola=new ClienteDAO();
+//$hola->create(1, "1234567", "Juan", "Alvaro", "Perez");
+//$hola->readall();
