@@ -149,7 +149,7 @@
 
                 </div>
             </div>
-        </section>
+        </section>        
         <section class="compra-vuelo">
             <form>
 
