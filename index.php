@@ -1,25 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-
-        <meta charset="utf-8">
-        <title>C & C </title>
-        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="keywords" content="">
-        <meta name="description" content="">
-        <link href="Web Pages/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="Web Pages/css/animate.min.css" rel="stylesheet" type="text/css"/>
-        <link href="Web Pages/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-        <link href="Web Pages/css/et-line-font.css" rel="stylesheet" type="text/css"/>
-        <link href="Web Pages/css/nivo-lightbox.css" rel="stylesheet" type="text/css"/>
-        <link href="Web Pages/css/nivo_themes/default/default.css" rel="stylesheet" type="text/css"/>
-        <link href="Web Pages/css/owl.carousel.css" rel="stylesheet" type="text/css"/>
-        <link href="Web Pages/css/owl.theme.css" rel="stylesheet" type="text/css"/>
-        <link href="Web Pages/css/bxslider.css" rel="stylesheet" type="text/css"/>
-        <link href="Web Pages/css/style.css" rel="stylesheet" type="text/css"/>
-        <link href='https://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
-
+        <?php
+            include './Web Pages/head.php';
+        ?>
     </head>
 
     <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
@@ -28,30 +12,9 @@
             <div class="sk-rotating-plane"></div>
 
         </section>
-        <section class="navbar navbar-fixed-top custom-navbar" role="navigation">
-            <div class="container">
-
-                <div class="navbar-header">
-                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon icon-bar"></span>
-                        <span class="icon icon-bar"></span>
-                        <span class="icon icon-bar"></span>
-                    </button>
-                    <a href="#home" class="smoothScroll navbar-brand">C & C</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#work" class="smoothScroll">Viajes</a></li>
-                        <li><a href="#about" class="smoothScroll">Acerca de..</a></li>
-                        <li><a href="#team" class="smoothScroll">Equipo</a></li>
-                        <li><a href="#portfolio" class="smoothScroll">Galeria</a></li>
-                        <li><a href="#plan" class="smoothScroll">Promociones</a></li>
-                        <li><a href="#contact" class="smoothScroll">Contáctenos</a></li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
+        <?php
+            include './Web Pages/menu.php';
+        ?>
 
 
         <!-- Homepage section

@@ -2,29 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dto/ClienteDTO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dto/LugarDTO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/config/Conexion.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/interfaces/interfaceAerolinea.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/interfaces/interfacePasaje.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dao/TourDAO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dao/ClienteDAO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dao/LugarDAO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/interfaces/interfaceCliente.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/interfaces/interfaceVuelo.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/interfaces/interfaceBus.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/index.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dao/VueloDAO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dto/AvionDTO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/interfaces/interfaceTour.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/interfaces/interfaceAvion.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dao/BusDAO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/interfaces/interfaceLugar.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dao/PasajeDAO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dao/AerolineaDAO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dto/BusDTO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dao/AvionDAO.php</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

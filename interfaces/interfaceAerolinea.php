@@ -12,10 +12,10 @@
  */
 interface interfaceAerolinea {
     //put your code here
-    function create($id,$nombre);
+    function create($entidad);
     function readall();
     function delete($id);
-    function update($id,$nombre);
+    function update($entidad);
     function searchById($id);
     function searchByName($nombre);
 }
