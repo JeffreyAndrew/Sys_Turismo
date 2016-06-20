@@ -838,6 +838,7 @@ footer h2 {
   }
 }
 .compra-vuelo{
+    padding:20px;
     border:  1px solid blue;
     border-radius: 10px; 
     margin: 40px;
