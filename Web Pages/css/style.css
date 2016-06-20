@@ -837,3 +837,18 @@ footer h2 {
     font-size: 11px;
   }
 }
+.compra-vuelo{
+    border:  1px solid blue;
+    border-radius: 10px; 
+    margin: 40px;
+    background-color: #f0f0f0; 
+}
+.compra-vuelo div{
+    padding: 5px;
+}
+.compra-vuelo form input{
+    border-color: #0000ff;
+}
+.compra-vuelo form center{
+    padding: 10px;
+}

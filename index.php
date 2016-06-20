@@ -187,6 +187,125 @@
                 </div>
             </div>
         </section>
+        <section class="compra-vuelo">
+            <form>
+
+                <h1 class="text-center">RESERVA TU VUELO</h1>
+
+                <div class="form-group" id="cajav">
+
+                    <label>ORIGEN</label>
+
+                    <datalist id="origen">
+                        <option value="Arequipa-Rodriguez Ballón">
+                        <option value="Andahuaylas-Andahuaylas">
+                        <option value="Anta(Huaraz)-Comandante FAP GAG">
+                        <option value="Ayacucho-Coronel FAP AM">
+                        <option value="Cajamarca-Mayor Gral. FAP AR">
+                        <option value="Chimbote-Tnte FAP JMM">
+                        <option value="Cuzco-Alejandro Velazco Astete">
+                        <option value="Chachapoyas-Chachapoyas">
+                        <option value="Chiclayo-Capitán FAP JQG">
+                        <option value="Huánuco-Alférez FAP DFF">
+                        <option value="Iquitos-Coronel FAP FSV">
+                        <option value="Juliaca-Manco Cápac">
+                        <option value="Lima-Internacional Jorge Chavez">
+                        <option value="Pisco-Pisco">
+                        <option value="Piura-Capitan FAP CC">
+                        <option value="Pucallpa-Pucallpa">
+                        <option value="Puerto Maldonado-Padre Aldamiz">
+                        <option value="Tacna-Coronel FAP CC">
+                        <option value="Tarapoto-Tarapoto">
+                        <option value="Tingo Maria-Tingo Maria">
+                        <option value="Trujillo-Capitan FAP CMP">
+                        <option value="Tumbes-Capitan FAP PC">
+                    </datalist>
+
+                    <input type="text" id="origen" class="origen form-control" list="origen" required="">             
+                </div>
+
+                <div class="form-group" id="cajav">
+
+                    <label>DESTINO</label>
+
+                    <datalist id="origen">
+                        <option value="Arequipa-Rodriguez Ballón">
+                        <option value="Andahuaylas-Andahuaylas">
+                        <option value="Anta(Huaraz)-Comandante FAP GAG">
+                        <option value="Ayacucho-Coronel FAP AM">
+                        <option value="Cajamarca-Mayor Gral. FAP AR">
+                        <option value="Chimbote-Tnte FAP JMM">
+                        <option value="Cuzco-Alejandro Velazco Astete">
+                        <option value="Chachapoyas-Chachapoyas">
+                        <option value="Chiclayo-Capitán FAP JQG">
+                        <option value="Huánuco-Alférez FAP DFF">
+                        <option value="Iquitos-Coronel FAP FSV">
+                        <option value="Juliaca-Manco Cápac">
+                        <option value="Lima-Internacional Jorge Chavez">
+                        <option value="Pisco-Pisco">
+                        <option value="Piura-Capitan FAP CC">
+                        <option value="Pucallpa-Pucallpa">
+                        <option value="Puerto Maldonado-Padre Aldamiz">
+                        <option value="Tacna-Coronel FAP CC">
+                        <option value="Tarapoto-Tarapoto">
+                        <option value="Tingo Maria-Tingo Maria">
+                        <option value="Trujillo-Capitan FAP CMP">
+                        <option value="Tumbes-Capitan FAP PC">
+                    </datalist>
+
+                    <input type="text" id="destino" class="destino form-control" list="origen" required=""><br>
+
+                </div>
+                <div class="form-inline">
+                    <div id="opcion1" class="form-group">
+                        <label class="radio-inline">
+                            <input name="ruta" type="radio" id="opcion1" class="opcion1" value="1" required="">Ida-Vuelta
+                        </label>  
+                    </div>    
+                    <div id="opcion2" class="form-group">    
+                        <label class="radio-inline">
+                            <input name="ruta" type="radio" id="opcion2" class="opcion2" value="2" required="">  Ida
+                        </label><br>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label for="ida">Ida</label>
+                        <input type="date" id="ida" class="ida form-control" required="">
+                    </div>
+                    <div id="vuelta1" class="form-group">
+                        <label for="vuelta">Vuelta</label>
+                        <input type="date" id="vuelta" class="vuelta form-control" required=""><br>
+                    </div>
+                </div>
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label>Pasajeros</label>
+                        <datalist id="pasajero">
+                            <option value="Niño">
+                            <option value="Adulto">
+                            <option value="Bebe">
+                        </datalist>
+                        <input type="text" id="pasajero" class="pasajero form-control" list="pasajero" required="" placeholder=" 0 Adulto,0 Niño,0 Bebé">
+                    </div>
+                    <div class="form-group">
+                        <label>Cabina</label>
+
+                        <datalist id="cabina">
+                            <option value="Economica">
+                            <option value="Ejecutivo">
+                            <option value="Privado">
+                            <option value="Turista">
+                            <option value="Business">
+                        </datalist>
+                        <input type="text" id="cabina" class="cabina form-control" list="cabina" required=""><br> 
+                    </div>
+                </div>
+                <center>
+                    <input type="submit" id="buscar" class="buscar btn btn-primary btn-lg text-center" value="Busca Tu Vuelo!!!">
+                </center>
+            </form>
+        </section>
 
 
         <!-- About section

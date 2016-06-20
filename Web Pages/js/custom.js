@@ -96,4 +96,13 @@ $(document).ready(function() {
   new WOW({ mobile: false }).init();
 
   });
-
+$(document).ready(function () {
+    $("#opcion2").click(function () {
+        $("#vuelta1").hide();
+    });
+ });
+$(document).ready(function () {
+    $("#opcion1").click(function () {
+        $("#vuelta1").show();
+    });
+ });
