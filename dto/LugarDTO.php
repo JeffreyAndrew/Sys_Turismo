@@ -11,7 +11,7 @@
  *
  * @author CESAR
  */
-class LUGAR {
+class LugarDTO {
     private $LUG_ID;
     private $LUG_NOM;
     
@@ -33,3 +33,4 @@ class LUGAR {
         $this->LUG_NOM;
     }
 }
+?>

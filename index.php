@@ -1,8 +1,12 @@
+<?php
+require_once './dao/LugarDAO.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <?php
-            include './Web Pages/head.php';
+        include './Web Pages/head.php';
         ?>
     </head>
 
@@ -13,7 +17,7 @@
 
         </section>
         <?php
-            include './Web Pages/menu.php';
+        include './Web Pages/menu.php';
         ?>
 
 
@@ -152,7 +156,6 @@
         </section>        
         <section class="compra-vuelo">
             <form>
-
                 <h1 class="text-center">RESERVA TU VUELO</h1>
 
                 <div class="form-group" id="cajav">
@@ -160,28 +163,19 @@
                     <label>ORIGEN</label>
 
                     <datalist id="origen">
-                        <option value="Arequipa-Rodriguez Ballón">
-                        <option value="Andahuaylas-Andahuaylas">
-                        <option value="Anta(Huaraz)-Comandante FAP GAG">
-                        <option value="Ayacucho-Coronel FAP AM">
-                        <option value="Cajamarca-Mayor Gral. FAP AR">
-                        <option value="Chimbote-Tnte FAP JMM">
-                        <option value="Cuzco-Alejandro Velazco Astete">
-                        <option value="Chachapoyas-Chachapoyas">
-                        <option value="Chiclayo-Capitán FAP JQG">
-                        <option value="Huánuco-Alférez FAP DFF">
-                        <option value="Iquitos-Coronel FAP FSV">
-                        <option value="Juliaca-Manco Cápac">
-                        <option value="Lima-Internacional Jorge Chavez">
-                        <option value="Pisco-Pisco">
-                        <option value="Piura-Capitan FAP CC">
-                        <option value="Pucallpa-Pucallpa">
-                        <option value="Puerto Maldonado-Padre Aldamiz">
-                        <option value="Tacna-Coronel FAP CC">
-                        <option value="Tarapoto-Tarapoto">
-                        <option value="Tingo Maria-Tingo Maria">
-                        <option value="Trujillo-Capitan FAP CMP">
-                        <option value="Tumbes-Capitan FAP PC">
+                        <?php
+                        $hola = new LugarDAO();
+                        $lista = $hola->readall();
+                        $i = 0;
+
+                        while ($i < count($lista)) {
+                            $lugar = $lista[$i];
+                            ?>
+                            <option value="<?php print $lugar->getLUG_NOM(); ?>">
+                                <?php
+                                $i++;
+                            }
+                            ?>
                     </datalist>
 
                     <input type="text" id="origen" class="origen form-control" list="origen" required="">             
@@ -678,6 +672,7 @@
                 </div>
             </div>
         </section>
+
 
 
         <!-- Footer section
