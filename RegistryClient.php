@@ -45,10 +45,6 @@
                         <label for="inacimiento" >Fecha de Nacimiento</label>
                         <input name="nacimiento" id="inacimiento" type="date">
                     </div>
-                    <div class="col s12 m6">
-                        <label for="ibautizmo" >Fecha de Bautizmo</label>
-                        <input name="bautizmo" id="ibautizmo" type="date">
-                    </div>
                     <div class="input-field col s12 m6">
                         <select name="sexo">
                             <option value="" disabled selected>Elegir Sexo</option>
