@@ -6,20 +6,17 @@ require_once './dao/LugarDAO.php';
 <html lang="en">
     <head>
         <?php
-        include './Web Pages/head.php';
+            include './Web Pages/head.php';
         ?>
     </head>
 
     <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
         <section  class="preloader">
-
             <div class="sk-rotating-plane"></div>
-
         </section>
         <?php
-        include './Web Pages/menu.php';
+            include './Web Pages/menu.php';
         ?>
-
 
         <!-- Homepage section
         ================================================== -->
@@ -91,7 +88,6 @@ require_once './dao/LugarDAO.php';
             </div>
         </div>
 
-
         <!-- Work section
         ================================================== -->
         <section id="work" class="parallax-section">
@@ -148,43 +144,33 @@ require_once './dao/LugarDAO.php';
                             <hr>
                             <p class="text-justify">El avion cuenta con asientos 180°, herramientas de negocios. Mayor comodidad para lograr un viaje inolvidable.</p>
                         </div>
-
                     </div>
-
                 </div>
             </div>
         </section>        
         <section class="compra-vuelo">
             <form>
                 <h1 class="text-center">RESERVA TU VUELO</h1>
-
                 <div class="form-group" id="cajav">
-
                     <label>ORIGEN</label>
-
                     <datalist id="origen">
                         <?php
-                        $hola = new LugarDAO();
-                        $lista = $hola->readall();
-                        $i = 0;
-
-                        while ($i < count($lista)) {
-                            $lugar = $lista[$i];
-                            ?>
+                            $hola = new LugarDAO();
+                            $lista = $hola->readall();
+                            $i = 0;
+                            while ($i < count($lista)) {
+                                $lugar = $lista[$i];
+                        ?>
                             <option value="<?php print $lugar->getLUG_NOM(); ?>">
-                                <?php
+                            <?php
                                 $i++;
                             }
                             ?>
                     </datalist>
-
                     <input type="text" id="origen" class="origen form-control" list="origen" required="">             
                 </div>
-
                 <div class="form-group" id="cajav">
-
                     <label>DESTINO</label>
-
                     <datalist id="origen">
                         <option value="Arequipa-Rodriguez Ballón">
                         <option value="Andahuaylas-Andahuaylas">
@@ -209,9 +195,7 @@ require_once './dao/LugarDAO.php';
                         <option value="Trujillo-Capitan FAP CMP">
                         <option value="Tumbes-Capitan FAP PC">
                     </datalist>
-
                     <input type="text" id="destino" class="destino form-control" list="origen" required=""><br>
-
                 </div>
                 <div class="form-inline">
                     <div id="opcion1" class="form-group">
@@ -247,7 +231,6 @@ require_once './dao/LugarDAO.php';
                     </div>
                     <div class="form-group">
                         <label>Cabina</label>
-
                         <datalist id="cabina">
                             <option value="Economica">
                             <option value="Ejecutivo">
@@ -263,7 +246,6 @@ require_once './dao/LugarDAO.php';
                 </center>
             </form>
         </section>
-
 
         <!-- About section
         ================================================== -->
@@ -354,7 +336,6 @@ require_once './dao/LugarDAO.php';
             </div>
         </section>
 
-
         <!-- team section
         ================================================== -->
         <section id="team" class="parallax-section">
@@ -419,11 +400,9 @@ require_once './dao/LugarDAO.php';
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
-
 
         <!-- Portfolio section
         ================================================== -->
