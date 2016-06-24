@@ -102,6 +102,7 @@ require_once './dao/LugarDAO.php';
                             <h1 class="heading">Reserva tus vuelos</h1>
                             <hr>
                             <p>En las casillas observe las opciónes y elija la que más prefiera...</p>
+                            <a href="views/registry/RegistryClient.php" class="btn btn-mini btn-primary" role="button">Comprar</a>
                         </div>
                     </div>
 
@@ -550,7 +551,7 @@ require_once './dao/LugarDAO.php';
                                 <li>Group of 10 people</li>
                             </ul>
                             <div class="plan-button">
-                                <button class="btn btn-default">COMPRAR VUELO</button>
+                                <button href="views/registry/RegistryClient.php" class="btn btn-default">COMPRAR VUELO</button>
                             </div>
                         </div>
                     </div>
