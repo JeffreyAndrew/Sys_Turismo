@@ -506,7 +506,7 @@ require_once './dao/LugarDAO.php';
                     </div> 
 
                     <!-- Portfolio bottom section
-                                ================================================== -->
+                    ================================================== -->
                     <div class="col-md-offset-2 col-md-8 col-sm-12">
                         <div class="portfolio-bottom">
                             <h2>¿INTERESADO?</h2>
@@ -595,7 +595,6 @@ require_once './dao/LugarDAO.php';
             </div>
         </section>
 
-
         <!-- Contact section
         ================================================== -->
         <section id="contact" class="parallax-section">
@@ -652,8 +651,6 @@ require_once './dao/LugarDAO.php';
             </div>
         </section>
 
-
-
         <!-- Footer section
         ================================================== -->
         <footer>
@@ -670,13 +667,11 @@ require_once './dao/LugarDAO.php';
                         </ul>
                         <p>Copyright &copy; 2016 C & C 
 
-                            | Design: Zannier Vargas</p>
-
+                            | Design: Zannier Vargas el Cabrito</p>
                     </div>
                 </div>
             </div>
         </footer>
-
 
         <!-- Javascript 
         ================================================== -->
@@ -690,6 +685,5 @@ require_once './dao/LugarDAO.php';
         <script src="Web Pages/js/jquery.parallax.js" type="text/javascript"></script>
         <script src="Web Pages/js/wow.min.js" type="text/javascript"></script>
         <script src="Web Pages/js/custom.js" type="text/javascript"></script>
-
     </body>
 </html>
