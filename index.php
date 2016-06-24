@@ -6,7 +6,7 @@ require_once './dao/LugarDAO.php';
 <html lang="en">
     <head>
         <?php
-            include './Web Pages/head.php';
+        include './Web Pages/head.php';
         ?>
     </head>
 
@@ -15,7 +15,7 @@ require_once './dao/LugarDAO.php';
             <div class="sk-rotating-plane"></div>
         </section>
         <?php
-            include './Web Pages/menu.php';
+        include './Web Pages/menu.php';
         ?>
 
         <!-- Homepage section
@@ -96,13 +96,13 @@ require_once './dao/LugarDAO.php';
 
                     <!-- Section title
                     ================================================== -->
-                    <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
+                    <div style="z-index: 1" class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
                         <div class="section-title">
                             <h5 class="wow bounceIn">C & C</h5>
                             <h1 class="heading">Reserva tus vuelos</h1>
                             <hr>
                             <p>En las casillas observe las opciónes y elija la que más prefiera...</p>
-                            <a href="views/registry/RegistryClient.php" class="btn btn-mini btn-primary" role="button">Comprar</a>
+                            <a style="z-index: 2;" href="RegistryClient.php" class="btn btn-mini btn-primary" role="button">Comprar</a>
                         </div>
                     </div>
 
@@ -155,14 +155,14 @@ require_once './dao/LugarDAO.php';
                     <label>ORIGEN</label>
                     <datalist id="origen">
                         <?php
-                            $hola = new LugarDAO();
-                            $lista = $hola->readall();
-                            $i = 0;
-                            while ($i < count($lista)) {
-                                $lugar = $lista[$i];
-                        ?>
+                        $hola = new LugarDAO();
+                        $lista = $hola->readall();
+                        $i = 0;
+                        while ($i < count($lista)) {
+                            $lugar = $lista[$i];
+                            ?>
                             <option value="<?php print $lugar->getLUG_NOM(); ?>">
-                            <?php
+                                <?php
                                 $i++;
                             }
                             ?>
