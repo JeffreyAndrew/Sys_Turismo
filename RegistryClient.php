@@ -43,7 +43,7 @@
                         <input id="dni" name="dni" type="text" class="validate">
                         <label for="dni">Dni</label>
                     </div>
-                    <div class="col s12 m6">
+                    <div class="input-field col s12 m6">
                         <label for="inacimiento" >Fecha de Nacimiento</label>
                         <input for="nacimiento" id="inacimiento" type="date" class="datepicker">
                     </div>
