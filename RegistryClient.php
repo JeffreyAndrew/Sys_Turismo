@@ -3,13 +3,15 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="Web Pages/css/materialize.css" rel="stylesheet" type="text/css"/>
+        <link href="Web Pages/css/materialize.min.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
         <div class="row ">  
-            <form class="col s10 offset-s1"  role="form" method="post" action="../../regPer"> 
+            <form class="col s10 offset-s1"  role="form" method="post" action=""> 
                 <input type="hidden" name="op" value="1" />
-                <h1 style="text-align: center; color: #26A69A">Registro Integrante</h1>
+                <h1 style="text-align: center; color: #26A69A">Registro Cliente</h1>
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">account_circle</i>
@@ -43,7 +45,7 @@
                     </div>
                     <div class="col s12 m6">
                         <label for="inacimiento" >Fecha de Nacimiento</label>
-                        <input name="nacimiento" id="inacimiento" type="date">
+                        <input for="nacimiento" id="inacimiento" type="date" class="datepicker">
                     </div>
                     <div class="input-field col s12 m6">
                         <select name="sexo">
@@ -53,10 +55,6 @@
                         </select>
                         <label>Sexo</label>
                     </div>
-                    <div class="input-field col s12 m12" >
-                        <textarea id="ocupacion" name="ocupacion" class="materialize-textarea"></textarea>
-                        <label for="ocupacion">Ocupación</label>
-                    </div>
                     <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
                         <i class="material-icons right">send</i>
                     </button>
@@ -65,7 +63,7 @@
         </div>
         <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="../../js/materialize.min.js" type="text/javascript"></script>
+        <script src="Web Pages/js/materialize.min.js" type="text/javascript"></script>
         <script>
             $('.datepicker').pickadate({
                 selectMonths: true, // Creates a dropdown to control month
