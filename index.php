@@ -106,7 +106,6 @@ require_once './dao/LugarDAO.php';
                         </div>
                     </div>
 
-
                     <!-- Work Owl Carousel section
                     ================================================== -->
                     <div id="owl-work" class="owl-carousel">
@@ -551,7 +550,7 @@ require_once './dao/LugarDAO.php';
                                 <li>Group of 10 people</li>
                             </ul>
                             <div class="plan-button">
-                                <button href="views/registry/RegistryClient.php" class="btn btn-default">COMPRAR VUELO</button>
+                                <button href="Web Pages/views/registry/RegistryClient.php" class="btn btn-default">COMPRAR VUELO</button>
                             </div>
                         </div>
                     </div>
