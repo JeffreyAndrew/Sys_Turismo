@@ -1,5 +1,4 @@
 <?php
-include './config/Conexion.php';
 include './dto/CiudadDTO.php';
 include './interfaces/CiudadInterface.php';
 

@@ -1,5 +1,4 @@
 <?php
-include './config/Conexion.php';
 include './dto/PasajeDTO.php';
 include './interfaces/PasajeInterface.php';
 /*

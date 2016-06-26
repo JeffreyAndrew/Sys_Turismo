@@ -1,3 +1,14 @@
+<?php
+    include './dao/AerolineaDAO.php';
+    include './dao/AvionDAO.php';
+    include './dao/CiudadDAO.php';
+    include './dao/ClienteDAO.php';
+    include './dao/Pas_AerDAO.php';
+    include './dao/PasajeDAO.php';
+    include './dao/TourDAO.php';
+    include './dao/VentaDAO.php';
+    include './dao/VueloDAO.php';
+?>
 <!DOCTYPE html>
 <html>
     <head>

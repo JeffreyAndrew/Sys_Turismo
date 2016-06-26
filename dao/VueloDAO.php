@@ -1,5 +1,4 @@
 <?php
-include './config/Conexion.php';
 include './dto/VueloDTO.php';
 include './interfaces/VueloInterface.php';
 /*
@@ -63,12 +62,12 @@ class VueloDAO implements VueloInterface{
         $link->close();
     }
 
-    function update($id, $nombre) {
+    function update(Vuelo $v) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
         $sql = "UPDATE vuelo"
-                . " SET AVI_ID='" . $nombre . "'"
-                . " WHERE VUE_ID='" . $id . "'";
+                . " SET AVI_ID='" . $v->getAVI_ID() . "',VUE_FECH='" . $v->getVUE_FECH() . "',CIU_ID_D='" . $v->getCIU_ID_D() . "',CIU_ID_O='" . $v->getCIU_ID_O() . "'"
+                . " WHERE VUE_ID='" . $v->getVUE_ID() . "'";
         if ($link->query($sql) === TRUE) {
             echo "Record updated successfully";
         } else {

@@ -19,7 +19,7 @@ class AerolineaDAO implements AerolineaInterface{
     function create(AEROLINEA $objeto) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO aerolinea(AER_ID,AER_NOM)VALUES( '".$objeto->getAER_ID()."','".$objeto->getAER_NOM()."')";
+        $sql = "INSERT INTO aerolinea(AER_ID,AER_NOM)VALUES( 'NULL','".$objeto->getAER_NOM()."')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {
@@ -58,12 +58,12 @@ class AerolineaDAO implements AerolineaInterface{
         $link->close();
         return $r;
     }
-    function update($id,$nombre){
+    function update(AEROLINEA $a){
         $link1 = new Conexion();
         $link = $link1->getConnection();
         $sql = "UPDATE aerolinea"
-                . " SET AER_NOM='".$nombre."'"
-                . " WHERE AER_ID='".$id."'";
+                . " SET AER_NOM='".$a->getAER_NOM()."'"
+                . " WHERE AER_ID='".$a->getAER_ID()."'";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {
@@ -75,7 +75,7 @@ class AerolineaDAO implements AerolineaInterface{
     public function read($key) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT AER_NOM FROM aerolinea order by AER_ID "
+        $sql = "SELECT AER_ID,AER_NOM FROM aerolinea order by AER_ID "
                 . "WHERE AER_ID='".$key."'";
         $result = $link->query($sql);
         $lista=array();

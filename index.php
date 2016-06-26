@@ -1,7 +1,3 @@
-<?php
-require_once './dao/CiudadDAO.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>

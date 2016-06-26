@@ -1,5 +1,4 @@
 <?php
-include './config/Conexion.php';
 include './dto/Pass_TerrDTO.php';
 include './interfaces/Pass_TerrInterface.php';
 /*

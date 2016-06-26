@@ -1,5 +1,4 @@
 <?php
-include './config/Conexion.php';
 include './dto/TourDTO.php';
 include './interfaces/TourInterface.php';
 /*

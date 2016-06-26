@@ -43,7 +43,7 @@ class Viaje {
         return $this->BUS_ID;
     }
     
-    public function Venta() {
+    public function Viaje() {
         $this->VIA_ID;
         $this->CIU_ID_D;
         $this->CIU_ID_O;

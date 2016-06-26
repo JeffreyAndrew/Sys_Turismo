@@ -14,8 +14,8 @@
 class Vuelo {
     private $VUE_ID;
     private $AVI_ID;
-    private $LUG_ID_D;
-    private $LUG_ID_O;
+    private $CIU_ID_D;
+    private $CIU_ID_O;
     private $VUE_FECH;
     
     public function setVUE_ID($value) {
@@ -24,17 +24,17 @@ class Vuelo {
     public function getVUE_ID() {
         return $this->VUE_ID;
     }
-    public function setLUG_ID_D($value) {
-        $this->LUG_ID_D=$value;
+    public function setCIU_ID_D($value) {
+        $this->CIU_ID_D=$value;
     }
-    public function getLUG_ID_D() {
-        return $this->LUG_ID_D;
+    public function getCIU_ID_D() {
+        return $this->CIU_ID_D;
     }
-    public function setLUG_ID_O($value) {
-        $this->LUG_ID_O=$value;
+    public function setCIU_ID_O($value) {
+        $this->CIU_ID_O=$value;
     }
-    public function getLUG_ID_O() {
-        return $this->LUG_ID_O;
+    public function getCIU_ID_O() {
+        return $this->CIU_ID_O;
     }
     public function setAVI_ID($value) {
         $this->AVI_ID=$value;
@@ -52,8 +52,8 @@ class Vuelo {
     public function Vuelo() {
         $this->VUE_ID;
         $this->AVI_ID;
-        $this->LUG_ID_D;
-        $this->LUG_ID_O;
+        $this->CIU_ID_D;
+        $this->CIU_ID_O;
         $this->VUE_FECH;
     }
 }

@@ -1,5 +1,4 @@
 <?php
-include './config/Conexion.php';
 include './dto/Pas_AerDTO.php';
 include './interfaces/Pas_AerInterface.php';
 /*

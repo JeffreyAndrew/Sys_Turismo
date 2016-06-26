@@ -1,5 +1,4 @@
 <?php
-include './config/Conexion.php';
 include './dto/BusDTO.php';
 include './interfaces/BusInterface.php';
 /*
