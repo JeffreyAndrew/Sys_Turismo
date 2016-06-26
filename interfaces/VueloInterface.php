@@ -10,11 +10,11 @@
  *
  * @author CESAR
  */
-interface operaciones {
+interface VueloInterface {
     //put your code here
-    function create(Object $entidad);
+    function create(Vuelo $entidad);
     function readall();
     function delete($key);
-    function update(Object $entidad);
+    function update(Vuelo $entidad);
     function read($key);
 }

@@ -1,5 +1,7 @@
 <?php
-
+include './config/Conexion.php';
+include './dto/VueloDTO.php';
+include './interfaces/VueloInterface.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,7 +13,7 @@
  *
  * @author CESAR
  */
-class VueloDAO implements operaciones{
+class VueloDAO implements VueloInterface{
 
     //put your code here
     function create(Vuelo $vuelo) {

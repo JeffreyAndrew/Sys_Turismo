@@ -1,5 +1,7 @@
 <?php
-
+include './config/Conexion.php';
+include './dto/TourDTO.php';
+include './interfaces/TourInterface.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,7 +13,7 @@
  *
  * @author CESAR
  */
-class TourDAO implements operaciones{
+class TourDAO implements TourInterface{
     //put your code here
     function create(TOUR $t) {
         $link1 = new Conexion();

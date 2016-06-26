@@ -1,7 +1,7 @@
 <?php
 include './config/Conexion.php';
-include './dto/PasajeDTO.php';
-include './interfaces/PasajeInterface.php';
+include './dto/Pas_AerDTO.php';
+include './interfaces/Pas_AerInterface.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,16 +9,16 @@ include './interfaces/PasajeInterface.php';
  */
 
 /**
- * Description of PasajeDTO
+ * Description of Pas_AerDTO
  *
  * @author CESAR
  */
-class PasajeDAO implements PasajeInterface{
+class Pas_AerDAO implements Pas_AerInterface{
     //put your code here
-    function create(PASAJE $p) {
+    function create(Pas_Aer $p) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO pasaje(PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID)VALUES( 'NULL','".$p->getPAS_FECH()."','".$p->getPAS_COD()."','".$p->getPAS_TERR_ID()."','".$p->getPAS_AER_ID()."')";
+        $sql = "INSERT INTO pas_aer(PAS_AER_ID,VUE_ID)VALUES( 'NULL','".$p->getVUE_ID()."')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {
@@ -31,16 +31,13 @@ class PasajeDAO implements PasajeInterface{
     function readall() {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID FROM pasaje order by PAS_ID";
+        $sql = "SELECT PAS_AER_ID,VUE_ID FROM pas_aer order by PAS_AER_ID";
         $result = $link->query($sql);
         $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
-            $p=new PASAJE();
-            $p->setPAS_ID($reg[0]);
-            $p->setPAS_FECH($reg[1]);
-            $p->setPAS_COD($reg[2]);
-            $p->setPAS_TERR_ID($reg[3]);
-            $p->setPAS_AER_ID($reg[4]);
+            $p=new Pas_Aer();
+            $p->setPAS_AER_ID($reg[0]);
+            $p->setVUE_ID($reg[1]);
             $lista[]=$p;
         }
         $link->close();
@@ -50,8 +47,8 @@ class PasajeDAO implements PasajeInterface{
     function delete($id) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "DELETE FROM pasaje"
-                . " WHERE PAS_ID='".$id."'";
+        $sql = "DELETE FROM pas_aer"
+                . " WHERE PAS_AER_ID='".$id."'";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {
@@ -60,12 +57,12 @@ class PasajeDAO implements PasajeInterface{
         $link->close();
         return $r;
     }
-    function update(PASAJE $p){
+    function update(Pas_Aer $p){
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "UPDATE pasaje"
-                . " SET PAS_FECH='".$p->getPAS_FECH()."',PAS_COD='".$p->getPAS_COD()."',PAS_TERR_ID='".$p->getPAS_TERR_ID()."',PAS_AER_ID='".$p->getPAS_AER_ID()."'"
-                . " WHERE PAS_ID='".$p->getPAS_ID()."'";
+        $sql = "UPDATE pas_aer"
+                . " SET VUE_ID='".$p->getVUE_ID()."'"
+                . " WHERE PAS_AER_ID='".$p->getPAS_AER_ID()."'";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {
@@ -78,21 +75,17 @@ class PasajeDAO implements PasajeInterface{
     public function read($key) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID FROM pasaje order by PAS_ID "
-                . "WHERE PAS_ID='".$key."'";
+        $sql = "SELECT PAS_AER_ID,VUE_ID FROM pas_aer order by PAS_AER_ID "
+                . "WHERE PAS_AER_ID='".$key."'";
         $result = $link->query($sql);
         $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
-            $p=new PASAJE();
-            $p->setPAS_ID($reg[0]);
-            $p->setPAS_FECH($reg[1]);
-            $p->setPAS_COD($reg[2]);
-            $p->setPAS_TERR_ID($reg[3]);
-            $p->setPAS_AER_ID($reg[4]);
+            $p=new Pas_Aer();
+            $p->setPAS_AER_ID($reg[0]);
+            $p->setVUE_ID($reg[1]);
             $lista[]=$p;
         }
         $link->close();
         return $lista;
     }
-
 }

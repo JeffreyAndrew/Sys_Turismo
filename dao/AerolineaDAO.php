@@ -1,5 +1,7 @@
 <?php
-
+include './config/Conexion.php';
+include './dto/AerolineaDTO.php';
+include './interfaces/AerolineaInterface.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,7 +13,7 @@
  *
  * @author CESAR
  */
-class AerolineaDAO implements operaciones{
+class AerolineaDAO implements AerolineaInterface{
 
     //put your code here
     function create(AEROLINEA $objeto) {
@@ -30,7 +32,7 @@ class AerolineaDAO implements operaciones{
     function readall() {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT AER_ID,AER_NOM FROM aerolinea order< by AER_ID";
+        $sql = "SELECT AER_ID,AER_NOM FROM aerolinea order by AER_ID";
         $result = $link->query($sql);
         $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
@@ -76,12 +78,15 @@ class AerolineaDAO implements operaciones{
         $sql = "SELECT AER_NOM FROM aerolinea order by AER_ID "
                 . "WHERE AER_ID='".$key."'";
         $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>Nombre</td><td>E-Mail</td></tr> \n";
+        $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td></tr> \n";
+            $a=new AEROLINEA();
+            $a->setAER_ID($reg[0]);
+            $a->setAER_NOM($reg[1]);
+            $lista[]=$a;
         }
         $link->close();
+        return $lista;
     }
 
 }

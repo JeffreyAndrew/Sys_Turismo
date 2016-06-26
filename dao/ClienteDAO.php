@@ -1,5 +1,7 @@
 <?php
-
+include './config/Conexion.php';
+include './dto/ClienteDTO.php';
+include './interfaces/ClienteInterface.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,82 +13,94 @@
  *
  * @author CESAR
  */
-class ClienteDAO implements operaciones{
+class ClienteDAO implements ClienteInterface{
     //put your code here
-    function create($id,$dni,$nombre,$app,$apm) {
-        include "../config/Conexion.php";
-        $sql = "INSERT INTO cliente(CLI_ID,CLI_NOM,CLI_DNI,CLI_APP,CLI_APM)VALUES( '".$id."','".$nombre."','".$dni."','".$app."','".$apm."')";
+    function create(CLIENTE $c) {
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
+        $sql = "INSERT INTO cliente(CLI_ID,CLI_NOM,CLI_APP,CLI_APM,CLI_DNI)VALUES( 'NULL','".$c->getCLI_NOM()."','".$c->getCLI_APP()."','".$c->getCLI_APM()."','".$c->getCLI_DNI()."')";
         if ($link->query($sql) === TRUE) {
-            echo "New record created successfully";
+            $r=1;
         } else {
             echo "Error: " . $sql . "<br>" . $link->error;
         }
-
         $link->close();
+        return $r;
     }
 
     function readall() {
-        include '../config/Conexion.php';
-        $sql = "SELECT CLI_NOM,CLI_APP,CLI_APM,CLI_DNI FROM cliente order by CLI_ID";
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
+        $sql = "SELECT CLI_ID,CLI_NOM,CLI_APP,CLI_APM,CLI_DNI FROM cliente order by CLI_ID";
         $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>Nombre</td><td>APELLIDO PATERNO</td><td>APELLIDO MATERNO</td><td>DNI</td></tr> \n";
+        $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td><td>$reg[2]</td><td>$reg[3]</td></tr> \n";
+            $c=new CLIENTE();
+            $c->setCLI_ID($reg[0]);
+            $c->setCLI_NOM($reg[1]);
+            $c->setCLI_APP($reg[2]);
+            $c->setCLI_APM($reg[3]);
+            $c->setCLI_DNI($reg[4]);
+            $lista[]=$c;
         }
         $link->close();
+        return $lista;
     }
     
-    function delete($id) {
-        include "../config/Conexion.php";
+    function delete($key) {
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "DELETE FROM cliente"
-                . " WHERE CLI_ID='".$id."'";
+                . " WHERE CLI_ID='".$key."'";
         if ($link->query($sql) === TRUE) {
-            echo "Record deleted successfully";
+            $r=1;
         } else {
             echo "Error: " . $sql . "<br>" . $link->error;
         }
-
         $link->close();
+        return $r;
     }
-    function update($id,$nombre){
-        include "../config/Conexion.php";
+    function update(CLIENTE $c){
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "UPDATE cliente"
-                . " SET CLI_NOM='".$nombre."'"
-                . " WHERE CLI_ID='".$id."'";
+                . " SET CLI_NOM='".$c->getCLI_NOM()."',CLI_APP='".$c->getCLI_APP()."',CLI_APM='".$c->getCLI_APM()."',CLI_DNI='".$c->getCLI_DNI()."'"
+                . " WHERE CLI_ID='".$c->getCLI_ID()."'";
         if ($link->query($sql) === TRUE) {
-            echo "Record updated successfully";
+            $r=1;
         } else {
             echo "Error: " . $sql . "<br>" . $link->error;
         }
+        $link->close();
+        return $r;
+    }
 
-        $link->close();
-    }
-    function searchById($id) {
-        include '../config/Conexion.php';
-        $sql = "SELECT CLI_NOM,CLI_APP,CLI_APM,CLI_DNI FROM cliente order by CLI_ID "
-                . "WHERE CLI_ID='".$id."'";
+    public function read($key) {
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
+        $sql = "SELECT CLI_ID,CLI_NOM,CLI_APP,CLI_APM,CLI_DNI FROM cliente order by CLI_ID "
+                . "WHERE CLI_ID='".$key."'";
         $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>Nombre</td><td>APELLIDO PATERNO</td><td>APELLIDO MATERNO</td><td>DNI</td></tr> \n";
+        $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td><td>$reg[2]</td><td>$reg[3]</td></tr> \n";
+            $c=new CLIENTE();
+            $c->setCLI_ID($reg[0]);
+            $c->setCLI_NOM($reg[1]);
+            $c->setCLI_APP($reg[2]);
+            $c->setCLI_APM($reg[3]);
+            $c->setCLI_DNI($reg[4]);
+            $lista[]=$c;
         }
         $link->close();
+        return $lista;
     }
-    function searchByName($nombre) {
-        include '../config/Conexion.php';
-        $sql = "SELECT CLI_NOM,CLI_APP,CLI_APM,CLI_DNI FROM cliente order by CLI_ID "
-                . "WHERE CLI_NOM='".$nombre."'";
-        $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>Nombre</td><td>APELLIDO PATERNO</td><td>APELLIDO MATERNO</td><td>DNI</td></tr> \n";
-        while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td><td>$reg[2]</td><td>$reg[3]</td></tr> \n";
-        }
-        $link->close();
-    }
+
 }
 //$hola=new ClienteDAO();
-//$hola->create(1, "1234567", "Juan", "Alvaro", "Perez");
-//$hola->readall();
+//$c=new CLIENTE();
+//$c->setCLI_NOM("Juan");
+//$hola->create($c);
+//$a=Array();
+//$a=$hola->readall();
+//echo $a[0]->getCLI_NOM();
+//echo $hola->delete(1);

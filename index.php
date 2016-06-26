@@ -1,5 +1,5 @@
 <?php
-require_once './dao/LugarDAO.php';
+require_once './dao/CiudadDAO.php';
 ?>
 
 <!DOCTYPE html>

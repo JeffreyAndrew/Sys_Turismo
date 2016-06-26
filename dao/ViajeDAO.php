@@ -1,7 +1,7 @@
 <?php
 include './config/Conexion.php';
-include './dto/PasajeDTO.php';
-include './interfaces/PasajeInterface.php';
+include './dto/ViajeDTO.php';
+include './interfaces/ViajeInterface.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -9,16 +9,16 @@ include './interfaces/PasajeInterface.php';
  */
 
 /**
- * Description of PasajeDTO
+ * Description of ViajeDAO
  *
  * @author CESAR
  */
-class PasajeDAO implements PasajeInterface{
+class ViajeDAO implements ViajeInterface{
     //put your code here
-    function create(PASAJE $p) {
+    function create(Viaje $v) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO pasaje(PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID)VALUES( 'NULL','".$p->getPAS_FECH()."','".$p->getPAS_COD()."','".$p->getPAS_TERR_ID()."','".$p->getPAS_AER_ID()."')";
+        $sql = "INSERT INTO viaje(VIA_ID,CIU_ID_D,CIU_ID_O,BUS_ID)VALUES( 'NULL','".$v->getCIU_ID_D()."','".$v->getCIU_ID_O()."','".$v->getBUS_ID()."')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {
@@ -31,27 +31,26 @@ class PasajeDAO implements PasajeInterface{
     function readall() {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID FROM pasaje order by PAS_ID";
+        $sql = "SELECT VIA_ID,CIU_ID_D,CIU_ID_O,BUS_ID FROM viaje ORDER BY VIA_ID";
         $result = $link->query($sql);
         $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
-            $p=new PASAJE();
-            $p->setPAS_ID($reg[0]);
-            $p->setPAS_FECH($reg[1]);
-            $p->setPAS_COD($reg[2]);
-            $p->setPAS_TERR_ID($reg[3]);
-            $p->setPAS_AER_ID($reg[4]);
-            $lista[]=$p;
+            $a=new Viaje();
+            $a->setVIA_ID($reg[0]);
+            $a->setCIU_ID_D($reg[1]);
+            $a->setCIU_ID_O($reg[2]);
+            $a->setBUS_ID($reg[3]);
+            $lista[]=$a;
         }
         $link->close();
         return $lista;
     }
     
-    function delete($id) {
+    function delete($key) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "DELETE FROM pasaje"
-                . " WHERE PAS_ID='".$id."'";
+        $sql = "DELETE FROM viaje"
+                . " WHERE VIA_ID='".$key."'";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {
@@ -60,12 +59,12 @@ class PasajeDAO implements PasajeInterface{
         $link->close();
         return $r;
     }
-    function update(PASAJE $p){
+    function update(Viaje $a){
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "UPDATE pasaje"
-                . " SET PAS_FECH='".$p->getPAS_FECH()."',PAS_COD='".$p->getPAS_COD()."',PAS_TERR_ID='".$p->getPAS_TERR_ID()."',PAS_AER_ID='".$p->getPAS_AER_ID()."'"
-                . " WHERE PAS_ID='".$p->getPAS_ID()."'";
+        $sql = "UPDATE viaje"
+                . " SET CIU_ID_D='".$a->getCIU_ID_D()."',CIU_ID_O='".$a->getCIU_ID_O()."',BUS_ID='".$a->getBUS_ID()."'"
+                . " WHERE VIA_ID='".$a->getVIA_ID()."'";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {
@@ -78,21 +77,19 @@ class PasajeDAO implements PasajeInterface{
     public function read($key) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID FROM pasaje order by PAS_ID "
-                . "WHERE PAS_ID='".$key."'";
+        $sql = "SELECT VIA_ID,CIU_ID_D,CIU_ID_O,BUS_ID FROM viaje order by VIA_ID "
+                . "WHERE VIA_ID='".$key."'";
         $result = $link->query($sql);
         $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
-            $p=new PASAJE();
-            $p->setPAS_ID($reg[0]);
-            $p->setPAS_FECH($reg[1]);
-            $p->setPAS_COD($reg[2]);
-            $p->setPAS_TERR_ID($reg[3]);
-            $p->setPAS_AER_ID($reg[4]);
-            $lista[]=$p;
+            $a=new Viaje();
+            $a->setVIA_ID($reg[0]);
+            $a->setCIU_ID_D($reg[1]);
+            $a->setCIU_ID_O($reg[2]);
+            $a->setBUS_ID($reg[3]);
+            $lista[]=$a;
         }
         $link->close();
         return $lista;
     }
-
 }

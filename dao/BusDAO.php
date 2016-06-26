@@ -1,5 +1,7 @@
 <?php
-
+include './config/Conexion.php';
+include './dto/BusDTO.php';
+include './interfaces/BusInterface.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -11,79 +13,80 @@
  *
  * @author CESAR
  */
-class BusDAO implements operaciones{
+class BusDAO implements BusInterface{
     //put your code here
-    function create($id,$lugNombre,$busMod) {
-        include "../config/Conexion.php";
-        $sql = "INSERT INTO bus(BUS_ID,LUG_NOM,BUS_MOD)VALUES( '".$id."','".$lugNombre."','".$busMod."')";
+    function create(BUS $b) {
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
+        $sql = "INSERT INTO bus(BUS_ID,BUS_MOD)VALUES( '".$b->getBUS_ID()."','".$b->getBUS_MOD()."')";
         if ($link->query($sql) === TRUE) {
-            echo "New record created successfully";
+            $r=1;
         } else {
             echo "Error: " . $sql . "<br>" . $link->error;
         }
-
         $link->close();
+        return $r;
     }
 
     function readall() {
-        include '../config/Conexion.php';
-        $sql = "SELECT BUS_MOD,LUG_NOM FROM bus order by BUS_ID";
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
+        $sql = "SELECT BUS_ID,BUS_MOD FROM bus order by BUS_ID";
         $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>LUGAR</td><td>MODELO</td></tr> \n";
+        $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td><td>$reg[2]</td></tr> \n";
+            $b=new BUS();
+            $b->setBUS_ID($reg[0]);
+            $b->setBUS_MOD($reg[1]);
+            $lista[]=$b;
         }
         $link->close();
+        return $lista;
     }
     
-    function delete($id) {
-        include "../config/Conexion.php";
+    function delete($key) {
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "DELETE FROM bus"
-                . " WHERE BUS_ID='".$id."'";
+                . " WHERE BUS_ID='".$key."'";
         if ($link->query($sql) === TRUE) {
-            echo "Record deleted successfully";
+            $r=1;
         } else {
             echo "Error: " . $sql . "<br>" . $link->error;
         }
-
         $link->close();
+        return $r;
     }
-    function update($id,$modelo){
-        include "../config/Conexion.php";
+    function update(BUS $b){
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "UPDATE bus"
-                . " SET BUS_MOD='".$modelo."'"
-                . " WHERE BUS_ID='".$id."'";
+                . " SET BUS_MOD='".$b->getBUS_MOD()."'"
+                . " WHERE BUS_ID='".$b->getBUS_ID()."'";
         if ($link->query($sql) === TRUE) {
-            echo "Record updated successfully";
+            $r=1;
         } else {
             echo "Error: " . $sql . "<br>" . $link->error;
         }
+        $link->close();
+        return $r;
+    }
 
-        $link->close();
-    }
-    function searchById($id) {
-        include '../config/Conexion.php';
-        $sql = "SELECT BUS_MOD,LUG_NOM FROM bus order by BUS_ID "
-                . "WHERE BUS_ID='".$id."'";
+    public function read($key) {
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
+        $sql = "SELECT BUS_ID,BUS_MOD FROM bus order by BUS_ID "
+                . "WHERE BUS_ID='".$key."'";
         $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>LUGAR</td><td>MODELO</td></tr> \n";
+        $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td><td>$reg[2]</td></tr> \n";
+            $b=new BUS();
+            $b->setBUS_ID($reg[0]);
+            $b->setBUS_MOD($reg[1]);
+            $lista[]=$b;
         }
         $link->close();
+        return $lista;
     }
-    function searchByName($modelo) {
-        include '../config/Conexion.php';
-        $sql = "SELECT BUS_MOD,LUG_NOM FROM bus order by BUS_ID "
-                . "WHERE BUS_MOD='".$modelo."'";
-        $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>LUGAR</td><td>MODELO</td></tr> \n";
-        while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td><td>$reg[2]</td></tr> \n";
-        }
-        $link->close();
-    }
+
 }

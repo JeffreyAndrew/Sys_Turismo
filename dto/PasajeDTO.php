@@ -45,7 +45,7 @@ class PASAJE {
     public function setPAS_AER_ID($value) {
         $this->PAS_AER_ID=$value;
     }
-    public function getPAS_AER_IDD() {
+    public function getPAS_AER_ID() {
         return $this->PAS_AER_ID;
     }
     
