@@ -853,3 +853,13 @@ footer h2 {
 .compra-vuelo form center{
     padding: 10px;
 }
+.itinerario{
+    border: 2px solid#26A69A;
+    border-radius: 10px;
+    width: 80%;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.itinerario table{
+    width: 80%;
+}

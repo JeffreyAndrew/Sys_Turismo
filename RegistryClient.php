@@ -6,12 +6,27 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="Web Pages/css/materialize.css" rel="stylesheet" type="text/css"/>
         <link href="Web Pages/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+        <link href="Web Pages/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
+        <nav>
+            <div class="nav-wrapper">
+                <div class="col s12">
+                    <center>
+                        <a id="1" href="#" class="breadcrumb">Registra Vuelo</a>
+                        <a id="2" href="#" class="breadcrumb">Pasajeros</a>
+                        <a id="3" href="#" class="breadcrumb">Vuelos</a>
+                        <a id="4" href="#" onclick="Materialize.showStaggeredList" class="breadcrumb">Precio</a>
+                        <a id="5" href="#" class="breadcrumb">Pago</a>
+                        <a id="6" href="#" class="breadcrumb">Confirmacion</a>
+                    </center>
+                </div>
+            </div>
+        </nav>
         <div id="caja2" class="row">
             <form class="col s10 offset-s1"  role="form" method="post" action="">
                 <input type="hidden" name="op" value="1" />
-                <h1 style="text-align: center; color: #26A69A">Comprar Vuelo</h1>
+                <h1 style="text-align: center; color: #26A69A">Registra Vuelo</h1>
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">location_on</i>
@@ -117,15 +132,6 @@
                 </div>
             </form>
 
-
-            <center>
-                <div class="caja2">
-                    <button class="btn waves-effect waves-light"  type="submit" id="boton">Siguiente
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
-            </center>
-
         </div>
         <div id="caja1" class="row ">
             <form class="col s10 offset-s1"  role="form" method="post" action=""> 
@@ -182,15 +188,413 @@
                 </div>
             </form>
         </div>
+        <div id="caja3" class="row">
+            <center>
+                <h1 style="color: #26A69A">¡Selecciona tus Vuelos!</h1>
+            </center>
+            <center>
+                <div class="itinerario">
+                    <h4>Itinerario</h4>            
+                    <table class="table-responsive striped">
+                        <thead>
+                            <tr>
+                                <th data-field="id">Ida</th>
+                                <th data-field="id">Vuelta</th>
+                                <th data-field="id">Pasajeros</th>
+                                <th data-field="id">Cabina</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lima-Cusco 3/06</td>
+                                <td>Cusco-Lima 11/06</td>
+                                <td>1 adulto</td>
+                                <td>Economica</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="itinerario">
+                    <h4>Selecciona tu Vuelo</h4>
+                    <p>Ida Domingo 26 de Junio: Lima/Cusco</p>
+                    <table class="table-responsive striped">
+                        <thead>
+                            <tr>
+                                <th data-field="id">Vuelta</th>
+                                <th data-field="id">salida</th>
+                                <th data-field="id">Llegada</th>
+                                <th data-field="id">Duración</th>
+                                <th data-field="id">Seleccion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Airbus 320</td>
+                                <td>14:25<strong>(LIM)</strong></td>
+                                <td>15:45<strong>(CUZ)</strong></td>
+                                <td>01:20 hrs.</td>
+                                <td><a role="button" class="red btn-large btn-floating" ><i class="large material-icons">done</i></a></td>
+                            </tr>
+                            <tr>
+                                <td>Airbus 320</td>
+                                <td>14:25<strong>(LIM)</strong></td>
+                                <td>15:45<strong>(CUZ)</strong></td>
+                                <td>01:20 hrs.</td>
+                                <td><a role="button" class="red btn-large btn-floating" ><i class="large material-icons">done</i></a></td>
+                            </tr>
+                            <tr>
+                                <td>Airbus 320</td>
+                                <td>14:25<strong>(LIM)</strong></td>
+                                <td>15:45<strong>(CUZ)</strong></td>
+                                <td>01:20 hrs.</td>
+                                <td><a role="button" class="red btn-large btn-floating" ><i class="large material-icons">done</i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br/><br/>
+                    <p>Vuelta 15 de Julio: Cusco/Lima</p>
+                    <table class="table-responsive striped">
+                        <thead>
+                            <tr>
+                                <th data-field="id">Vuelos</th>
+                                <th data-field="id">salida</th>
+                                <th data-field="id">Llegada</th>
+                                <th data-field="id">Duración</th>
+                                <th data-field="id">Seleccion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Airbus 320</td>
+                                <td>14:25<strong>(LIM)</strong></td>
+                                <td>15:45<strong>(CUZ)</strong></td>
+                                <td>01:20 hrs.</td>
+                                <td><a role="button" class="red btn-large btn-floating" ><i class="large material-icons">done</i></a></td>
+                            </tr>
+                            <tr>
+                                <td>Airbus 320</td>
+                                <td>14:25<strong>(LIM)</strong></td>
+                                <td>15:45<strong>(CUZ)</strong></td>
+                                <td>01:20 hrs.</td>
+                                <td><a role="button" class="red btn-large btn-floating" ><i class="large material-icons">done</i></a></td>
+                            </tr>
+                            <tr>
+                                <td>Airbus 320</td>
+                                <td>14:25<strong>(LIM)</strong></td>
+                                <td>15:45<strong>(CUZ)</strong></td>
+                                <td>01:20 hrs.</td>
+                                <td><a role="button" class="red btn-large btn-floating" ><i class="large material-icons">done</i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="itinerario">
+                    <table class="table-responsive striped">
+                        <thead>
+                            <tr>
+                                <th>Tarifa:</th>
+                                <th>Tasas y/o Impuestos</th>
+                                <th>Tarifa:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$442</td>
+                                <td>$94.49</td>
+                                <td>$536.49 por pasajero</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </center>            
+        </div>
+        <div class="row" id="caja4">
+            <center>
+                <h1 style="color: #26A69A">Confirma tu Itinerario y precio</h1>
+            </center>
+            <center>
+                <div class="itinerario">
+                    <h4>Itinerario</h4>            
+                    <table class="table-responsive striped">
+                        <thead>
+                            <tr>
+                                <th data-field="id">Ida</th>
+                                <th data-field="id">Salida</th>
+                                <th data-field="id">Llegada</th>
+                                <th data-field="id">Vuelo</th>
+                                <th data-field="id">Cabina</th>
+                                <th data-field="id">Equipaje</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Viernes 29 de Julio</td>
+                                <td>04:50 Lima(LIM)</td>
+                                <td>06:10 Cusco(CUZ)</td>
+                                <td>LA2025</td>
+                                <td>Economica</td>
+                                <td>Máximo 2 piezas de 23Kg en Total    </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table-responsive striped">
+                        <thead>
+                            <tr>
+                                <th data-field="id">Vuelta</th>
+                                <th data-field="id">Salida</th>
+                                <th data-field="id">Llegada</th>
+                                <th data-field="id">Vuelo</th>
+                                <th data-field="id">Cabina</th>
+                                <th data-field="id">Equipaje</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Martes 02 de Agosto</td>
+                                <td>14:45 Lima(LIM)</td>
+                                <td>16:10 Cusco(CUZ)</td>
+                                <td>LA2030</td>
+                                <td>Economica</td>
+                                <td>Máximo 2 piezas de 23Kg en Total    </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="itinerario">
+                    <h4>Tarifa en dólares americanos</h4>
+                    <table class="table-responsive striped">
+                        <thead>
+                            <tr>
+                                <th>Tarifa:</th>
+                                <th>Tasas y/o Impuestos</th>
+                                <th>Tarifa:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$442</td>
+                                <td>$94.49</td>
+                                <td>$536.49 por pasajero</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <form>
+                        <center>
+                            <button class="btn waves-effect waves-light" type="button" name="action">Confirmar
+                                <i class="material-icons right">send</i>
+                            </button>
+                        </center>
+                    </form>
+                </div>
+            </center>
+        </div>
+        <div class="row" id="caja5">
+            <center>
+                <h1 style="color: #26A69A">Selecciona tu medio de Pago  </h1>
+            </center>
+            <center>
+                <div class="itinerario">
+                    <h4>Tarifa en dólares americanos</h4>
+                    <table class="table-responsive striped">
+                        <thead>
+                            <tr>
+                                <th>Tarifa:</th>
+                                <th>Tasas y/o Impuestos</th>
+                                <th>Tarifa:</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$442</td>
+                                <td>$94.49</td>
+                                <td>$536.49 por pasajero</td>
+                            </tr>
+                        </tbody>
+                    </table><br><br><br>
+                    <h4>Elige el medio de Pago</h4>
+                    <a href="#" id="visa" onclick="Materialize.fadeInImage('#presencial')">Tarjeta de crédito(Solo VISA)</a><br><br><br>
+
+                    <div id="presencial">
+                        <form> 
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">account_circle</i>
+                                <input id="icon_prefix" type="number" required="" class="validate">
+                                <label for="icon_prefix">Numero Tarjeta:</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="date" class="validate datepicker">
+                                <label for="icon_telephone">Fecha de Expiracion:</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="number" class="validate">
+                                <label for="icon_telephone">Codigo de verificaciòn:</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="text" class="validate">
+                                <label for="icon_telephone">Nombre del Titular</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="text" class="validate">
+                                <label for="icon_telephone">Apellidos</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="text" class="validate">
+                                <label for="icon_telephone">Calle</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="text" class="validate">
+                                <label for="icon_telephone">Ciudad</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="text" class="validate">
+                                <label for="icon_telephone">Estado</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="text" class="validate">
+                                <label for="icon_telephone">Codigo Postal</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <i class="material-icons prefix">phone</i>
+                                <input id="icon_telephone" type="number" class="validate">
+                                <label for="icon_telephone">Numero</label>
+                            </div>
+                            <center>
+                                <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                                    <i class="material-icons right">send</i>
+                                </button><br><br><br>
+                            </center>
+                        </form>
+                    </div>
+
+                    <a href="#" id="online" onclick="Materialize.fadeInImage('#tarjeta')">Presencial/Banca on-line</a><br><br>
+
+                    <div id="tarjeta">
+                        <form>
+
+                            <div>
+                                <input class="with-gap" name="group3" type="radio" id="test5" checked />
+                                <label for="test5"></label>
+                                <img src="Web Pages/images/bcp-logo.png" alt="" style="width: 150px; height: 100px"/>
+                            </div>
+                            <div>
+                                <input class="with-gap" name="group3" type="radio" id="test6" checked />
+                                <label for="test6"></label>
+                                <img src="Web Pages/images/logo-scotiabank.png" alt="" style="width: 150px; height: 100px"/>
+                            </div>
+                            <div>
+                                <input class="with-gap" name="group3" type="radio" id="test7" checked />
+                                <label for="test7"></label>
+                                <img src="Web Pages/images/logo-bbva.png" alt="" style="width: 150px; height: 100px;"/>
+                            </div>  
+                        </form>
+
+                    </div>
+
+                </div>
+            </center>
+        </div>
+        <div class="row" id="caja6">
+            <center>
+                <h1 style="color: #26A69A">Confirma tus Datos</h1>
+            </center>  
+            <center>
+                <div class="itinerario">
+                    <h4>Itinerario</h4>  
+                    <table class="table-responsive striped">
+                        <thead>
+                            <tr>
+                                <th data-field="id">Ida</th>
+                                <th data-field="id">Salida</th>
+                                <th data-field="id">Llegada</th>
+                                <th data-field="id">Vuelo</th>
+                                <th data-field="id">Cabina</th>
+                                <th data-field="id">Equipaje</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Viernes 29 de Julio</td>
+                                <td>04:50 Lima(LIM)</td>
+                                <td>06:10 Cusco(CUZ)</td>
+                                <td>LA2025</td>
+                                <td>Economica</td>
+                                <td>Máximo 2 piezas de 23Kg en Total    </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table-responsive striped">
+                        <thead>
+                            <tr>
+                                <th data-field="id">Vuelta</th>
+                                <th data-field="id">Salida</th>
+                                <th data-field="id">Llegada</th>
+                                <th data-field="id">Vuelo</th>
+                                <th data-field="id">Cabina</th>
+                                <th data-field="id">Equipaje</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Martes 02 de Agosto</td>
+                                <td>14:45 Lima(LIM)</td>
+                                <td>16:10 Cusco(CUZ)</td>
+                                <td>LA2030</td>
+                                <td>Economica</td>
+                                <td>Máximo 2 piezas de 23Kg en Total    </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="itinerario">
+                    <center>
+                        <h4>Pasajeros</h4>
+                    </center>
+                    <table class="table-responsive striped">
+                        <thead>
+                            <tr>
+                                <th data-field="id">Tipo</th>
+                                <th data-field="id">Nombre</th>
+                                <th data-field="id">Apellidos</th>
+                                <th data-field="id">Documento de Identidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CABRO</td>
+                                <td>Cesar</td>
+                                <td>El Gay Valerio</td>
+                                <td>NO apto para cabros</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </center>
+            <center>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Confirmar
+                    <i class="material-icons right">send</i>
+                </button><br><br><br>
+            </center>
+        </div>
+
 
         <!--  Scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="Web Pages/js/materialize.min.js" type="text/javascript"></script>
         <script>
-            $('.datepicker').pickadate({
-                selectMonths: true, // Creates a dropdown to control month
-                selectYears: 15 // Creates a dropdown of 15 years to control year
-            });
+                        $('.datepicker').pickadate({
+                            selectMonths: true, // Creates a dropdown to control month
+                            selectYears: 15 // Creates a dropdown of 15 years to control year
+                        });
         </script>
         <script>
             $(document).ready(function () {
