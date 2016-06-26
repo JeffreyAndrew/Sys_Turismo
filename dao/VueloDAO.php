@@ -18,29 +18,29 @@ class VueloDAO implements VueloInterface{
     function create(Vuelo $vuelo) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO vuelo(VUE_ID,AVI_ID,AER_ID,LUG_ID,VUE_FECH)VALUES( '" . $vuelo->getVUE_ID() . "','" . $vuelo->getAVI_ID() . "','" . $vuelo->getAER_ID() . "','" . $vuelo->getLUG_ID() . "','" 
+        $sql = "INSERT INTO vuelo(VUE_ID,AVI_ID,CIU_ID_D,CIU_ID_O,VUE_FECH)VALUES( 'NULL','" . $vuelo->getAVI_ID() . "','" . $vuelo->getCIU_ID_D() . "','" . $vuelo->getCIU_ID_O() . "','" 
                 . $vuelo->getVUE_FECH() . "')";
         if ($link->query($sql) === TRUE) {
-            echo "New record created successfully";
+            $r=1;
         } else {
             echo "Error: " . $sql . "<br>" . $link->error;
         }
-
         $link->close();
+        return $r;
     }
 
     function readall() {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT AVI_ID,AER_ID,LUG_ID_LL,LUG_ID_S,VUE_FECH FROM vuelo order by VUE_ID";
+        $sql = "SELECT VUE_ID,AVI_ID,CIU_ID_D,CIU_ID_O,VUE_FECH FROM vuelo order by VUE_ID";
         $result = $link->query($sql);
         $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
             $vuelo = new Vuelo();
-            $vuelo->setAVI_ID($reg[0]);
-            $vuelo->setAER_ID($reg[1]);
-            $vuelo->setLUG_ID_LL($reg[2]);
-            $vuelo->setLUG_ID_S($reg[3]);
+            $vuelo->setVUE_ID($reg[0]);
+            $vuelo->setAVI_ID($reg[1]);
+            $vuelo->setCIU_ID_D($reg[2]);
+            $vuelo->setCIU_ID_O($reg[3]);
             $vuelo->setVUE_FECH($reg[4]);
             $lista[]=$vuelo;
         }
@@ -54,12 +54,12 @@ class VueloDAO implements VueloInterface{
         $sql = "DELETE FROM vuelo"
                 . " WHERE VUE_ID='" . $id . "'";
         if ($link->query($sql) === TRUE) {
-            echo "Record deleted successfully";
+            $r=1;
         } else {
             echo "Error: " . $sql . "<br>" . $link->error;
         }
-
         $link->close();
+        return $r;
     }
 
     function update(Vuelo $v) {
@@ -69,26 +69,32 @@ class VueloDAO implements VueloInterface{
                 . " SET AVI_ID='" . $v->getAVI_ID() . "',VUE_FECH='" . $v->getVUE_FECH() . "',CIU_ID_D='" . $v->getCIU_ID_D() . "',CIU_ID_O='" . $v->getCIU_ID_O() . "'"
                 . " WHERE VUE_ID='" . $v->getVUE_ID() . "'";
         if ($link->query($sql) === TRUE) {
-            echo "Record updated successfully";
+            $r=1;
         } else {
             echo "Error: " . $sql . "<br>" . $link->error;
         }
-
         $link->close();
+        return $r;
     }
 
     public function read($key) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT AVI_ID,AER_ID,LUG_ID,VUE_FECH FROM vuelo order by VUE_ID "
+        $sql = "SELECT VUE_ID,AVI_ID,CIU_ID_D,CIU_ID_O,VUE_FECH FROM vuelo order by VUE_ID "
                 . "WHERE VUE_ID='" . $key . "'";
         $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>ID AVION</td><td>ID AIRLINE</td><td>ID LUGAR</td><td>FECHA VUELO</td></tr> \n";
+        $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td><td>$reg[2]</td><td>$reg[3]</td></tr> \n";
+            $vuelo = new Vuelo();
+            $vuelo->setVUE_ID($reg[0]);
+            $vuelo->setAVI_ID($reg[1]);
+            $vuelo->setCIU_ID_D($reg[2]);
+            $vuelo->setCIU_ID_O($reg[3]);
+            $vuelo->setVUE_FECH($reg[4]);
+            $lista[]=$vuelo;
         }
         $link->close();
+        return $lista;
     }
 
 }
