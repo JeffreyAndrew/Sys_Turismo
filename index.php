@@ -13,7 +13,6 @@
         <?php
         include './Web Pages/menu.php';
         ?>
-
         <!-- Homepage section
         ================================================== -->
         <div id="home">
