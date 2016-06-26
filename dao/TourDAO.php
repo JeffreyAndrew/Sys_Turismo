@@ -11,11 +11,12 @@
  *
  * @author CESAR
  */
-class TourDTO {
+class TourDAO implements operaciones{
     //put your code here
-    function create($id,$nombre) {
-        include "../config/Conexion.php";
-        $sql = "INSERT INTO tour(TOUR_ID,LUG_ID)VALUES( '".$id."','".$lugId."')";
+    function create(TOUR $t) {
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
+        $sql = "INSERT INTO tour(TOUR_ID,LUG_ID)VALUES( '".$t->getTOUR_ID()."','".$t->getLUG_ID()."')";
         if ($link->query($sql) === TRUE) {
             echo "New record created successfully";
         } else {
@@ -26,7 +27,8 @@ class TourDTO {
     }
 
     function readall() {
-        include '../config/Conexion.php';
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "SELECT TOUR_ID,LUG_ID FROM tour order by TOUR_ID";
         $result = $link->query($sql);
         echo "<table border = '1'> \n";
@@ -38,7 +40,8 @@ class TourDTO {
     }
     
     function delete($id) {
-        include "../config/Conexion.php";
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "DELETE FROM tour"
                 . " WHERE TOUR_ID='".$id."'";
         if ($link->query($sql) === TRUE) {
@@ -49,11 +52,12 @@ class TourDTO {
 
         $link->close();
     }
-    function update($id,$nombre){
-        include "../config/Conexion.php";
+    function update(TOUR $t){
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "UPDATE tour"
-                . " SET LUG_ID='".$nombre."'"
-                . " WHERE TOUR_ID='".$id."'";
+                . " SET LUG_ID='".$t->getLUG_ID()."'"
+                . " WHERE TOUR_ID='".$t->getTOUR_ID()."'";
         if ($link->query($sql) === TRUE) {
             echo "Record updated successfully";
         } else {
@@ -62,10 +66,12 @@ class TourDTO {
 
         $link->close();
     }
-    function searchById($id) {
-        include '../config/Conexion.php';
+
+    public function read($key) {
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "SELECT TOUR_ID,LUG_ID FROM tour order by TOUR_ID "
-                . "WHERE TOUR_ID='".$id."'";
+                . "WHERE TOUR_ID='".$key."'";
         $result = $link->query($sql);
         echo "<table border = '1'> \n";
         echo "<tr><td>ID</td><td>LUGAR ID</td></tr> \n";
@@ -74,16 +80,5 @@ class TourDTO {
         }
         $link->close();
     }
-    function searchByName($nombre) {
-        include '../config/Conexion.php';
-        $sql = "SELECT TOUR_ID,LUG_ID FROM tour order by TOUR_ID "
-                . "WHERE LUG_ID='".$nombre."'";
-        $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>ID</td><td>LUGAR ID</td></tr> \n";
-        while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td></tr> \n";
-        }
-        $link->close();
-    }
+
 }

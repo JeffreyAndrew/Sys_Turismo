@@ -11,7 +11,7 @@
  *
  * @author CESAR
  */
-class BusDAO {
+class BusDAO implements operaciones{
     //put your code here
     function create($id,$lugNombre,$busMod) {
         include "../config/Conexion.php";

@@ -13,7 +13,9 @@
  */
 class TOUR {
     private $TOUR_ID;
-    private $LUG_ID;
+    private $TOUR_NOM;
+    private $TOUR_DESC;
+    private $CIU_ID;
     
     public function setTOUR_ID($value) {
         $this->TOUR_ID=$value;
@@ -21,18 +23,28 @@ class TOUR {
     public function getTOUR_ID() {
         return $this->TOUR_ID;
     }
-    public function setLUG_ID($value) {
-        $this->LUG_ID=$value;
+    public function setTOUR_NOM($value) {
+        $this->TOUR_NOM=$value;
     }
-    public function getLUG_ID() {
-        return $this->LUG_ID;
+    public function getTOUR_NOM() {
+        return $this->TOUR_NOM;
+    }
+    public function setTOUR_DESC($value) {
+        $this->TOUR_DESC=$value;
+    }
+    public function getTOUR_DESC() {
+        return $this->TOUR_DESC;
+    }
+    public function setCIU_ID($value) {
+        $this->CIU_ID=$value;
+    }
+    public function getCIU_ID() {
+        return $this->CIU_ID;
     }
     
     public function TOUR() {
-        $this->VUE_ID;
-        $this->AVI_ID;
-        $this->AER_ID;
-        $this->LUG_ID;
-        $this->VUE_FECH;
+        $this->TOUR_ID;
+        $this->CIU_ID;
+        $this->TOUR_DESC;
     }
 }

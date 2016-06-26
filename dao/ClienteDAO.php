@@ -11,7 +11,7 @@
  *
  * @author CESAR
  */
-class ClienteDAO {
+class ClienteDAO implements operaciones{
     //put your code here
     function create($id,$dni,$nombre,$app,$apm) {
         include "../config/Conexion.php";

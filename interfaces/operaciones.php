@@ -10,18 +10,11 @@
  *
  * @author CESAR
  */
-interface interfaceLugar {
+interface operaciones {
     //put your code here
-    function create($id,$nombre);
-
+    function create(Object $entidad);
     function readall();
-    
-    function delete($id);
-    
-    function update($id,$nombre);
-    
-    function searchById($id);
-    
-    function searchByName($nombre);
-    
+    function delete($key);
+    function update(Object $entidad);
+    function read($key);
 }

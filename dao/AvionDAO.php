@@ -11,22 +11,24 @@
  *
  * @author CESAR
  */
-class AvionDAO {
+class AvionDAO implements operaciones{
     //put your code here
-    function create($id,$modelo,$capacidad,$aerId) {
-        include "../config/Conexion.php";
-        $sql = "INSERT INTO avion(AVI_ID,AVI_MOD,AVI_CAP,AER_ID)VALUES( '".$id."','".$modelo."','".$capacidad."','".$aerId."')";
+    function create(AVION $a) {
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
+        $sql = "INSERT INTO avion(AVI_ID,AVI_MOD,AVI_CAP,AER_ID)VALUES( '".$a->getAVI_ID()."','".$a->getAVI_MOD()."','".$a->getAVI_CAP()."','".$a->getAER_ID()."')";
         if ($link->query($sql) === TRUE) {
-            echo "New record created successfully";
+            $r=1;
         } else {
             echo "Error: " . $sql . "<br>" . $link->error;
         }
-
         $link->close();
+        return $r;
     }
 
     function readall() {
-        include '../config/Conexion.php';
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "SELECT A.AVI_MOD,A.AVI_CAP,B.AER_NOM FROM avion A,aerolinea B "
                 . "WHERE A.AER_ID=B.AER_ID "
                 . "ORDER BY AVI_ID";
@@ -40,7 +42,8 @@ class AvionDAO {
     }
     
     function delete($id) {
-        include "../config/Conexion.php";
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "DELETE FROM avion"
                 . " WHERE AVI_ID='".$id."'";
         if ($link->query($sql) === TRUE) {
@@ -52,7 +55,8 @@ class AvionDAO {
         $link->close();
     }
     function update($id,$aerId){
-        include "../config/Conexion.php";
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "UPDATE avion"
                 . " SET AER_ID='".$aerId."'"
                 . " WHERE AVI_ID='".$id."'";
@@ -64,10 +68,12 @@ class AvionDAO {
 
         $link->close();
     }
-    function searchById($id) {
-        include '../config/Conexion.php';
+
+    public function read($key) {
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "SELECT AVI_MOD,AVI_CAP FROM avion order by AVI_ID "
-                . "WHERE AVI_ID='".$id."'";
+                . "WHERE AVI_ID='".$key."'";
         $result = $link->query($sql);
         echo "<table border = '1'> \n";
         echo "<tr><td>MODELO</td><td>CAPACIDAD</td></tr> \n";
@@ -76,18 +82,7 @@ class AvionDAO {
         }
         $link->close();
     }
-    function searchByName($nombre) {
-        include '../config/Conexion.php';
-        $sql = "SELECT AVI_MOD,AVI_CAP FROM avion order by AVI_ID "
-                . "WHERE AVI_MOD='".$nombre."'";
-        $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>MODELO</td><td>CAPACIDAD</td></tr> \n";
-        while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td></tr> \n";
-        }
-        $link->close();
-    }
+
 }
 //$hola=new AvionDAO();
 //$hola->create(1, "AXT800", "150", 1);

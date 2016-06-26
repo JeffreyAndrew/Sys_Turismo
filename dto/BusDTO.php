@@ -13,7 +13,6 @@
  */
 class BUS {
     private $BUS_ID;
-    private $LUG_ID;
     private $BUS_MOD;
     
     public function setBUS_ID($value) {
@@ -21,12 +20,6 @@ class BUS {
     }
     public function getBUS_ID() {
         return $this->BUS_ID;
-    }
-    public function setLUG_ID($value) {
-        $this->LUG_ID=$value;
-    }
-    public function getLUG_ID() {
-        return $this->LUG_ID;
     }
     public function setBUS_MOD($value) {
         $this->BUS_MOD=$value;
@@ -37,7 +30,6 @@ class BUS {
     
     public function BUS() {
         $this->BUS_ID;
-        $this->LUG_ID;
         $this->BUS_MOD;
     }
 }

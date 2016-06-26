@@ -3,20 +3,20 @@
 require_once './config/Conexion.php';
 require_once './dto/LugarDTO.php';
 
-class LugarDAO {
+class LugarDAO implements operaciones{
 
     //put your code here
-    function create(LUGAR $lugar) {
+    function create(LugarDTO $lugar) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
         $sql = "INSERT INTO ciudad(CIU_ID,CIU_NOM)VALUES( '" . $lugar->getLUG_ID() . "','" . $lugar->getLUG_NOM() . "')";
         if ($link->query($sql) === TRUE) {
-            echo "New record created successfully";
+            $r=1;
         } else {
             echo "Error: " . $sql . "<br>" . $link->error;
         }
-
         $link->close();
+        return $r;
     }
 
     function readall() {
@@ -41,20 +41,20 @@ class LugarDAO {
         $sql = "DELETE FROM ciudad"
                 . " WHERE CIU_ID='" . $id . "'";
         if ($link->query($sql) === TRUE) {
-            echo "Record deleted successfully";
+            $r=1;
         } else {
             echo "Error: " . $sql . "<br>" . $link->error;
         }
-
         $link->close();
+        return $r;
     }
 
-    function update($id, $nombre) {
+    function update(LugarDTO $l) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
         $sql = "UPDATE ciudad"
-                . " SET CIU_NOM='" . $nombre . "'"
-                . " WHERE CIU_ID='" . $id . "'";
+                . " SET CIU_NOM='" . $l->getLUG_NOM() . "'"
+                . " WHERE CIU_ID='" . $l->getLUG_ID() . "'";
         if ($link->query($sql) === TRUE) {
             echo "Record updated successfully";
         } else {
@@ -63,33 +63,21 @@ class LugarDAO {
 
         $link->close();
     }
-
-    function searchById($id) {
+    public function read($key) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT LUG_NOM FROM ciudad order by LUG_ID "
-                . "WHERE LUG_ID='" . $id . "'";
+        $sql = "SELECT LUG_NOM FROM ciudad "
+                . "WHERE LUG_ID='" . $key . "'";
         $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>NOMBRE</td></tr> \n";
+        $lista = array();
         while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td></tr> \n";
+            $lugar = new LugarDTO();
+            $lugar->setLUG_ID($reg[0]);
+            $lugar->setLUG_NOM($reg[1]);
+            $lista[] = $lugar;
         }
         $link->close();
-    }
-
-    function searchByName($nombre) {
-        $link1 = new Conexion();
-        $link = $link1->getConnection();
-        $sql = "SELECT LUG_NOM FROM ciudad order by LUG_ID "
-                . "WHERE LUG_NOM='" . $nombre . "'";
-        $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>Nombre</td></tr> \n";
-        while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td></tr> \n";
-        }
-        $link->close();
+        return $lista;
     }
 
 }

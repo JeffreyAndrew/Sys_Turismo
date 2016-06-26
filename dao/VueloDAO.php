@@ -11,11 +11,12 @@
  *
  * @author CESAR
  */
-class VueloDAO {
+class VueloDAO implements operaciones{
 
     //put your code here
     function create(Vuelo $vuelo) {
-        include "../config/Conexion.php";
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "INSERT INTO vuelo(VUE_ID,AVI_ID,AER_ID,LUG_ID,VUE_FECH)VALUES( '" . $vuelo->getVUE_ID() . "','" . $vuelo->getAVI_ID() . "','" . $vuelo->getAER_ID() . "','" . $vuelo->getLUG_ID() . "','" 
                 . $vuelo->getVUE_FECH() . "')";
         if ($link->query($sql) === TRUE) {
@@ -28,7 +29,8 @@ class VueloDAO {
     }
 
     function readall() {
-        include '../config/Conexion.php';
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "SELECT AVI_ID,AER_ID,LUG_ID_LL,LUG_ID_S,VUE_FECH FROM vuelo order by VUE_ID";
         $result = $link->query($sql);
         $lista=array();
@@ -46,7 +48,8 @@ class VueloDAO {
     }
 
     function delete($id) {
-        include "../config/Conexion.php";
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "DELETE FROM vuelo"
                 . " WHERE VUE_ID='" . $id . "'";
         if ($link->query($sql) === TRUE) {
@@ -59,7 +62,8 @@ class VueloDAO {
     }
 
     function update($id, $nombre) {
-        include "../config/Conexion.php";
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "UPDATE vuelo"
                 . " SET AVI_ID='" . $nombre . "'"
                 . " WHERE VUE_ID='" . $id . "'";
@@ -72,23 +76,11 @@ class VueloDAO {
         $link->close();
     }
 
-    function searchById($id) {
-        include '../config/Conexion.php';
+    public function read($key) {
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
         $sql = "SELECT AVI_ID,AER_ID,LUG_ID,VUE_FECH FROM vuelo order by VUE_ID "
-                . "WHERE VUE_ID='" . $id . "'";
-        $result = $link->query($sql);
-        echo "<table border = '1'> \n";
-        echo "<tr><td>ID AVION</td><td>ID AIRLINE</td><td>ID LUGAR</td><td>FECHA VUELO</td></tr> \n";
-        while ($reg = mysqli_fetch_array($result)) {
-            echo "<tr><td>$reg[0]</td><td>$reg[1]</td><td>$reg[2]</td><td>$reg[3]</td></tr> \n";
-        }
-        $link->close();
-    }
-
-    function searchByName($nombre) {
-        include '../config/Conexion.php';
-        $sql = "SELECT AVI_ID,AER_ID,LUG_ID,VUE_FECH FROM vuelo order by VUE_ID "
-                . "WHERE LUG_ID='" . $nombre . "'";
+                . "WHERE VUE_ID='" . $key . "'";
         $result = $link->query($sql);
         echo "<table border = '1'> \n";
         echo "<tr><td>ID AVION</td><td>ID AIRLINE</td><td>ID LUGAR</td><td>FECHA VUELO</td></tr> \n";
