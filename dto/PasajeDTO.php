@@ -17,6 +17,7 @@ class PASAJE {
     private $PAS_COD;
     private $PAS_TERR_ID;
     private $PAS_AER_ID;
+    private $PAS_TIP;
     
     public function setPAS_ID($value) {
         $this->PAS_ID=$value;
@@ -48,6 +49,12 @@ class PASAJE {
     public function getPAS_AER_ID() {
         return $this->PAS_AER_ID;
     }
+    public function setPAS_TIP($value) {
+        $this->PAS_TIP=$value;
+    }
+    public function getPAS_TIP() {
+        return $this->PAS_TIP;
+    }
     
     public function PASAJE() {
         $this->PAS_ID;
@@ -55,5 +62,6 @@ class PASAJE {
         $this->PAS_COD;
         $this->PAS_TERR_ID;
         $this->PAS_AER_ID;
+        $this->PAS_TIP;
     }
 }

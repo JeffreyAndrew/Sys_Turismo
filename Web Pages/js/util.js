@@ -4,10 +4,10 @@ $(document).ready(function(){
 });
 $(document).ready(function () {
     $("#opcionii").click(function () {
-        $("#rutaii").hide();
+        $(".rutaii").hide();
     });
     $("#opcioni").click(function () {
-        $("#rutaii").show();
+        $(".rutaii").show();
     });
 //    esconder cajas
     $("#caja1").hide();
@@ -78,4 +78,8 @@ $(document).ready(function () {
         $("#presencial").hide();
         $("#tarjeta").show();
     });
+    var a=0;
+    function disabler(a){
+    }
+    
  });
