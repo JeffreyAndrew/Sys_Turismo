@@ -107,6 +107,7 @@ include './dao/VueloDAO.php';
                     <div class="input-field col s12 m6 rutaii">
                         <input id="rutaii" name="rutaii" type="date" class="datepicker2">
                         <label for="rutaii">Vuelta</label>
+                    </div>
                     <center>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
                             <i class="material-icons right">send</i>
@@ -114,7 +115,6 @@ include './dao/VueloDAO.php';
                     </center>
                 </div>
             </form>
-
         </div>
         <div id="caja1" class="row ">
             <form class="col s10 offset-s1"  role="form" method="post" action=""> 
@@ -625,7 +625,6 @@ include './dao/VueloDAO.php';
                 $('select').material_select();
             });
         </script>
-
         <script src="Web Pages/js/util.js" type="text/javascript"></script>
     </body>
 </html>
