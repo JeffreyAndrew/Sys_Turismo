@@ -17,7 +17,7 @@ class PasajeDAO implements PasajeInterface{
     function create(PASAJE $p) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO pasaje(PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID)VALUES( 'NULL','".$p->getPAS_FECH()."','".$p->getPAS_COD()."','".$p->getPAS_TERR_ID()."','".$p->getPAS_AER_ID()."')";
+        $sql = "INSERT INTO pasaje(PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID,PAS_TIP)VALUES( 'NULL','".$p->getPAS_FECH()."','".$p->getPAS_COD()."','".$p->getPAS_TERR_ID()."','".$p->getPAS_AER_ID()."','".$p->getPAS_TIP()."')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {
@@ -30,7 +30,7 @@ class PasajeDAO implements PasajeInterface{
     function readall() {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID FROM pasaje order by PAS_ID";
+        $sql = "SELECT PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID,PAS_TIP FROM pasaje order by PAS_ID";
         $result = $link->query($sql);
         $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
@@ -40,6 +40,7 @@ class PasajeDAO implements PasajeInterface{
             $p->setPAS_COD($reg[2]);
             $p->setPAS_TERR_ID($reg[3]);
             $p->setPAS_AER_ID($reg[4]);
+            $p->setPAS_TIP($reg[5]);
             $lista[]=$p;
         }
         $link->close();
@@ -63,7 +64,7 @@ class PasajeDAO implements PasajeInterface{
         $link1 = new Conexion();
         $link = $link1->getConnection();
         $sql = "UPDATE pasaje"
-                . " SET PAS_FECH='".$p->getPAS_FECH()."',PAS_COD='".$p->getPAS_COD()."',PAS_TERR_ID='".$p->getPAS_TERR_ID()."',PAS_AER_ID='".$p->getPAS_AER_ID()."'"
+                . " SET PAS_FECH='".$p->getPAS_FECH()."',PAS_COD='".$p->getPAS_COD()."',PAS_TERR_ID='".$p->getPAS_TERR_ID()."',PAS_AER_ID='".$p->getPAS_AER_ID()."',PAS_TIP='".$p->getPAS_TIP()."'"
                 . " WHERE PAS_ID='".$p->getPAS_ID()."'";
         if ($link->query($sql) === TRUE) {
             $r=1;
@@ -77,7 +78,7 @@ class PasajeDAO implements PasajeInterface{
     public function read($key) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID FROM pasaje order by PAS_ID "
+        $sql = "SELECT PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID,PAS_TIP FROM pasaje order by PAS_ID "
                 . "WHERE PAS_ID='".$key."'";
         $result = $link->query($sql);
         $lista=array();
@@ -88,6 +89,7 @@ class PasajeDAO implements PasajeInterface{
             $p->setPAS_COD($reg[2]);
             $p->setPAS_TERR_ID($reg[3]);
             $p->setPAS_AER_ID($reg[4]);
+            $p->setPAS_TIP($reg[5]);
             $lista[]=$p;
         }
         $link->close();

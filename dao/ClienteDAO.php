@@ -17,7 +17,7 @@ class ClienteDAO implements ClienteInterface{
     function create(CLIENTE $c) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO cliente(CLI_ID,CLI_NOM,CLI_APP,CLI_APM,CLI_DNI)VALUES( 'NULL','".$c->getCLI_NOM()."','".$c->getCLI_APP()."','".$c->getCLI_APM()."','".$c->getCLI_DNI()."')";
+        $sql = "INSERT INTO cliente(CLI_ID,CLI_NOM,CLI_APP,CLI_APM,CLI_DNI,CLI_TIP)VALUES( 'NULL','".$c->getCLI_NOM()."','".$c->getCLI_APP()."','".$c->getCLI_APM()."','".$c->getCLI_DNI()."','".$c->getCLI_TIP()."')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {
@@ -30,7 +30,7 @@ class ClienteDAO implements ClienteInterface{
     function readall() {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT CLI_ID,CLI_NOM,CLI_APP,CLI_APM,CLI_DNI FROM cliente order by CLI_ID";
+        $sql = "SELECT CLI_ID,CLI_NOM,CLI_APP,CLI_APM,CLI_DNI,CLI_TIP FROM cliente order by CLI_ID";
         $result = $link->query($sql);
         $lista=array();
         while ($reg = mysqli_fetch_array($result)) {
@@ -40,6 +40,7 @@ class ClienteDAO implements ClienteInterface{
             $c->setCLI_APP($reg[2]);
             $c->setCLI_APM($reg[3]);
             $c->setCLI_DNI($reg[4]);
+            $c->setCLI_TIP($reg[5]);
             $lista[]=$c;
         }
         $link->close();
@@ -63,7 +64,7 @@ class ClienteDAO implements ClienteInterface{
         $link1 = new Conexion();
         $link = $link1->getConnection();
         $sql = "UPDATE cliente"
-                . " SET CLI_NOM='".$c->getCLI_NOM()."',CLI_APP='".$c->getCLI_APP()."',CLI_APM='".$c->getCLI_APM()."',CLI_DNI='".$c->getCLI_DNI()."'"
+                . " SET CLI_NOM='".$c->getCLI_NOM()."',CLI_APP='".$c->getCLI_APP()."',CLI_APM='".$c->getCLI_APM()."',CLI_DNI='".$c->getCLI_DNI()."',CLI_TIP='".$c->getCLI_TIP()."'"
                 . " WHERE CLI_ID='".$c->getCLI_ID()."'";
         if ($link->query($sql) === TRUE) {
             $r=1;
@@ -77,7 +78,7 @@ class ClienteDAO implements ClienteInterface{
     public function read($key) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT CLI_ID,CLI_NOM,CLI_APP,CLI_APM,CLI_DNI FROM cliente order by CLI_ID "
+        $sql = "SELECT CLI_ID,CLI_NOM,CLI_APP,CLI_APM,CLI_DNI,CLI_TIP FROM cliente order by CLI_ID "
                 . "WHERE CLI_ID='".$key."'";
         $result = $link->query($sql);
         $lista=array();
@@ -88,6 +89,7 @@ class ClienteDAO implements ClienteInterface{
             $c->setCLI_APP($reg[2]);
             $c->setCLI_APM($reg[3]);
             $c->setCLI_DNI($reg[4]);
+            $c->setCLI_TIP($reg[5]);
             $lista[]=$c;
         }
         $link->close();
