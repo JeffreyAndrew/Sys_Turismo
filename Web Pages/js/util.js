@@ -78,4 +78,9 @@ $(document).ready(function () {
         $("#presencial").hide();
         $("#tarjeta").show();
     });
+    //Configurando el calendario
+    $('.datepicker').pickadate({
+       selectMonths:false,
+       selectYears:2
+    });
  });

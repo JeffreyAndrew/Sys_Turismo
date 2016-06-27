@@ -582,8 +582,8 @@
                         <tbody>
                             <tr>
                                 <td>CABRO</td>
-                                <td>Zannier</td>
-                                <td>El Gay Vargas</td>
+                                <td>Cesar</td>
+                                <td>El cabro Valerio</td>
                                 <td>NO apto para cabros</td>
                             </tr>
                         </tbody>
