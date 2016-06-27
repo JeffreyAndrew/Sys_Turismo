@@ -4,7 +4,7 @@ function loginAction()
     {
         $name = $this->request->get('nombre');
         $lastName = $this->request->get('apellido');
-        $direction = $this->request->get('direccion');
+        $direccion = $this->request->get('direccion');
         $email = $this->request->get('email');
         $phone = $this->request->get('telefono');
         
