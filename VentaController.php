@@ -2,13 +2,16 @@
 
 function loginAction()
     {
-        $username = $this->request->get('username');
-        $password = $this->request->get('password');
-
-        $this->loadModel('users');
-        if ($this->users->validate($username, $password))
+        $name = $this->request->get('nombre');
+        $lastName = $this->request->get('apellido');
+        $direction = $this->request->get('direccion');
+        $email = $this->request->get('email');
+        $phone = $this->request->get('telefono');
+        
+        $this->loadModel('cliente');
+        if ($this->users->validate($name, $lastName))
         {
-            $userData = $this->users->fetch($username);
+            $userData = $this->users->fetch($name);
             AuthStorage::save($username, $userData);
             $this->redirect('secret_area');
         }
