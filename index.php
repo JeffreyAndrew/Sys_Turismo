@@ -571,7 +571,7 @@
                         </ul>
                         <p>Copyright &copy; 2016 C & C 
 
-                            | Design: Inc. Veloster Company</p>
+                            | Design: El potito cabrito de Zannier</p>
                     </div>
                 </div>
             </div>
