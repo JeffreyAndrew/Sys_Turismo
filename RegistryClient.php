@@ -521,7 +521,7 @@
             <center>
                 <div class="itinerario">
                     <h4>Itinerario</h4>  
-                    <table class="table-responsive striped">
+                    <table class="responsive-table striped">
                         <thead>
                             <tr>
                                 <th data-field="id">Ida</th>
@@ -543,7 +543,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table class="table-responsive striped">
+                    <table class="responsive-table striped">
                         <thead>
                             <tr>
                                 <th data-field="id">Vuelta</th>
@@ -570,7 +570,7 @@
                     <center>
                         <h4>Pasajeros</h4>
                     </center>
-                    <table class="table-responsive striped">
+                    <table class="responsive-table striped">
                         <thead>
                             <tr>
                                 <th data-field="id">Tipo</th>
