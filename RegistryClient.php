@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>COMPRAR VUELO</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="Web Pages/css/materialize.css" rel="stylesheet" type="text/css"/>
         <link href="Web Pages/css/materialize.min.css" rel="stylesheet" type="text/css"/>
@@ -582,8 +582,8 @@
                         <tbody>
                             <tr>
                                 <td>CABRO</td>
-                                <td>Cesar</td>
-                                <td>El Gay Valerio</td>
+                                <td>Zannier</td>
+                                <td>El Gay Vargas</td>
                                 <td>NO apto para cabros</td>
                             </tr>
                         </tbody>
