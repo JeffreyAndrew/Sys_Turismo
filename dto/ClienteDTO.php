@@ -17,7 +17,6 @@ class CLIENTE {
     private $CLI_APP;
     private $CLI_DNI;
     private $CLI_APM;
-    private $CLI_TIP;
     
     public function setCLI_ID($value) {
         $this->CLI_ID=$value;
@@ -49,12 +48,6 @@ class CLIENTE {
     public function getCLI_APM() {
         return $this->CLI_APM;
     }
-    public function setCLI_TIP($value) {
-        $this->CLI_TIP=$value;
-    }
-    public function getCLI_TIP() {
-        return $this->CLI_TIP;
-    }
     
     public function CLIENTE() {
         $this->CLI_ID;
@@ -62,6 +55,5 @@ class CLIENTE {
         $this->CLI_DNI;
         $this->CLI_APP;
         $this->CLI_APM;
-        $this->CLI_TIP;
     }
 }

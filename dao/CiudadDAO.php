@@ -1,6 +1,6 @@
 <?php
-require_once './dto/CiudadDTO.php';
-require_once './interfaces/CiudadInterface.php';
+include './dto/CiudadDTO.php';
+include './interfaces/CiudadInterface.php';
 
 class CiudadDAO implements CiudadInterface{
 

@@ -1,13 +1,13 @@
 <?php
-include './dao/AerolineaDAO.php';
-include './dao/AvionDAO.php';
-include './dao/CiudadDAO.php';
-include './dao/ClienteDAO.php';
-include './dao/Pas_AerDAO.php';
-include './dao/PasajeDAO.php';
-include './dao/TourDAO.php';
-include './dao/VentaDAO.php';
-include './dao/VueloDAO.php';
+    include './dao/AerolineaDAO.php';
+    include './dao/AvionDAO.php';
+    include './dao/CiudadDAO.php';
+    include './dao/ClienteDAO.php';
+    include './dao/Pas_AerDAO.php';
+    include './dao/PasajeDAO.php';
+    include './dao/TourDAO.php';
+    include './dao/VentaDAO.php';
+    include './dao/VueloDAO.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,8 +15,8 @@ include './dao/VueloDAO.php';
         <meta charset="UTF-8">
         <title>COMPRAR VUELO</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="Web Pages/css/materialize.css" rel="stylesheet" type="text/css"/>
         <link href="Web Pages/css/materialize.min.css" rel="stylesheet" type="text/css"/>
-        <script src="Web Pages/js/materialize.min.js" type="text/javascript"></script>
         <link href="Web Pages/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -43,29 +43,57 @@ include './dao/VueloDAO.php';
                         <i class="material-icons prefix">location_on</i>
                         <select id="origen">
                             <option value="" disabled selected>Elegir Origen</option>
-                            <?php
-                            $aO = new CiudadDAO();
-                            $lista = $aO->readall();
-                            for ($i = 0; $i < count($lista); $i++) {
-                                $c = new Ciudad();
-                                $c = $lista[$i];
-                                ?>
-                                <option id="<?= $c->getCIU_ID() ?>" value="<?= $c->getCIU_ID() ?>"><?= $c->getCIU_NOM() ?></option>
-                            <?php } ?>
+                            <option value="1">Arequipa-Rodriguez Ballón</option>
+                            <option value="2">Andahuaylas-Andahuaylas</option>
+                            <option value="3">Anta(Huaraz)-Comandante FAP GAG</option>
+                            <option value="4">Ayacucho-Coronel FAP AM</option>
+                            <option value="5">Cajamarca-Mayor Gral. FAP AR</option>
+                            <option value="6">Chimbote-Tnte FAP JMM</option>
+                            <option value="7">Cuzco-Alejandro Velazco Astete</option>
+                            <option value="8">Chachapoyas-Chachapoyas</option>
+                            <option value="9">Chiclayo-Capitán FAP JQG</option>
+                            <option value="10">Huánuco-Alférez FAP DFF</option>
+                            <option value="11">Iquitos-Coronel FAP FSV</option>
+                            <option value="12">Juliaca-Manco Cápac</option>
+                            <option value="13">Lima-Internacional Jorge Chavez</option>
+                            <option value="14">Pisco-Pisco</option>
+                            <option value="15">Piura-Capitan FAP CC</option>
+                            <option value="16">Pucallpa-Pucallpa</option>
+                            <option value="17">Puerto Maldonado-Padre Aldamiz</option>
+                            <option value="18">Tacna-Coronel FAP CC</option>
+                            <option value="19">Tarapoto-Tarapoto</option>
+                            <option value="20">Tingo Maria-Tingo Maria</option>
+                            <option value="21">Trujillo-Capitan FAP CMP</option>
+                            <option value="22">Tumbes-Capitan FAP PC</option>
                         </select>
                         <label>Origen</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">location_on</i>
-                        <select id="destino">
+                        <select>
                             <option value="" disabled selected>Elegir Destino</option>
-                            <?php
-                            for ($i = 0; $i < count($lista); $i++) {
-                                $c = new Ciudad();
-                                $c = $lista[$i];
-                                ?>
-                                <option id="<?= $c->getCIU_ID() ?>" value="<?= $c->getCIU_ID() ?>"><?= $c->getCIU_NOM() ?></option>
-                            <?php } ?>
+                            <option value="1">Arequipa-Rodriguez Ballón</option>
+                            <option value="2">Andahuaylas-Andahuaylas</option>
+                            <option value="3">Anta(Huaraz)-Comandante FAP GAG</option>
+                            <option value="4">Ayacucho-Coronel FAP AM</option>
+                            <option value="5">Cajamarca-Mayor Gral. FAP AR</option>
+                            <option value="6">Chimbote-Tnte FAP JMM</option>
+                            <option value="7">Cuzco-Alejandro Velazco Astete</option>
+                            <option value="8">Chachapoyas-Chachapoyas</option>
+                            <option value="9">Chiclayo-Capitán FAP JQG</option>
+                            <option value="10">Huánuco-Alférez FAP DFF</option>
+                            <option value="11">Iquitos-Coronel FAP FSV</option>
+                            <option value="12">Juliaca-Manco Cápac</option>
+                            <option value="13">Lima-Internacional Jorge Chavez</option>
+                            <option value="14">Pisco-Pisco</option>
+                            <option value="15">Piura-Capitan FAP CC</option>
+                            <option value="16">Pucallpa-Pucallpa</option>
+                            <option value="17">Puerto Maldonado-Padre Aldamiz</option>
+                            <option value="18">Tacna-Coronel FAP CC</option>
+                            <option value="19">Tarapoto-Tarapoto</option>
+                            <option value="20">Tingo Maria-Tingo Maria</option>
+                            <option value="21">Trujillo-Capitan FAP CMP</option>
+                            <option value="22">Tumbes-Capitan FAP PC</option>
                         </select>
                         <label>Destino</label>
                     </div>
@@ -100,11 +128,11 @@ include './dao/VueloDAO.php';
                         <label style="margin-bottom: 30px" for="opcionii">Ida</label>
                     </div>    
                     <div class="input-field col s12 m6">
-                        <input id="rutai" name="rutai" type="date" class="calendar">
+                        <input id="rutai" name="rutai" type="date" class="datepicker">
                         <label style="margin-bottom: 30px" for="rutai">Ida</label>
                     </div>
-                    <div class="input-field col s12 m6 rutaii">
-                        <input id="rutaii" name="rutaii" type="date" class="datepicker2">
+                    <div class="input-field col s12 m6" id="rutaii">
+                        <input id="rutaii" name="rutaii" type="date" class="datepicker">
                         <label for="rutaii">Vuelta</label>
                     </div>
                     <center>
@@ -574,50 +602,9 @@ include './dao/VueloDAO.php';
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="Web Pages/js/materialize.min.js" type="text/javascript"></script>
         <script>
-                        $('.calendar').pickadate({
-                            monthsFull: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
-                            monthsShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
-                            weekdaysFull: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
-                            weekdaysShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
-                            today: 'hoy',
-                            clear: 'borrar',
-                            close: 'cerrar',
-                            firstDay: 1,
-                            format: 'dddd d !de mmmm !de yyyy',
-                            formatSubmit: 'yyyy/mm/dd',
-                            selectMonths: true, // Creates a dropdown to control month
-                            selectYears: 15, // Creates a dropdown of 15 years to control year
-                            min: true
-                        });
-                        $('.datepicker2').pickadate({
-                            monthsFull: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
-                            monthsShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
-                            weekdaysFull: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
-                            weekdaysShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
-                            today: 'hoy',
-                            clear: 'borrar',
-                            close: 'cerrar',
-                            firstDay: 1,
-                            format: 'dddd d !de mmmm !de yyyy',
-                            formatSubmit: 'yyyy-mm-dd',
-                            selectMonths: true, // Creates a dropdown to control month
-                            selectYears: 15, // Creates a dropdown of 15 years to control year
-                            min:true
-                        });
                         $('.datepicker').pickadate({
-                            monthsFull: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
-                            monthsShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
-                            weekdaysFull: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
-                            weekdaysShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
-                            today: 'hoy',
-                            clear: 'borrar',
-                            close: 'cerrar',
-                            firstDay: 1,
-                            format: 'dddd d !de mmmm !de yyyy',
-                            formatSubmit: 'yyyy-mm-dd',
                             selectMonths: true, // Creates a dropdown to control month
-                            selectYears: 15, // Creates a dropdown of 15 years to control year
-                            min:true
+                            selectYears: 15 // Creates a dropdown of 15 years to control year
                         });
         </script>
         <script>
