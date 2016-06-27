@@ -571,7 +571,7 @@
                         </ul>
                         <p>Copyright &copy; 2016 C & C 
 
-                            | Design: Zannier Vargas el Cabrito</p>
+                            | Design: Inc. Veloster Company</p>
                     </div>
                 </div>
             </div>

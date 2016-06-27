@@ -120,19 +120,19 @@
                         <label>Cabina</label>
                     </div>
                     <div class="input-field col s12 m6">
-                        <input style="margin-bottom: 30px" id="opcioni" name="opcionii" type="radio" class="with-gap validate">
+                        <input style="margin-bottom: 30px" required="" id="opcioni" name="opcionii" type="radio" class="with-gap validate">
                         <label for="opcioni">Ida-Vuelta</label>
                     </div>
                     <div class="input-field col s12 m6">
-                        <input  id="opcionii" name="opcionii" type="radio" class="validate with-gap">
+                        <input  id="opcionii" name="opcionii" required="" type="radio" class="validate with-gap">
                         <label style="margin-bottom: 30px" for="opcionii">Ida</label>
                     </div>    
                     <div class="input-field col s12 m6">
-                        <input id="rutai" name="rutai" type="date" class="datepicker">
+                        <input id="rutai" name="rutai" type="date" required="" class="datepicker">
                         <label style="margin-bottom: 30px" for="rutai">Ida</label>
                     </div>
                     <div class="input-field col s12 m6" id="rutaii">
-                        <input id="rutaii" name="rutaii" type="date" class="datepicker">
+                        <input id="rutaii" name="rutaii" type="date" required="" class="datepicker">
                         <label for="rutaii">Vuelta</label>
                     </div>
                     <center>
@@ -151,37 +151,37 @@
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="nombre" name="nombre" type="text" class="validate">
+                        <input id="nombre" required="" name="nombre" type="text" class="validate">
                         <label for="nombre">Nombres</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="apellido" name="apellido" type="text" class="validate">
+                        <input id="apellido" required="" name="apellido" type="text" class="validate">
                         <label for="apellido">Apellidos</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">store</i>
-                        <input id="direccion" name="direccion" type="text" class="validate">
+                        <input id="direccion" required="" name="direccion" type="text" class="validate">
                         <label for="direccion">Dirección</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">email</i>
-                        <input id="email" name="email" type="email" class="validate">
+                        <input id="email" name="email" required="" type="email" class="validate">
                         <label for="email">Email</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">phone</i>
-                        <input id="telefono" name="telefono" type="number" class="validate">
+                        <input id="telefono" required="" maxlength="9" name="telefono" type="number" class="validate">
                         <label for="telefono">Teléfono</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">store</i>
-                        <input id="dni" name="dni" type="text" class="validate">
+                        <input id="dni" required="" maxlength="8" name="dni" type="number" class="validate">
                         <label for="dni">Dni</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <label for="inacimiento" >Fecha de Nacimiento</label>
-                        <input for="nacimiento" id="inacimiento" type="date" class="datepicker">
+                        <input for="nacimiento" required="" id="inacimiento" type="date" class="datepicker">
                     </div>
                     <div class="input-field col s12 m6">
                         <select name="sexo">
@@ -430,57 +430,57 @@
                     <div id="presencial">
                         <form> 
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">account_circle</i>
-                                <input id="icon_prefix" type="number" required="" class="validate">
+                                <i class="material-icons prefix">dialpad</i>
+                                <input id="digitotarjeta" min="1" max="16" type="number" required="" class="validate">
                                 <label for="icon_prefix">Numero Tarjeta:</label>
                             </div>
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">phone</i>
-                                <input id="icon_telephone" type="date" class="validate datepicker">
+                                <i class="material-icons prefix">today</i>
+                                <input id="icon_telephone" required="" type="date" class="validate datepicker">
                                 <label for="icon_telephone">Fecha de Expiracion:</label>
                             </div>
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">phone</i>
-                                <input id="icon_telephone" type="number" class="validate">
+                                <i class="material-icons prefix">lock_outline</i>
+                                <input id="icon_telephone" required="" maxlength="4" type="number" class="validate">
                                 <label for="icon_telephone">Codigo de verificaciòn:</label>
                             </div>
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">phone</i>
-                                <input id="icon_telephone" type="text" class="validate">
+                                <i class="material-icons prefix">perm_identity</i>
+                                <input id="icon_telephone" required="" type="text" class="validate">
                                 <label for="icon_telephone">Nombre del Titular</label>
                             </div>
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">phone</i>
-                                <input id="icon_telephone" type="text" class="validate">
+                                <i class="material-icons prefix">perm_identity</i>
+                                <input id="icon_telephone" required="" type="text" class="validate">
                                 <label for="icon_telephone">Apellidos</label>
                             </div>
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">phone</i>
-                                <input id="icon_telephone" type="text" class="validate">
+                                <i class="material-icons prefix">theaters</i>
+                                <input id="icon_telephone" required="" type="text" class="validate">
                                 <label for="icon_telephone">Calle</label>
                             </div>
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">phone</i>
-                                <input id="icon_telephone" type="text" class="validate">
+                                <i class="material-icons prefix">business</i>
+                                <input id="icon_telephone" required="" type="text" class="validate">
                                 <label for="icon_telephone">Ciudad</label>
                             </div>
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">phone</i>
-                                <input id="icon_telephone" type="text" class="validate">
+                                <i class="material-icons prefix">language</i>
+                                <input id="icon_telephone" required="" type="text" class="validate">
                                 <label for="icon_telephone">Estado</label>
                             </div>
                             <div class="input-field col s6">
-                                <i class="material-icons prefix">phone</i>
-                                <input id="icon_telephone" type="text" class="validate">
-                                <label for="icon_telephone">Codigo Postal</label>
+                                <i class="material-icons prefix">location_on</i>
+                                <input id="icon_telephone" required="" maxlength="10" type="text" class="validate">
+                                <label for="icon_telephone">Código Postal</label>
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">phone</i>
-                                <input id="icon_telephone" type="number" class="validate">
-                                <label for="icon_telephone">Numero</label>
+                                <input id="icon_telephone" required="" maxlength="9" type="number" class="validate">
+                                <label for="icon_telephone">Número Teléfono</label>
                             </div>
                             <center>
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Enviar
+                                <button class="btn waves-effect waves-light" type="submit" onclick="inputs()" name="action">Enviar
                                     <i class="material-icons right">send</i>
                                 </button><br><br><br>
                             </center>
@@ -604,9 +604,10 @@
         <script>
                         $('.datepicker').pickadate({
                             selectMonths: true, // Creates a dropdown to control month
-                            selectYears: 15 // Creates a dropdown of 15 years to control year
+                            selectYears: 15,
+                            min: true
                         });
-        </script>
+        </script>   
         <script>
             $(document).ready(function () {
                 $('select').material_select();
