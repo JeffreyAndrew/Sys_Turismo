@@ -571,7 +571,7 @@
                         </ul>
                         <p>Copyright &copy; 2016 C & C 
 
-                            | Design: Zannier Vargas el Cabrito</p>
+                            | Design: El potito cabrito de Zannier</p>
                     </div>
                 </div>
             </div>
