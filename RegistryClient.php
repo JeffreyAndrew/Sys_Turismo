@@ -16,10 +16,11 @@ include './dao/VueloDAO.php';
         <title>COMPRAR VUELO</title>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="Web Pages/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+        <link href="Web Pages/css/materialize.css" rel="stylesheet" type="text/css"/>
         <script src="Web Pages/js/materialize.min.js" type="text/javascript"></script>
         <link href="Web Pages/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
-    <body>
+    <body class="registerBody">
         <nav>
             <div class="nav-wrapper">
                 <div class="col s12">

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/AppServ/www/Sys_Turismo/dto/ClienteDTO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/config/Conexion.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dto/VueloDTO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dto/VentaDTO.php</file>
@@ -12,14 +10,15 @@
             <file>file:/C:/AppServ/www/Sys_Turismo/dao/ViajeDAO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dao/Pas_AerDAO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/index.php</file>
+            <file>file:/C:/AppServ/www/Sys_Turismo/Web%20Pages/head.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dto/AvionDTO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dto/PasajeDTO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dto/ViajeDTO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/Web%20Pages/js/util.js</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dao/CiudadDAO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dto/Pas_TerrDTO.php</file>
+            <file>file:/C:/AppServ/www/Sys_Turismo/dao/CiudadDAO.php</file>
+            <file>file:/C:/AppServ/www/Sys_Turismo/Web%20Pages/css/style.css</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dao/TourDAO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dao/ClienteDAO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dto/TourDTO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dto/AerolineaDTO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/Web%20Pages/js/materialize.min.js</file>
@@ -28,8 +27,8 @@
             <file>file:/C:/AppServ/www/Sys_Turismo/controller/IndexController.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/Web%20Pages/css/materialize.min.css</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dto/CiudadDTO.php</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/dao/BusDAO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dto/Pas_AerDTO.php</file>
+            <file>file:/C:/AppServ/www/Sys_Turismo/dao/BusDAO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dao/Pas_TerrDAO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dao/PasajeDAO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/RegistryClient.php</file>
@@ -38,10 +37,6 @@
             <file>file:/C:/AppServ/www/Sys_Turismo/dao/AvionDAO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/dao/VentaDAO.php</file>
             <file>file:/C:/AppServ/www/Sys_Turismo/Web%20Pages/css/materialize.css</file>
-=======
-            <file>file:/C:/AppServ/www/Sys_Turismo/Web%20Pages/js/util.js</file>
-            <file>file:/C:/AppServ/www/Sys_Turismo/RegistryClient.php</file>
->>>>>>> origin/master
         </group>
     </open-files>
 </project-private>

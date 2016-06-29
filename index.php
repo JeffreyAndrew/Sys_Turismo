@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <?php
-        include './Web Pages/head.php';
+        require_once './Web Pages/head.php';
         ?>
     </head>
 
@@ -11,7 +11,7 @@
             <div class="sk-rotating-plane"></div>
         </section>
         <?php
-        include './Web Pages/menu.php';
+        require_once './Web Pages/menu.php';
         ?>
         <!-- Homepage section
         ================================================== -->
