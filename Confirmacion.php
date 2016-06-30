@@ -26,7 +26,7 @@ and open the template in the editor.
         <link href="Web Pages/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div class="row" id="caja6">
+        <div class="row" id="carton">
             <center>
                 <h1 style="color: #26A69A">Confirma tus Datos</h1>
             </center>  

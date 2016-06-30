@@ -14,7 +14,7 @@
         require_once './Web Pages/menu.php';
         ?>
         <!-- Homepage section
-        ================================================== -->
+        ================================================== -->      
         <div id="home">
             <div class="site-slider">
                 <ul class="bxslider">
@@ -97,7 +97,7 @@
                             <h1 class="heading">Reserva tus vuelos</h1>
                             <hr>
                             <p>En las casillas observe las opciónes y elija la que más prefiera...</p>
-                            <a style="z-index: 2;" href="VentaController.php?op=1" class="btn btn-mini btn-primary" role="button">Comprar</a>
+                            <a style="z-index: 2;" class="btn btn-large btn-warning" role="button">Comprar Vuelos</a>
                         </div>
                     </div>
 
@@ -158,7 +158,7 @@
                             <h5 class="wow bounceIn">Enterate sobre nosotros</h5>
                             <h1 class="heading color-white">C & C AIRLINES</h1>
                             <hr>
-                            <p class="color-white">Donde tus viajes son inolvidables ya que cada vuelo es unico en su clase buscando la satisfacción del cliente</p>
+                            <p class="color-white">Donde tus viajes son inolvidables porque cada vuelo es unico en su clase buscando la satisfacción del cliente</p>
                         </div>
                     </div>
 

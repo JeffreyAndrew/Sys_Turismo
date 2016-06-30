@@ -26,9 +26,9 @@ and open the template in the editor.
         <link href="Web Pages/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div class="row" id="caja5">
+        <div class="row" id="carton">
             <center>
-                <h1 style="color: #26A69A">Selecciona tu medio de Pago  </h1>
+                <h1 style="color: #26A69A">Pago Online</h1>
             </center>
             <center>
                 <div class="itinerario">
@@ -49,7 +49,7 @@ and open the template in the editor.
                             </tr>
                         </tbody>
                     </table><br><br><br>
-                    <h4>Elige el medio de Pago</h4>
+                    <h4>Complete los Campos</h4>
                     <a href="#" id="visa" onclick="Materialize.fadeInImage('#presencial')">Tarjeta de crédito(Solo VISA)</a><br><br><br>
 
                     <div id="presencial">
@@ -61,7 +61,7 @@ and open the template in the editor.
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">today</i>
-                                <input id="icon_telephone" required="" type="date" class="validate datepicker">
+                                <input id="icon_telephone" required="" type="date" class="datepicker">
                                 <label for="icon_telephone">Fecha de Expiracion:</label>
                             </div>
                             <div class="input-field col s6">
@@ -110,32 +110,7 @@ and open the template in the editor.
                                 </button><br><br><br>
                             </center>
                         </form>
-                    </div>
-
-                    <a href="#" id="online" onclick="Materialize.fadeInImage('#tarjeta')">Presencial/Banca on-line</a><br><br>
-
-                    <div id="tarjeta">
-                        <form>
-
-                            <div>
-                                <input class="with-gap" name="group3" type="radio" id="test5" checked />
-                                <label for="test5"></label>
-                                <img src="Web Pages/images/bcp-logo.png" alt="" style="width: 150px; height: 100px"/>
-                            </div>
-                            <div>
-                                <input class="with-gap" name="group3" type="radio" id="test6" checked />
-                                <label for="test6"></label>
-                                <img src="Web Pages/images/logo-scotiabank.png" alt="" style="width: 150px; height: 100px"/>
-                            </div>
-                            <div>
-                                <input class="with-gap" name="group3" type="radio" id="test7" checked />
-                                <label for="test7"></label>
-                                <img src="Web Pages/images/logo-bbva.png" alt="" style="width: 150px; height: 100px;"/>
-                            </div>  
-                        </form>
-
-                    </div>
-
+                    </div>                       
                 </div>
             </center>
         </div>
@@ -144,51 +119,51 @@ and open the template in the editor.
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="Web Pages/js/materialize.min.js" type="text/javascript"></script>
         <script>
-                        $('.calendar').pickadate({
-                            monthsFull: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
-                            monthsShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
-                            weekdaysFull: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
-                            weekdaysShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
-                            today: 'hoy',
-                            clear: 'borrar',
-                            close: 'cerrar',
-                            firstDay: 1,
-                            format: 'dddd d !de mmmm !de yyyy',
-                            formatSubmit: 'yyyy/mm/dd',
-                            selectMonths: true, // Creates a dropdown to control month
-                            selectYears: 15, // Creates a dropdown of 15 years to control year
-                            min: true
-                        });
-                        $('.datepicker2').pickadate({
-                            monthsFull: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
-                            monthsShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
-                            weekdaysFull: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
-                            weekdaysShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
-                            today: 'hoy',
-                            clear: 'borrar',
-                            close: 'cerrar',
-                            firstDay: 1,
-                            format: 'dddd d !de mmmm !de yyyy',
-                            formatSubmit: 'yyyy-mm-dd',
-                            selectMonths: true, // Creates a dropdown to control month
-                            selectYears: 15, // Creates a dropdown of 15 years to control year
-                            min: true
-                        });
-                        $('.datepicker').pickadate({
-                            monthsFull: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
-                            monthsShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
-                            weekdaysFull: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
-                            weekdaysShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
-                            today: 'hoy',
-                            clear: 'borrar',
-                            close: 'cerrar',
-                            firstDay: 1,
-                            format: 'dddd d !de mmmm !de yyyy',
-                            formatSubmit: 'yyyy-mm-dd',
-                            selectMonths: true, // Creates a dropdown to control month
-                            selectYears: 15, // Creates a dropdown of 15 years to control year
-                            min: true
-                        });
+                                    $('.calendar').pickadate({
+                                        monthsFull: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+                                        monthsShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
+                                        weekdaysFull: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
+                                        weekdaysShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
+                                        today: 'hoy',
+                                        clear: 'borrar',
+                                        close: 'cerrar',
+                                        firstDay: 1,
+                                        format: 'dddd d !de mmmm !de yyyy',
+                                        formatSubmit: 'yyyy/mm/dd',
+                                        selectMonths: true, // Creates a dropdown to control month
+                                        selectYears: 15, // Creates a dropdown of 15 years to control year
+                                        min: true
+                                    });
+                                    $('.datepicker2').pickadate({
+                                        monthsFull: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+                                        monthsShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
+                                        weekdaysFull: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
+                                        weekdaysShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
+                                        today: 'hoy',
+                                        clear: 'borrar',
+                                        close: 'cerrar',
+                                        firstDay: 1,
+                                        format: 'dddd d !de mmmm !de yyyy',
+                                        formatSubmit: 'yyyy-mm-dd',
+                                        selectMonths: true, // Creates a dropdown to control month
+                                        selectYears: 15, // Creates a dropdown of 15 years to control year
+                                        min: true
+                                    });
+                                    $('.datepicker').pickadate({
+                                        monthsFull: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
+                                        monthsShort: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic'],
+                                        weekdaysFull: ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'],
+                                        weekdaysShort: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
+                                        today: 'hoy',
+                                        clear: 'borrar',
+                                        close: 'cerrar',
+                                        firstDay: 1,
+                                        format: 'dddd d !de mmmm !de yyyy',
+                                        formatSubmit: 'yyyy-mm-dd',
+                                        selectMonths: true, // Creates a dropdown to control month
+                                        selectYears: 15, // Creates a dropdown of 15 years to control year
+                                        min: true
+                                    });
         </script>   
         <script>
             $(document).ready(function () {

@@ -26,7 +26,7 @@ and open the template in the editor.
         <link href="Web Pages/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div class="row" id="caja4">
+        <div class="row" id="carton">
             <center>
                 <h1 style="color: #26A69A">Confirma tu Itinerario y precio</h1>
             </center>
@@ -100,7 +100,7 @@ and open the template in the editor.
                 <div>
                     <form>
                         <center>
-                            <button class="btn waves-effect waves-light" type="button" name="action">Confirmar
+                            <button style="margin-bottom: 20px;" class="btn waves-effect waves-light" type="button" name="action">Confirmar
                                 <i class="material-icons right">send</i>
                             </button>
                         </center>

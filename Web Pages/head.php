@@ -21,3 +21,5 @@ and open the template in the editor.
 <link href="Web Pages/css/bxslider.css" rel="stylesheet" type="text/css"/>
 <link href="Web Pages/css/style.css" rel="stylesheet" type="text/css"/>
 <link href='https://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
+<script src="js/owl.carousel.min.js" type="text/javascript"></script>
+<script src="js/jquery-2.2.4.min.js" type="text/javascript"></script>

@@ -26,7 +26,7 @@ and open the template in the editor.
         <link href="Web Pages/css/style.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <div id="caja1" class="row ">
+        <div id="carton" class="row ">
             <form class="col s10 offset-s1"  role="form" method="post" action=""> 
                 <input type="hidden" name="op" value="1" />
                 <h1 style="text-align: center; color: #26A69A">Registro Cliente</h1>
