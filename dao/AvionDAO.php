@@ -76,7 +76,7 @@ class AvionDAO implements AvionInterface{
     public function read($key) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT AVI_ID,AVI_MOD,AVI_CAP,AER_ID FROM avion order by AVI_ID "
+        $sql = "SELECT AVI_ID,AVI_MOD,AVI_CAP,AER_ID FROM avion "
                 . "WHERE AVI_ID='".$key."'";
         $result = $link->query($sql);
         $lista=array();

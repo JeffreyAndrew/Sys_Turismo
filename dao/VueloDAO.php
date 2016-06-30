@@ -77,11 +77,13 @@ class VueloDAO implements VueloInterface{
         return $r;
     }
 
-    public function read($key) {
+    public function read(Vuelo $v) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "SELECT VUE_ID,AVI_ID,CIU_ID_D,CIU_ID_O,VUE_FECH FROM vuelo order by VUE_ID "
-                . "WHERE VUE_ID='" . $key . "'";
+        $sql = "SELECT VUE_ID,AVI_ID,CIU_ID_D,CIU_ID_O,VUE_FECH FROM vuelo "
+                . "WHERE CIU_ID_O='" . $v->getCIU_ID_O() . "' "
+                . "AND CIU_ID_D='".$v->getCIU_ID_D()."' "
+                . "AND VUE_FECH='".$v->getVUE_FECH()."'";
         $result = $link->query($sql);
         $lista=array();
         while ($reg = mysqli_fetch_array($result)) {

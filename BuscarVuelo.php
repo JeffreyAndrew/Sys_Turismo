@@ -27,20 +27,21 @@ and open the template in the editor.
     </head>
     <body>
         <div id="caja2" class="row">
-            <form class="col s10 offset-s1" name="reg"  role="form" method="post" action="">
-                <input type="hidden" name="op" value="1" />
+            <form class="col s10 offset-s1" name="reg"  role="form" method="get" action="VentaController.php">
+                <input type="hidden" name="op" value="2" />
                 <h1 style="text-align: center; color: #26A69A">Registra Vuelo</h1>
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">location_on</i>
-                        <select id="origen">
+                        <select id="origen" name="origen">
                             <option value="" disabled selected>Elegir Origen</option>
                             <?php
-                            $aO = new CiudadDAO();
-                            $lista = $aO->readall();
-                            for ($i = 0; $i < count($lista); $i++) {
+                            session_start();
+                            ob_start();
+                            $list = $_SESSION['lista'];
+                            for ($i = 0; $i < count($list); $i++) {
                                 $c = new Ciudad();
-                                $c = $lista[$i];
+                                $c = $list[$i];
                                 ?>
                                 <option id="<?= $c->getCIU_ID() ?>" value="<?= $c->getCIU_ID() ?>"><?= $c->getCIU_NOM() ?></option>
                             <?php } ?>
@@ -50,12 +51,12 @@ and open the template in the editor.
 
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">location_on</i>
-                        <select id="destino">
+                        <select id="destino" name="destino">
                             <option value="" disabled selected>Elegir Destino</option>
                             <?php
-                            for ($i = 0; $i < count($lista); $i++) {
+                            for ($i = 0; $i < count($list); $i++) {
                                 $c = new Ciudad();
-                                $c = $lista[$i];
+                                $c = $list[$i];
                                 ?>
                                 <option id="<?= $c->getCIU_ID() ?>" value="<?= $c->getCIU_ID() ?>"><?= $c->getCIU_NOM() ?></option>
                             <?php } ?>
@@ -80,12 +81,12 @@ and open the template in the editor.
                         <label for="rutaii">Vuelta</label>
                     </div>
                 </div>
+                <center>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
+                        <i class="material-icons right">send</i>
+                    </button>
+                </center>
             </form>
-            <center>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
-                    <i class="material-icons right">send</i>
-                </button>
-            </center>
         </div>
 
         <!--  Scripts-->

@@ -16,5 +16,5 @@ interface VueloInterface {
     function readall();
     function delete($key);
     function update(Vuelo $entidad);
-    function read($key);
+    function read(Vuelo $entidad);
 }

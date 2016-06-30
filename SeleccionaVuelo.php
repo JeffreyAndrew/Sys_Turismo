@@ -54,11 +54,18 @@ and open the template in the editor.
                 </div>
                 <div class="itinerario">
                     <h4>Selecciona tu Vuelo</h4>
-                    <p>Ida Domingo 26 de Junio: Lima/Cusco</p>
+                    <?php
+                    session_start();
+                    ob_start();
+                    $list = $_SESSION['lista'];
+                    $info = $_SESSION['eleccion'];
+                    $list3 = $_SESSION['lista3'];
+                    ?>
+                    <p><?= $info ?></p>
                     <table class="table-responsive striped">
                         <thead>
                             <tr>
-                                <th data-field="id">Vuelta</th>
+                                <th data-field="id">Vuelo</th>
                                 <th data-field="id">salida</th>
                                 <th data-field="id">Llegada</th>
                                 <th data-field="id">Duración</th>
@@ -66,27 +73,22 @@ and open the template in the editor.
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Airbus 320</td>
-                                <td>14:25<strong>(LIM)</strong></td>
-                                <td>15:45<strong>(CUZ)</strong></td>
-                                <td>01:20 hrs.</td>
-                                <td><a role="button" class="red btn-large btn-floating" ><i class="large material-icons">done</i></a></td>
-                            </tr>
-                            <tr>
-                                <td>Airbus 320</td>
-                                <td>14:25<strong>(LIM)</strong></td>
-                                <td>15:45<strong>(CUZ)</strong></td>
-                                <td>01:20 hrs.</td>
-                                <td><a role="button" class="red btn-large btn-floating" ><i class="large material-icons">done</i></a></td>
-                            </tr>
-                            <tr>
-                                <td>Airbus 320</td>
-                                <td>14:25<strong>(LIM)</strong></td>
-                                <td>15:45<strong>(CUZ)</strong></td>
-                                <td>01:20 hrs.</td>
-                                <td><a role="button" class="red btn-large btn-floating" ><i class="large material-icons">done</i></a></td>
-                            </tr>
+                            <?php
+                            for ($i = 0; $i < count($list); $i++) {
+                                $v = new Vuelo();
+                                $a = new AVION();
+                                $list4 = Array();
+                                $v = $list[$i];
+                                $a = $list3[$i][0];
+                                ?>
+                                <tr>
+                                    <td><?= $a->getAVI_MOD() ?></td>
+                                    <td>14:25<strong>(LIM)</strong></td>
+                                    <td>15:45<strong>(CUZ)</strong></td>
+                                    <td>01:20 hrs.</td>
+                                    <td><a role="button" class="red btn-large btn-floating" value="<?= $v->getVUE_ID() ?>" ><i class="large material-icons">done</i></a></td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                     <br/><br/>
