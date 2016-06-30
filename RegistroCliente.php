@@ -42,6 +42,27 @@ and open the template in the editor.
                         <label for="apellido">Apellidos</label>
                     </div>
                     <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">perm_identify</i>
+                        <select>
+                            <option value="1">Adulto</option>
+                            <option value="2">Niño</option>
+                            <option value="3">Bebe</option>
+                        </select>
+                        <label>Pasajero(s)</label>
+                    </div>
+
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">perm_identify</i>
+                        <select>
+                            <option value="1">Economica</option>
+                            <option value="2">Ejecutivo</option>
+                            <option value="3">Privado</option>
+                            <option value="4">Turista</option>
+                            <option value="5">Business</option>
+                        </select>
+                        <label>Cabina</label>
+                    </div>
+                    <div class="input-field col s12 m6">
                         <i class="material-icons prefix">store</i>
                         <input id="direccion" required="" name="direccion" type="text" >
                         <label for="direccion">Dirección</label>
