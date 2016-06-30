@@ -97,7 +97,7 @@
                             <h1 class="heading">Reserva tus vuelos</h1>
                             <hr>
                             <p>En las casillas observe las opciónes y elija la que más prefiera...</p>
-                            <a style="z-index: 2;" class="btn btn-large btn-warning" role="button">Comprar Vuelos</a>
+                            <a style="z-index: 2;" class="btn btn-large btn-warning" href="VentaController.php?op=1" role="button">Comprar Vuelos</a>
                         </div>
                     </div>
 

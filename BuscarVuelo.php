@@ -29,7 +29,7 @@ and open the template in the editor.
         <div id="caja2" class="row">
             <form class="col s10 offset-s1" name="reg"  role="form" method="get" action="VentaController.php">
                 <input type="hidden" name="op" value="2" />
-                <h1 style="text-align: center; color: #26A69A">Registra Vuelo</h1>
+                <h1 style="text-align: center; color: #26A69A">Buscar Vuelo</h1>
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">location_on</i>
@@ -82,7 +82,7 @@ and open the template in the editor.
                     </div>
                 </div>
                 <center>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
+                    <button class="btn waves-effect waves-light" type="submit">Registrar
                         <i class="material-icons right">send</i>
                     </button>
                 </center>
