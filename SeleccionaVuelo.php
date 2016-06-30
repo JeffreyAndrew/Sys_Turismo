@@ -32,27 +32,6 @@ and open the template in the editor.
             </center>
             <center>
                 <div class="itinerario">
-                    <h4>Itinerario</h4>            
-                    <table class="table-responsive striped">
-                        <thead>
-                            <tr>
-                                <th data-field="id">Ida</th>
-                                <th data-field="id">Vuelta</th>
-                                <th data-field="id">Pasajeros</th>
-                                <th data-field="id">Cabina</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Lima-Cusco 3/06</td>
-                                <td>Cusco-Lima 11/06</td>
-                                <td>1 adulto</td>
-                                <td>Economica</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="itinerario">
                     <h4>Selecciona tu Vuelo</h4>
                     <?php
                     session_start();
@@ -93,40 +72,42 @@ and open the template in the editor.
                     </table>
                     <br/><br/>
                     <p>Vuelta 15 de Julio: Cusco/Lima</p>
-                    <table class="table-responsive striped">
-                        <thead>
-                            <tr>
-                                <th data-field="id">Vuelos</th>
-                                <th data-field="id">salida</th>
-                                <th data-field="id">Llegada</th>
-                                <th data-field="id">Duración</th>
-                                <th data-field="id">Seleccion</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Airbus 320</td>
-                                <td>14:25<strong>(LIM)</strong></td>
-                                <td>15:45<strong>(CUZ)</strong></td>
-                                <td>01:20 hrs.</td>
-                                <td><a role="button" class="red btn-large btn-floating" ><i class="large material-icons">done</i></a></td>
-                            </tr>
-                            <tr>
-                                <td>Airbus 320</td>
-                                <td>14:25<strong>(LIM)</strong></td>
-                                <td>15:45<strong>(CUZ)</strong></td>
-                                <td>01:20 hrs.</td>
-                                <td><a role="button" class="red btn-large btn-floating" ><i class="large material-icons">done</i></a></td>
-                            </tr>
-                            <tr>
-                                <td>Airbus 320</td>
-                                <td>14:25<strong>(LIM)</strong></td>
-                                <td>15:45<strong>(CUZ)</strong></td>
-                                <td>01:20 hrs.</td>
-                                <td><a role="button" class="red btn-large btn-floating" ><i class="large material-icons">done</i></a></td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <form >
+                        <table class="table-responsive striped">
+                            <thead>
+                                <tr>
+                                    <th data-field="id">Vuelos</th>
+                                    <th data-field="id">salida</th>
+                                    <th data-field="id">Llegada</th>
+                                    <th data-field="id">Duración</th>
+                                    <th data-field="id">Seleccion</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Airbus 320</td>
+                                    <td>14:25<strong>(LIM)</strong></td>
+                                    <td>15:45<strong>(CUZ)</strong></td>
+                                    <td>01:20 hrs.</td>
+                                    <td><input name="group1" class="with-gap" type="radio" id="a"><label for="a"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>Airbus 320</td>
+                                    <td>14:25<strong>(LIM)</strong></td>
+                                    <td>15:45<strong>(CUZ)</strong></td>
+                                    <td>01:20 hrs.</td>
+                                    <td><input name="group1" class="with-gap" type="radio" id="b"><label for="b"></label></td>
+                                </tr>
+                                <tr>
+                                    <td>Airbus 320</td>
+                                    <td>14:25<strong>(LIM)</strong></td>
+                                    <td>15:45<strong>(CUZ)</strong></td>
+                                    <td>01:20 hrs.</td>
+                                    <td><input name="group1" class="with-gap" type="radio" id="c"><label for="c"></label></td>
+                                </tr>
+                            </tbody>                       
+                        </table>
+                    </form>
                 </div>
                 <div class="itinerario">
                     <table class="table-responsive striped">
