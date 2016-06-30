@@ -18,7 +18,7 @@ class VueloDAO implements VueloInterface{
     function create(Vuelo $vuelo) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO vuelo(VUE_ID,AVI_ID,CIU_ID_D,CIU_ID_O,VUE_FECH)VALUES( 'NULL','" . $vuelo->getAVI_ID() . "','" . $vuelo->getCIU_ID_D() . "','" . $vuelo->getCIU_ID_O() . "','" 
+        $sql = "CALL PR_INSERT_VUE('" . $vuelo->getAVI_ID() . "','" . $vuelo->getCIU_ID_D() . "','" . $vuelo->getCIU_ID_O() . "','" 
                 . $vuelo->getVUE_FECH() . "')";
         if ($link->query($sql) === TRUE) {
             $r=1;

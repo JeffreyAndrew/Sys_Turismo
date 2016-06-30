@@ -17,7 +17,7 @@ class PasajeDAO implements PasajeInterface{
     function create(PASAJE $p) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO pasaje(PAS_ID,PAS_FECH,PAS_COD,PAS_TERR_ID,PAS_AER_ID,PAS_TIP)VALUES( 'NULL','".$p->getPAS_FECH()."','".$p->getPAS_COD()."','".$p->getPAS_TERR_ID()."','".$p->getPAS_AER_ID()."','".$p->getPAS_TIP()."')";
+        $sql = "CALL PR_INSERT_PAS('".$p->getPAS_FECH()."','".$p->getPAS_COD()."','".$p->getPAS_TERR_ID()."','".$p->getPAS_AER_ID()."','".$p->getPAS_TIP()."')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {

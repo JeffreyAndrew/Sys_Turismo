@@ -17,7 +17,7 @@ class Pas_AerDAO implements Pas_AerInterface{
     function create(Pas_Aer $p) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO pas_aer(PAS_AER_ID,VUE_ID)VALUES( 'NULL','".$p->getVUE_ID()."')";
+        $sql = "CALL PR_INSERT_PAS_AER( '".$p->getVUE_ID()."')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {

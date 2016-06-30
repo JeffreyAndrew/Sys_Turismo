@@ -17,7 +17,7 @@ class AvionDAO implements AvionInterface{
     function create(AVION $a) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO avion(AVI_ID,AVI_MOD,AVI_CAP,AER_ID)VALUES( 'NULL','".$a->getAVI_MOD()."','".$a->getAVI_CAP()."','".$a->getAER_ID()."')";
+        $sql = "CALL PR_INSERT_AVI('".$a->getAVI_MOD()."','".$a->getAVI_CAP()."','".$a->getAER_ID()."')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {

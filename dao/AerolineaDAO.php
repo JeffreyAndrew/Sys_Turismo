@@ -19,7 +19,7 @@ class AerolineaDAO implements AerolineaInterface{
     function create(AEROLINEA $objeto) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO aerolinea(AER_ID,AER_NOM)VALUES( 'NULL','".$objeto->getAER_NOM()."')";
+        $sql = "CALL PR_INSERT_AER( '".$objeto->getAER_NOM()."')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {

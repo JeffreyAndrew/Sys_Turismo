@@ -17,7 +17,7 @@ class Pas_TerrDAO implements Pas_TerrInterface{
     function create(Pas_Terr $p) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO pas_terr(PAS_TERR_ID,VIA_ID)VALUES( 'NULL','".$p->getVIA_ID()."')";
+        $sql = "CALL PR_INSERT_PAS_TERR( '".$p->getVIA_ID()."')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {

@@ -8,7 +8,7 @@ class CiudadDAO implements CiudadInterface{
     function create(Ciudad $c) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO ciudad(CIU_ID,CIU_NOM)VALUES( '" . $c->getCIU_ID() . "','" . $c->getCIU_NOM() . "')";
+        $sql = "CALL PR_INSERT_CIU( '" . $c->getCIU_NOM() . "')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {

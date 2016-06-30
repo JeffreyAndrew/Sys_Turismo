@@ -17,7 +17,7 @@ class ClienteDAO implements ClienteInterface{
     function create(CLIENTE $c) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "INSERT INTO cliente(CLI_ID,CLI_NOM,CLI_APP,CLI_APM,CLI_DNI,CLI_TIP)VALUES( 'NULL','".$c->getCLI_NOM()."','".$c->getCLI_APP()."','".$c->getCLI_APM()."','".$c->getCLI_DNI()."','".$c->getCLI_TIP()."')";
+        $sql = "CALL PR_INSERT_CLI('".$c->getCLI_NOM()."','".$c->getCLI_APP()."','".$c->getCLI_APM()."','".$c->getCLI_DNI()."','".$c->getCLI_TIP()."')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {
