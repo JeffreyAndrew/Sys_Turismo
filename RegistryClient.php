@@ -36,7 +36,7 @@ include './dao/VueloDAO.php';
             </div>
         </nav>
         <div id="caja2" class="row">
-            <form class="col s10 offset-s1"  role="form" method="post" action="">
+            <form class="col s10 offset-s1" name="reg"  role="form" method="post" action="">
                 <input type="hidden" name="op" value="1" />
                 <h1 style="text-align: center; color: #26A69A">Registra Vuelo</h1>
                 <div class="row">
@@ -56,7 +56,7 @@ include './dao/VueloDAO.php';
                         </select>
                         <label>Origen</label>
                     </div>
-                    
+
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">location_on</i>
                         <select id="destino">
@@ -94,7 +94,7 @@ include './dao/VueloDAO.php';
                         <label>Cabina</label>
                     </div>
                     <div class="input-field col s12 m6">
-                        <input style="margin-bottom: 30px" required="" id="opcioni" name="opcionii" type="radio" class="with-gap validate">
+                        <input style="margin-bottom: 30px" required=""  id="opcioni" name="opcionii" type="radio" class="with-gap validate">
                         <label for="opcioni">Ida-Vuelta</label>
                     </div>
                     <div class="input-field col s12 m6">
@@ -109,13 +109,13 @@ include './dao/VueloDAO.php';
                         <input id="rutaii" name="rutaii" type="date" class="datepicker2">
                         <label for="rutaii">Vuelta</label>
                     </div>
-                    <center>
-                        <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
-                            <i class="material-icons right">send</i>
-                        </button>
-                    </center>
                 </div>
             </form>
+            <center>
+                <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
+                    <i class="material-icons right">send</i>
+                </button>
+            </center>
         </div>
         <div id="caja1" class="row ">
             <form class="col s10 offset-s1"  role="form" method="post" action=""> 
@@ -124,32 +124,32 @@ include './dao/VueloDAO.php';
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="nombre" required="" name="nombre" type="text" class="validate">
+                        <input id="nombre"  maxlength="35" onkeypress="return soloLetras(event)" required="" name="nombre" type="text" >
                         <label for="nombre">Nombres</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="apellido" required="" name="apellido" type="text" class="validate">
+                        <input id="apellido" maxlength="35" onkeypress="return soloLetras(event)" required="" name="apellido" type="text" >
                         <label for="apellido">Apellidos</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">store</i>
-                        <input id="direccion" required="" name="direccion" type="text" class="validate">
+                        <input id="direccion" required="" name="direccion" type="text" >
                         <label for="direccion">Dirección</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">email</i>
-                        <input id="email" name="email" required="" type="email" class="validate">
+                        <input id="email" name="email" required="" type="email" >
                         <label for="email">Email</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">phone</i>
-                        <input id="telefono" required="" maxlength="9" name="telefono" type="number" class="validate">
+                        <input id="miCampo2" required="" maxlength="9" name="telefono" type="text" onkeypress="return soloNumeros(event)">
                         <label for="telefono">Teléfono</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">store</i>
-                        <input id="dni" required="" maxlength="8" name="dni" type="number" class="validate">
+                        <input id="dni" required="" maxlength="8" name="dni" type="text" onkeypress="return soloNumeros(event)">
                         <label for="dni">Dni</label>
                     </div>
                     <div class="input-field col s12 m6">
@@ -404,7 +404,7 @@ include './dao/VueloDAO.php';
                         <form> 
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">dialpad</i>
-                                <input id="digitotarjeta" min="1" max="16" type="number" required="" class="validate">
+                                <input id="digitotarjeta number"  maxlength="16" type="text" required="" onkeypress="return soloNumeros(event)">
                                 <label for="icon_prefix">Numero Tarjeta:</label>
                             </div>
                             <div class="input-field col s6">
@@ -414,17 +414,17 @@ include './dao/VueloDAO.php';
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">lock_outline</i>
-                                <input id="icon_telephone" required="" maxlength="4" type="number" class="validate">
+                                <input id="icon_telephone" required="" maxlength="4" type="text" onkeypress="return soloNumeros(event)">
                                 <label for="icon_telephone">Codigo de verificaciòn:</label>
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">perm_identity</i>
-                                <input id="icon_telephone" required="" type="text" class="validate">
+                                <input id="icon_telephone" required="" type="text" maxlength="35" onkeypress="return soloLetras(event)">
                                 <label for="icon_telephone">Nombre del Titular</label>
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">perm_identity</i>
-                                <input id="icon_telephone" required="" type="text" class="validate">
+                                <input id="icon_telephone" required="" type="text" maxlength="35" onkeypress="return soloLetras(event)">
                                 <label for="icon_telephone">Apellidos</label>
                             </div>
                             <div class="input-field col s6">
@@ -434,22 +434,22 @@ include './dao/VueloDAO.php';
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">business</i>
-                                <input id="icon_telephone" required="" type="text" class="validate">
+                                <input id="icon_telephone" required="" type="text" onkeypress="return soloLetras(event)">
                                 <label for="icon_telephone">Ciudad</label>
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">language</i>
-                                <input id="icon_telephone" required="" type="text" class="validate">
+                                <input id="icon_telephone" required="" type="text" onkeypress="return soloLetras(event)">
                                 <label for="icon_telephone">Estado</label>
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">location_on</i>
-                                <input id="icon_telephone" required="" maxlength="10" type="text" class="validate">
+                                <input id="icon_telephone" required="" maxlength="10" type="text" onkeypress="return soloNumeros(event)">
                                 <label for="icon_telephone">Código Postal</label>
                             </div>
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">phone</i>
-                                <input id="icon_telephone" required="" maxlength="9" type="number" class="validate">
+                                <input id="icon_telephone" required="" maxlength="9" type="text" onkeypress="return soloNumeros(event)">
                                 <label for="icon_telephone">Número Teléfono</label>
                             </div>
                             <center>
@@ -572,6 +572,8 @@ include './dao/VueloDAO.php';
 
 
         <!--  Scripts-->
+
+
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="Web Pages/js/materialize.min.js" type="text/javascript"></script>
         <script>
@@ -603,7 +605,7 @@ include './dao/VueloDAO.php';
                             formatSubmit: 'yyyy-mm-dd',
                             selectMonths: true, // Creates a dropdown to control month
                             selectYears: 15, // Creates a dropdown of 15 years to control year
-                            min:true
+                            min: true
                         });
                         $('.datepicker').pickadate({
                             monthsFull: ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'],
@@ -618,7 +620,7 @@ include './dao/VueloDAO.php';
                             formatSubmit: 'yyyy-mm-dd',
                             selectMonths: true, // Creates a dropdown to control month
                             selectYears: 15, // Creates a dropdown of 15 years to control year
-                            min:true
+                            min: true
                         });
         </script>   
         <script>
