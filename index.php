@@ -247,7 +247,7 @@
                             <h5 class="wow bounceIn">Estamos Listos</h5>
                             <h1 class="heading">Nuestro Equipo</h1>
                             <hr>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia deserunt.</p>
+                            <p style="text-align: justify;">C & C cuenta con un equipo internacional altamente cualificado y multilingüe compuesto por profesionales que destacan por su verdadera vocación de servicio al cliente.</p>
                         </div>
                     </div>
 
@@ -315,7 +315,7 @@
                             <h5 class="wow bounceIn">Mejores Recuerdos</h5>
                             <h1 class="heading">Las Imagenes Hablan Solas</h1>
                             <hr>
-                            <p>Pellentesque mollis purus ipsum. Fusce tristique ante et est placerat dignissim. Curabitur tincidunt risus non dui vulputate tincidunt.</p>
+                            <p style="text-align: justify;">Recuerda que nunca es imposible llegar lejos. Los distintos paisajes te esperan... Reserva tu VUELO</p>
                         </div>
                     </div>
 
@@ -408,7 +408,7 @@
                     <div class="col-md-offset-2 col-md-8 col-sm-12">
                         <div class="portfolio-bottom">
                             <h2>¿INTERESADO?</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Lorem ipsum dolor sit 	amet.</p>
+                            <p style="text-align: justify;">No te quedes con las ganas de volar y conocer el Perú.... Descubre nuestras ofertas dandole click al boton Let's Go.</p>
                             <a href="#plan" class="smoothScroll btn btn-default">LET'S GO!</a>
                         </div>
                     </div>    
@@ -431,7 +431,7 @@
                             <h5 class="wow bounceIn">Aventuras Unicas</h5>
                             <h1 class="heading color-white">Aprovecha Nuestras Promociones</h1>
                             <hr>
-                            <p class="color-white">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia deserunt.</p>
+                            <p class="color-white" style="text-align: justify;">Viaja por el Perú a un precio cómodo. Aprovecha ahora o nunca nuestras promociones...No te arrepentiras de habe VOLADO con C & C... </p>
                         </div>
                     </div>
 
@@ -442,14 +442,15 @@
                                 <h1 class="plan-price-title">$40 / <small>Economy</small></h1>
                             </div>
                             <ul class="plan-list">
-                                <li>4 days 3 nights</li>
-                                <li>Explore Forest</li>
-                                <li>Visit Waterfalls</li>
-                                <li>Group of 10 people</li>
+                                <li>1 hora de vuelo</li>
+                                <li>Avion AirBus350</li>
+                                <li>Asientos 180°</li>
+                                <li>3 personas por fila</li>
                             </ul>
                             <center>
                                 <div class="plan-button">
-                                    <a href="RegistryClient.php"><button class="btn btn-default">Comprar Vuelo</button></a>
+                                    <a href="VentaController.php?op=1"
+                                       ><button class="btn btn-default">Comprar Vuelo</button></a>
                                 </div>
                             </center>
                         </div>
@@ -462,14 +463,14 @@
                                 <h1 class="plan-price-title">$250 / <small>Bussines</small></h1>
                             </div>
                             <ul class="plan-list">
-                                <li>8 days 7 nights</li>
-                                <li>Explore Mountains</li>
-                                <li>Touring Villages</li>
-                                <li>Group of 15 people</li>
+                                <li>45 minutos de vuelo</li>
+                                <li>Atencion Prerencial</li>
+                                <li>Centro de entretenimiento</li>
+                                <li>2 asientos por fila</li>
                             </ul>
                             <center>
                                 <div class="plan-button">
-                                    <a href="RegistryClient.php"><button class="btn btn-default">Comprar Vuelo</button></a>
+                                    <a href="VentaController.php?op=1"><button class="btn btn-default">Comprar Vuelo</button></a>
                                 </div>
                             </center>
                         </div>
@@ -482,14 +483,14 @@
                                 <h1 class="plan-price-title">$400 / <small>Ejecutivo</small></h1>
                             </div>
                             <ul class="plan-list">
-                                <li>12 days 11 nights</li>
-                                <li>Multiple Cities</li>
-                                <li>Unique Experiences</li>
-                                <li>Group of 20 people</li>
+                                <li>Elija su horario</li>
+                                <li>Evite las colas</li>
+                                <li>Calidad ISO 9001</li>
+                                <li>Mas tiempo para usted </li>
                             </ul>
                             <center>
                                 <div class="plan-button">
-                                    <a href="RegistryClient.php"><button class="btn btn-default">Comprar Vuelo</button></a>
+                                    <a href="VentaController.php?op=1"><button class="btn btn-default">Comprar Vuelo</button></a>
                                 </div>
                             </center>
                         </div>
@@ -512,7 +513,7 @@
                             <h5 class="wow bounceIn">PLANIFICA TU VIAJE</h5>
                             <h1 class="heading">AHORA</h1>
                             <hr>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. Excepteu sunt in culpa qui officia deserunt mollit.</p>
+                            <p style="text-align: justify;">No dejes que la rutina te atrape, conoce las maravillas del Perú. Planifica tu viaje ahora, mañana será demasiado tarde.</p>
                         </div>
                     </div>
 
@@ -521,13 +522,13 @@
                     <div class="col-md-offset-1 col-md-10 col-sm-12">
                         <form action="#" method="post" class="wow fadeInUp" data-wow-delay="0.6s">
                             <div class="col-md-4 col-sm-6">
-                                <input type="text" class="form-control" placeholder="NOMBRE" name="name" required="">
+                                <input type="text" class="form-control" placeholder="Nombre" name="name" required="">
                             </div>
                             <div class="col-md-4 col-sm-6">
                                 <input type="email" class="form-control" placeholder="Email" name="email" required="">
                             </div>
                             <div class="col-md-4 col-sm-12">
-                                <input type="text" class="form-control" placeholder="MOTIVO" name="subject" required="">
+                                <input type="text" class="form-control" placeholder="Motivo" name="subject" required="">
                             </div>
                             <div class="col-md-12 col-sm-12">
                                 <textarea class="form-control" placeholder="Mensaje" rows="7" name="message" required=""></textarea>
@@ -564,14 +565,13 @@
 
                         <h2 class="wow bounceIn">C & C</h2>
                         <ul class="social-icon">
-                            <li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
-                            <li><a href="#" class="fa fa-twitter wow fadeIn" data-wow-delay="0.6s"></a></li>
-                            <li><a href="#" class="fa fa-dribbble wow fadeIn" data-wow-delay="0.9s"></a></li>
-                            <li><a href="#" class="fa fa-tumblr wow fadeIn" data-wow-delay="1.6s"></a></li>
+                            <li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="1s"></a></li>
+                            <li><a href="#" class="fa fa-twitter wow fadeIn" data-wow-delay="1s"></a></li>
+                            <li><a href="#" class="fa fa-tumblr wow fadeIn" data-wow-delay="1s"></a></li>
                         </ul>
                         <p>Copyright &copy; 2016 C & C 
 
-                            | Design: El potito cabrito de Zannier</p>
+                            | Design: Veloster Inc Corp ©</p>
                     </div>
                 </div>
             </div>
