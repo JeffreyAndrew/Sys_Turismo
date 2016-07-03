@@ -11,7 +11,9 @@ require_once './dao/VentaDAO.php';
 require_once './dao/VueloDAO.php';
 if ($_GET) {
     $lista = Array();
+    $cli = new ClienteDAO();
     $op = $_GET['op'];
+    $c = new CLIENTE();
     switch ($op) {
         case 1:
             $aO = new CiudadDAO();
@@ -66,7 +68,18 @@ if ($_GET) {
             header('location: SeleccionaVuelo.php');
             break;
         case 3:
-            $id=$_GET['group1'];
+            $id = $_GET['group1'];
+            $nombre = $_GET['nombre'];
+            $apellido = $_GET['apellido'];
+            $tipo = $_GET['tipo'];
+            $address = $_GET['direccion'];
+            $email = $_GET['email'];
+            $telefono = $_GET['telefono'];
+            $dni = $_GET['dni'];
+            $c->setCLI_NOM($nombre);
+            $c->setCLI_APP($apellido);
+            $c->setCLI_DNI($dni);
+            $c->setCLI_TIP($tipo);
             header('location: RegistroCliente.php');
             break;
         case 4:

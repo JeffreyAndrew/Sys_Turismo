@@ -43,10 +43,10 @@ and open the template in the editor.
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">perm_identify</i>
-                        <select>
-                            <option value="1">Adulto</option>
-                            <option value="2">Niño</option>
-                            <option value="3">Bebe</option>
+                        <select name="tipo">
+                            <option value="Adulto">Adulto</option>
+                            <option value="Niño">Niño</option>
+                            <option value="Bebé">Bebe</option>
                         </select>
                         <label>Pasajero(s)</label>
                     </div>
