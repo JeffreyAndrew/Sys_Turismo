@@ -27,9 +27,13 @@ and open the template in the editor.
     </head>
     <body>
         <div id="carton" class="row ">
+           
             <form class="col s10 offset-s1"  role="form" method="post" action=""> 
+                
                 <input type="hidden" name="op" value="4" />
+                
                 <h1 style="text-align: center; color: #26A69A">Registro Cliente</h1>
+                
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">account_circle</i>
@@ -81,18 +85,6 @@ and open the template in the editor.
                         <i class="material-icons prefix">store</i>
                         <input id="dni" required="" maxlength="8" name="dni" type="text" onkeypress="return soloNumeros(event)">
                         <label for="dni">Dni</label>
-                    </div>
-                    <div class="input-field col s12 m6">
-                        <label for="inacimiento" >Fecha de Nacimiento</label>
-                        <input for="nacimiento" required="" id="inacimiento" type="date" class="datepicker">
-                    </div>
-                    <div class="input-field col s12 m6">
-                        <select name="sexo">
-                            <option value="" disabled selected>Elegir Sexo</option>
-                            <option value="1">Masculino</option>
-                            <option value="2">Femenino</option>
-                        </select>
-                        <label>Sexo</label>
                     </div>
                     <center>
                         <button class="btn waves-effect waves-light" type="submit" name="action">Registrar

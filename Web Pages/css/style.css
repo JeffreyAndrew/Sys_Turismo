@@ -868,8 +868,10 @@ footer h2 {
 .itinerario table{
     width: 80%;
 }
+#caja2{
+    height: 100vh;
+}
 #carton{ 
-    width: 100vw;
     height: 100vh;
 }
 .pago{
