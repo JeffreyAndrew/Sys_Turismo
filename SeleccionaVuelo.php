@@ -31,48 +31,53 @@ and open the template in the editor.
                 <h1 style="color: #26A69A">¡Selecciona tus Vuelos!</h1>
             </center>
             <center>
-                <div class="itinerario">
-                    <h4>Selecciona tu Vuelo</h4>
-                    <?php
-                    session_start();
-                    ob_start();
-                    $list = $_SESSION['lista'];
-                    $info = $_SESSION['eleccion'];
-                    $list3 = $_SESSION['lista3'];
-                    ?>
-                    <p><?= $info ?></p>
-                    <table class="table-responsive striped">
-                        <thead>
-                            <tr>
-                                <th data-field="id">Vuelo</th>
-                                <th data-field="id">salida</th>
-                                <th data-field="id">Llegada</th>
-                                <th data-field="id">Duración</th>
-                                <th data-field="id">Seleccion</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            for ($i = 0; $i < count($list); $i++) {
-                                $v = new Vuelo();
-                                $a = new AVION();
-                                $list4 = Array();
-                                $v = $list[$i];
-                                $a = $list3[$i][0];
-                                ?>
+                <form method="get" action="VentaController.php">
+                    <input type="hidden" name="op" value="3" />
+                    <div class="itinerario">
+                        <h4>Selecciona tu Vuelo</h4>
+                        <?php
+                        session_start();
+                        ob_start();
+                        $list = $_SESSION['lista'];
+                        $list1 = $_SESSION['lista1'];
+                        $list2=$_SESSION['lista2'];
+                        $info = $_SESSION['eleccion'];
+                        $info2= $_SESSION['eleccion2'];
+                        $list3 = $_SESSION['lista3'];
+                        $list5=$_SESSION['lista5'];
+                        ?>
+                        <p><?= $info ?></p>
+                        <table class="table-responsive striped">
+                            <thead>
                                 <tr>
-                                    <td><?= $a->getAVI_MOD() ?></td>
-                                    <td>14:25<strong>(LIM)</strong></td>
-                                    <td>15:45<strong>(CUZ)</strong></td>
-                                    <td>01:20 hrs.</td>
-                                    <td><a role="button" class="red btn-large btn-floating" value="<?= $v->getVUE_ID() ?>" ><i class="large material-icons">done</i></a></td>
+                                    <th data-field="id">Vuelo</th>
+                                    <th data-field="id">salida</th>
+                                    <th data-field="id">Llegada</th>
+                                    <th data-field="id">Duración</th>
+                                    <th data-field="id">Seleccion</th>
                                 </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                    <br/><br/>
-                    <p>Vuelta 15 de Julio: Cusco/Lima</p>
-                    <form >
+                            </thead>
+                            <tbody>
+                                <?php
+                                for ($i = 0; $i < count($list); $i++) {
+                                    $v = new Vuelo();
+                                    $a = new AVION();
+                                    $list4 = Array();
+                                    $v = $list[$i];
+                                    $a = $list3[$i][0];
+                                    ?>
+                                    <tr>
+                                        <td><?= $a->getAVI_MOD() ?></td>
+                                        <td>14:25<strong>(<?=$list1[0][0]->getCIU_ABR()?>)</strong></td>
+                                        <td>15:45<strong>(<?=$list1[1][0]->getCIU_ABR()?>)</strong></td>
+                                        <td>01:20 hrs.</td>
+                                        <td><input name="group1" class="with-gap" type="radio" id="a<?= $v->getVUE_ID() ?>" value="<?= $v->getVUE_ID() ?>"><label for="a<?= $v->getVUE_ID() ?>"></label></td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                        <br/><br/>
+                        <p><?= $info2 ?></p>
                         <table class="table-responsive striped">
                             <thead>
                                 <tr>
@@ -84,49 +89,29 @@ and open the template in the editor.
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Airbus 320</td>
-                                    <td>14:25<strong>(LIM)</strong></td>
-                                    <td>15:45<strong>(CUZ)</strong></td>
-                                    <td>01:20 hrs.</td>
-                                    <td><input name="group1" class="with-gap" type="radio" id="a"><label for="a"></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Airbus 320</td>
-                                    <td>14:25<strong>(LIM)</strong></td>
-                                    <td>15:45<strong>(CUZ)</strong></td>
-                                    <td>01:20 hrs.</td>
-                                    <td><input name="group1" class="with-gap" type="radio" id="b"><label for="b"></label></td>
-                                </tr>
-                                <tr>
-                                    <td>Airbus 320</td>
-                                    <td>14:25<strong>(LIM)</strong></td>
-                                    <td>15:45<strong>(CUZ)</strong></td>
-                                    <td>01:20 hrs.</td>
-                                    <td><input name="group1" class="with-gap" type="radio" id="c"><label for="c"></label></td>
-                                </tr>
+                                <?php
+                                for ($i = 0; $i < count($list2); $i++) {
+                                    $v = new Vuelo();
+                                    $a = new AVION();
+                                    $list4 = Array();
+                                    $v = $list2[$i];
+                                    $a = $list5[$i][0];
+                                    ?>
+                                    <tr>
+                                        <td><?= $a->getAVI_MOD() ?></td>
+                                        <td>14:25<strong>(LIM)</strong></td>
+                                        <td>15:45<strong>(CUZ)</strong></td>
+                                        <td>01:20 hrs.</td>
+                                        <td><input name="group2" class="with-gap" type="radio" id="a<?= $v->getVUE_ID() ?><?= $v->getVUE_ID() ?>" value="<?= $v->getVUE_ID() ?>"><label for="a<?= $v->getVUE_ID() ?><?= $v->getVUE_ID() ?>"></label></td>
+                                    </tr>
+                                <?php } ?>
                             </tbody>                       
                         </table>
-                    </form>
-                </div>
-                <div class="itinerario">
-                    <table class="table-responsive striped">
-                        <thead>
-                            <tr>
-                                <th>Tarifa:</th>
-                                <th>Tasas y/o Impuestos</th>
-                                <th>Tarifa:</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>$442</td>
-                                <td>$94.49</td>
-                                <td>$536.49 por pasajero</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit">Registrar
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
             </center>            
         </div>
         <!--scripts-->

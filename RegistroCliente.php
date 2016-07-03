@@ -28,7 +28,7 @@ and open the template in the editor.
     <body>
         <div id="carton" class="row ">
             <form class="col s10 offset-s1"  role="form" method="post" action=""> 
-                <input type="hidden" name="op" value="1" />
+                <input type="hidden" name="op" value="4" />
                 <h1 style="text-align: center; color: #26A69A">Registro Cliente</h1>
                 <div class="row">
                     <div class="input-field col s12 m6">

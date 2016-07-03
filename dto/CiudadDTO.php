@@ -14,6 +14,7 @@
 class Ciudad {
     private $CIU_ID;
     private $CIU_NOM;
+    private $CIU_ABR;
     
     public function setCIU_ID($value) {
         $this->CIU_ID=$value;
@@ -27,10 +28,17 @@ class Ciudad {
     public function getCIU_NOM() {
         return $this->CIU_NOM;
     }
+    public function setCIU_ABR($value) {
+        $this->CIU_ABR=$value;
+    }
+    public function getCIU_ABR() {
+        return $this->CIU_ABR;
+    }
     
     public function Ciudad() {
         $this->CIU_ID;
         $this->CIU_NOM;
+        $this->CIU_ABR;
     }
 }
 ?>
