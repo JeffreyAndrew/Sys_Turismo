@@ -27,13 +27,12 @@ and open the template in the editor.
     </head>
     <body>
         <div id="carton" class="row ">
-           
             <form class="col s10 offset-s1"  role="form" method="post" action=""> 
-                
+
                 <input type="hidden" name="op" value="4" />
-                
+
                 <h1 style="text-align: center; color: #26A69A">Registro Cliente</h1>
-                
+
                 <div class="row">
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">account_circle</i>
@@ -43,7 +42,12 @@ and open the template in the editor.
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="apellido" maxlength="35" onkeypress="return soloLetras(event)" required="" name="apellido" type="text" >
-                        <label for="apellido">Apellidos</label>
+                        <label for="apellido">Apellido Paterno</label>
+                    </div>
+                    <div class="input-field col s12 m6">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="apellido" maxlength="35" onkeypress="return soloLetras(event)" required="" name="apellido" type="text" >
+                        <label for="apellido">Apellido Materno</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">perm_identify</i>
@@ -55,17 +59,6 @@ and open the template in the editor.
                         <label>Pasajero(s)</label>
                     </div>
 
-                    <div class="input-field col s12 m6">
-                        <i class="material-icons prefix">perm_identify</i>
-                        <select>
-                            <option value="1">Economica</option>
-                            <option value="2">Ejecutivo</option>
-                            <option value="3">Privado</option>
-                            <option value="4">Turista</option>
-                            <option value="5">Business</option>
-                        </select>
-                        <label>Cabina</label>
-                    </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">store</i>
                         <input id="direccion" required="" name="direccion" type="text" >

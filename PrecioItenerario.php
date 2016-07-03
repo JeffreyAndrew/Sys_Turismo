@@ -28,9 +28,27 @@ and open the template in the editor.
     <body>
         <div class="row" id="carton">
             <center>
-                <h1 style="color: #26A69A">Confirma tu Itinerario y precio</h1>
+                <h1 style="color: #26A69A">Itinerario, Precio y Cabina</h1>
             </center>
-             <center>
+            <center>
+                <div class="input-field col s12 m6">
+                    <i class="material-icons prefix">perm_identify</i>
+                    <select>
+                        <option value="1">Economica</option>
+                        <option value="2">Ejecutivo</option>
+                        <option value="3">Privado</option>
+                        <option value="4">Turista</option>
+                        <option value="5">Business</option>
+                    </select>
+                    <label>Cabina</label>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+
+            </center>
+            <center>
                 <div class="itinerario">
                     <h4>Itinerario</h4>  
                     <table class="responsive-table striped">
@@ -108,7 +126,7 @@ and open the template in the editor.
                 </div>
             </center>
         </div>
-        
+
         <!--scripts-->
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="Web Pages/js/materialize.min.js" type="text/javascript"></script>
