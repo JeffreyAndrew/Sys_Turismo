@@ -869,5 +869,29 @@ footer h2 {
     width: 80%;
 }
 #carton{ 
+    width: 100vw;
     height: 100vh;
+}
+.pago{
+    width: 80%;
+}
+@media (max-width: 768px){
+    #carton{
+        width: 100%;
+    }
+    .itinerario{
+        width: 100%;
+    }
+    .itinerario table{
+        width: 80vw;
+    }
+    .itinerario table th{
+        font-size: 10px;
+    }
+    .itinerario table td{
+        font-size: 10px;
+    }
+    #carton h1{
+        font-size: 50px;
+    }
 }

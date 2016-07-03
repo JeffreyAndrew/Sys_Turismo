@@ -31,7 +31,7 @@ and open the template in the editor.
                 <h1 style="color: #26A69A">Pago Online</h1>
             </center>
             <center>
-                <div class="itinerario">
+                <div class="pago">
                     <h4>Tarifa en dólares americanos</h4>
                     <table class="table-responsive striped">
                         <thead>
@@ -48,60 +48,69 @@ and open the template in the editor.
                                 <td>$536.49 por pasajero</td>
                             </tr>
                         </tbody>
-                    </table><br><br><br>
-                    <h4>Complete los Campos</h4>
-                    <a href="#" id="visa" onclick="Materialize.fadeInImage('#presencial')">Tarjeta de crédito(Solo VISA)</a><br><br><br>
+                    </table>
 
-                    <div id="presencial">
-                        <form> 
-                            <div class="input-field col s6">
+                    <br><br><br>
+                </div>      
+                <div id="presencial carton pago2" class="row">
+
+                    <input type="hidden" name="op" value="4" />
+
+                    <form class="col s10 offset-s1" role="form" method="post" action=""> 
+
+                        <h4>Complete los Campos</h4>
+
+                        <a href="#" id="visa" onclick="Materialize.fadeInImage('#presencial')">Tarjeta de crédito(Solo VISA)</a><br><br><br>
+
+                        <div class="row">
+                            <div class="input-field col s12 m6">
                                 <i class="material-icons prefix">dialpad</i>
-                                <input id="digitotarjeta number"  maxlength="16" type="text" required="" onkeypress="return soloNumeros(event)">
+                                <input id="digitotarjeta number"  placeholder="16 dígitos" maxlength="16" type="text" required="" onkeypress="return soloNumeros(event)">
                                 <label for="icon_prefix">Numero Tarjeta:</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <i class="material-icons prefix">today</i>
-                                <input id="icon_telephone" required="" type="date" class="datepicker">
+                                <input id="icon_telephone" required="" type="date" placeholder="expiracion/tarjeta" class="datepicker">
                                 <label for="icon_telephone">Fecha de Expiracion:</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <i class="material-icons prefix">lock_outline</i>
-                                <input id="icon_telephone" required="" maxlength="4" type="text" onkeypress="return soloNumeros(event)">
-                                <label for="icon_telephone">Codigo de verificaciòn:</label>
+                                <input id="icon_telephone" required="" maxlength="4" type="text" placeholder="4 dígitos" onkeypress="return soloNumeros(event)">
+                                <label for="icon_telephone">Codigo Tarjeta</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <i class="material-icons prefix">perm_identity</i>
-                                <input id="icon_telephone" required="" type="text" maxlength="35" onkeypress="return soloLetras(event)">
-                                <label for="icon_telephone">Nombre del Titular</label>
+                                <input id="icon_telephone" required="" type="text" placeholder="35 dígitos/máximo" maxlength="35" onkeypress="return soloLetras(event)">
+                                <label for="icon_telephone">Nombre</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <i class="material-icons prefix">perm_identity</i>
-                                <input id="icon_telephone" required="" type="text" maxlength="35" onkeypress="return soloLetras(event)">
+                                <input id="icon_telephone" required="" placeholder="35 dígitos/máximo" type="text" maxlength="35" onkeypress="return soloLetras(event)">
                                 <label for="icon_telephone">Apellidos</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <i class="material-icons prefix">theaters</i>
-                                <input id="icon_telephone" required="" type="text" class="validate">
-                                <label for="icon_telephone">Calle</label>
+                                <input id="calle" required="" type="text" placeholder="Ubicación actual">
+                                <label for="calle">Calle</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <i class="material-icons prefix">business</i>
-                                <input id="icon_telephone" required="" type="text" onkeypress="return soloLetras(event)">
+                                <input id="icon_telephone" required="" placeholder="Actual" type="text" onkeypress="return soloLetras(event)">
                                 <label for="icon_telephone">Ciudad</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <i class="material-icons prefix">language</i>
-                                <input id="icon_telephone" required="" type="text" onkeypress="return soloLetras(event)">
+                                <input id="icon_telephone" required="" type="text" placeholder="Actual" onkeypress="return soloLetras(event)">
                                 <label for="icon_telephone">Estado</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <i class="material-icons prefix">location_on</i>
-                                <input id="icon_telephone" required="" maxlength="10" type="text" onkeypress="return soloNumeros(event)">
+                                <input id="icon_telephone" required="" maxlength="10" placeholder="10 dígitos/máximo" type="text" onkeypress="return soloNumeros(event)">
                                 <label for="icon_telephone">Código Postal</label>
                             </div>
-                            <div class="input-field col s6">
+                            <div class="input-field col s12 m6">
                                 <i class="material-icons prefix">phone</i>
-                                <input id="icon_telephone" required="" maxlength="9" type="text" onkeypress="return soloNumeros(event)">
+                                <input id="icon_telephone" required="" placeholder="Celular" maxlength="9" type="text" onkeypress="return soloNumeros(event)">
                                 <label for="icon_telephone">Número Teléfono</label>
                             </div>
                             <center>
@@ -109,9 +118,9 @@ and open the template in the editor.
                                     <i class="material-icons right">send</i>
                                 </button><br><br><br>
                             </center>
-                        </form>
-                    </div>                       
-                </div>
+                        </div>
+                    </form>
+                </div>  
             </center>
         </div>
 

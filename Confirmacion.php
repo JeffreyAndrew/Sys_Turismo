@@ -80,7 +80,7 @@ and open the template in the editor.
                 </div>
                 <div class="itinerario">
                     <center>
-                        <h4>Pasajeros</h4>
+                        <h4>Pasajero</h4>
                     </center>
                     <table class="responsive-table striped">
                         <thead>
@@ -88,15 +88,15 @@ and open the template in the editor.
                                 <th data-field="id">Tipo</th>
                                 <th data-field="id">Nombre</th>
                                 <th data-field="id">Apellidos</th>
-                                <th data-field="id">Documento de Identidad</th>
+                                <th data-field="id">DNI</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>CABRO</td>
-                                <td>Zannier</td>
-                                <td>El cabro Vargas</td>
-                                <td>NO apto para cabros</td>
+                                <td>HOMOSEXUAL</td>
+                                <td>Cesar Pareja</td>
+                                <td>El cabro VALERIO</td>
+                                <td>no apto para esta sexo...</td>
                             </tr>
                         </tbody>
                     </table>

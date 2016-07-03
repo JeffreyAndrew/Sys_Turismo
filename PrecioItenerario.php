@@ -30,10 +30,10 @@ and open the template in the editor.
             <center>
                 <h1 style="color: #26A69A">Confirma tu Itinerario y precio</h1>
             </center>
-            <center>
+             <center>
                 <div class="itinerario">
-                    <h4>Itinerario</h4>            
-                    <table class="table-responsive striped">
+                    <h4>Itinerario</h4>  
+                    <table class="responsive-table striped">
                         <thead>
                             <tr>
                                 <th data-field="id">Ida</th>
@@ -55,7 +55,7 @@ and open the template in the editor.
                             </tr>
                         </tbody>
                     </table>
-                    <table class="table-responsive striped">
+                    <table class="responsive-table striped">
                         <thead>
                             <tr>
                                 <th data-field="id">Vuelta</th>
@@ -80,12 +80,12 @@ and open the template in the editor.
                 </div>
                 <div class="itinerario">
                     <h4>Tarifa en dólares americanos</h4>
-                    <table class="table-responsive striped">
+                    <table class="table-responsive bordered">
                         <thead>
                             <tr>
-                                <th>Tarifa:</th>
-                                <th>Tasas y/o Impuestos</th>
-                                <th>Tarifa:</th>
+                                <th data-field="id">Tarifa:</th>
+                                <th data-field="id">Tasas y/o Impuestos</th>
+                                <th data-field="id">Tarifa:</th>
                             </tr>
                         </thead>
                         <tbody>
