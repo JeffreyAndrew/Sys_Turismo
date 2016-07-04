@@ -32,7 +32,17 @@ and open the template in the editor.
             </center>  
             <center>
                 <div class="itinerario">
-                    <h4>Itinerario</h4>  
+                    <h4>Itinerario</h4>
+                    <?php
+                    session_start();
+                    ob_start();
+                    $list6 = $_SESSION['lista6'];
+                    $list7 = $_SESSION['lista7'];
+                    $list8 = $_SESSION['lista8'];
+                    $list1 = $_SESSION['lista1'];
+                    $pas_aer = $_SESSION['pas_aer'];
+                    $c = $_SESSION['c'];
+                    ?>
                     <table class="responsive-table striped">
                         <thead>
                             <tr>
@@ -46,11 +56,11 @@ and open the template in the editor.
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Viernes 29 de Julio</td>
-                                <td>04:50 Lima(LIM)</td>
-                                <td>06:10 Cusco(CUZ)</td>
-                                <td>LA2025</td>
-                                <td>Economica</td>
+                                <td><?= $list8[0] ?></td>
+                                <td>04:50 <?= $list1[0][0]->getCIU_NOM() ?>(<?= $list1[0][0]->getCIU_ABR() ?>)</td>
+                                <td>06:10 <?= $list1[1][0]->getCIU_NOM() ?>(<?= $list1[0][0]->getCIU_ABR() ?>)</td>
+                                <td><?= $list7[0]->getAVI_MOD() ?></td>
+                                <td><?= $pas_aer->getPAS_AER_TIP() ?></td>
                                 <td>Máximo 2 piezas de 23Kg en Total    </td>
                             </tr>
                         </tbody>
@@ -68,11 +78,11 @@ and open the template in the editor.
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Martes 02 de Agosto</td>
-                                <td>14:45 Lima(LIM)</td>
-                                <td>16:10 Cusco(CUZ)</td>
+                                <td><?= $list8[1] ?></td>
+                                <td>14:45 <?= $list1[1][0]->getCIU_NOM() ?>(<?= $list1[1][0]->getCIU_ABR() ?>)</td>
+                                <td>16:10 <?= $list1[0][0]->getCIU_NOM() ?>(<?= $list1[0][0]->getCIU_ABR() ?>)</td>
                                 <td>LA2030</td>
-                                <td>Economica</td>
+                                <td><?= $pas_aer->getPAS_AER_TIP() ?></td>
                                 <td>Máximo 2 piezas de 23Kg en Total    </td>
                             </tr>
                         </tbody>
@@ -93,20 +103,31 @@ and open the template in the editor.
                         </thead>
                         <tbody>
                             <tr>
-                                <td>HOMOSEXUAL</td>
-                                <td>Cesar Pareja</td>
-                                <td>El cabro VALERIO</td>
-                                <td>no apto para esta sexo...</td>
+                                <td><?= $c->getCLI_TIP() ?></td>
+                                <td><?= $c->getCLI_NOM() ?></td>
+                                <td><?= $c->getCLI_APP() . " " . $c->getCLI_APM() ?></td>
+                                <td><?= $c->getCLI_DNI() ?></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </center>
-            <center>
-                <button class="btn waves-effect waves-light" type="submit" name="action">Confirmar
-                    <i class="material-icons right">send</i>
-                </button><br><br><br>
-            </center>
+            <form method="get" action="VentaController.php">
+                <input type="hidden" name="op" value="7">
+                <center>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Confirmar
+                        <i class="material-icons right">send</i>
+                    </button><br><br><br>
+                </center>
+            </form>
+            <form method="get" action="VentaController.php">
+                <input type="hidden" name="op" value="8">
+                <center>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Cancelar
+                        <i class="material-icons right">send</i>
+                    </button><br><br><br>
+                </center>
+            </form>
         </div>
 
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

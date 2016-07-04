@@ -95,6 +95,26 @@ class ClienteDAO implements ClienteInterface{
         $link->close();
         return $lista;
     }
+    public function readDni($key) {
+        $link1 = new Conexion();
+        $link = $link1->getConnection();
+        $sql = "SELECT CLI_ID,CLI_NOM,CLI_APP,CLI_APM,CLI_DNI,CLI_TIP FROM cliente "
+                . "WHERE CLI_DNI='".$key."'";
+        $result = $link->query($sql);
+        $lista=array();
+        while ($reg = mysqli_fetch_array($result)) {
+            $c=new CLIENTE();
+            $c->setCLI_ID($reg[0]);
+            $c->setCLI_NOM($reg[1]);
+            $c->setCLI_APP($reg[2]);
+            $c->setCLI_APM($reg[3]);
+            $c->setCLI_DNI($reg[4]);
+            $c->setCLI_TIP($reg[5]);
+            $lista[]=$c;
+        }
+        $link->close();
+        return $lista;
+    }
 
 }
 //$hola=new ClienteDAO();

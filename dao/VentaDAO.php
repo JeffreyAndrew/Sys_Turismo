@@ -17,7 +17,7 @@ class VentaDAO implements VentaInterface{
     function create(Venta $v) {
         $link1 = new Conexion();
         $link = $link1->getConnection();
-        $sql = "CALL PR_INSERT_VEN('".$v->getCLI_ID()."','".$v->getTOUR_ID()."','".$v->getPAS_ID()."')";
+        $sql = "CALL PR_INSERT_VEN('".$v->getCLI_ID()."',NULL,'".$v->getPAS_ID()."')";
         if ($link->query($sql) === TRUE) {
             $r=1;
         } else {

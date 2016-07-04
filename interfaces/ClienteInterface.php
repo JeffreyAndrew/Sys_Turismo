@@ -17,4 +17,5 @@ interface ClienteInterface {
     function delete($key);
     function update(CLIENTE $entidad);
     function read($key);
+    function readDni($key);
 }

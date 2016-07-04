@@ -33,6 +33,23 @@ and open the template in the editor.
             <center>
                 <div class="pago">
                     <h4>Tarifa en dólares americanos</h4>
+                    <?php
+                    session_start();
+                    ob_start();
+                    $result=$_SESSION['result'];
+                    $pas_aer=$_SESSION['pas_aer'];
+                    if($pas_aer->getPAS_AER_TIP()=='Económico'){
+                        $tipo=$result[0]->getVUE_PRICE_ECO();
+                    }if($pas_aer->getPAS_AER_TIP()=='Ejecutivo'){
+                        $tipo=$result[0]->getVUE_PRICE_EJE();
+                    }if($pas_aer->getPAS_AER_TIP()=='Privado'){
+                        $tipo=$result[0]->getVUE_PRICE_PRI();
+                    }if($pas_aer->getPAS_AER_TIP()=='Turista'){
+                        $tipo=$result[0]->getVUE_PRICE_TUR();
+                    }if($pas_aer->getPAS_AER_TIP()=='Business'){
+                        $tipo=$result[0]->getVUE_PRICE_BUS();
+                    }
+                    ?>
                     <table class="table-responsive striped">
                         <thead>
                             <tr>
@@ -43,9 +60,9 @@ and open the template in the editor.
                         </thead>
                         <tbody>
                             <tr>
-                                <td>$442</td>
+                                <td>$<?=$tipo-94.49?></td>
                                 <td>$94.49</td>
-                                <td>$536.49 por pasajero</td>
+                                <td>$<?=$tipo?></td>
                             </tr>
                         </tbody>
                     </table>
@@ -54,10 +71,8 @@ and open the template in the editor.
                 </div>      
                 <div id="presencial carton pago2" class="row">
 
-                    <input type="hidden" name="op" value="4" />
-
-                    <form class="col s10 offset-s1" role="form" method="post" action=""> 
-
+                    <form class="col s10 offset-s1" role="form" method="get" action="VentaController.php"> 
+                        <input type="hidden" name="op" value="6" />
                         <h4>Complete los Campos</h4>
 
                         <a href="#" id="visa" onclick="Materialize.fadeInImage('#presencial')">Tarjeta de crédito(Solo VISA)</a><br><br><br>
@@ -70,12 +85,12 @@ and open the template in the editor.
                             </div>
                             <div class="input-field col s12 m6">
                                 <i class="material-icons prefix">today</i>
-                                <input id="icon_telephone" required="" type="date" placeholder="expiracion/tarjeta" class="datepicker">
+                                <input id="icon_telephone" required="" type="date" class="datepicker">
                                 <label for="icon_telephone">Fecha de Expiracion:</label>
                             </div>
                             <div class="input-field col s12 m6">
                                 <i class="material-icons prefix">lock_outline</i>
-                                <input id="icon_telephone" required="" maxlength="4" type="text" placeholder="4 dígitos" onkeypress="return soloNumeros(event)">
+                                <input id="icon_telephone" required="" maxlength="4" type="password" placeholder="4 dígitos" onkeypress="return soloNumeros(event)">
                                 <label for="icon_telephone">Codigo Tarjeta</label>
                             </div>
                             <div class="input-field col s12 m6">

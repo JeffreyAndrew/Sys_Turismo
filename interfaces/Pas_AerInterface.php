@@ -17,4 +17,5 @@ interface Pas_AerInterface {
     function delete($key);
     function update(Pas_Aer $entidad);
     function read($key);
+    function readByDni(Pas_Aer $entidad);
 }

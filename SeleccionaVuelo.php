@@ -99,8 +99,8 @@ and open the template in the editor.
                                     ?>
                                     <tr>
                                         <td><?= $a->getAVI_MOD() ?></td>
-                                        <td>14:25<strong>(LIM)</strong></td>
-                                        <td>15:45<strong>(CUZ)</strong></td>
+                                        <td>14:25<strong>(<?=$list1[1][0]->getCIU_ABR()?>)</strong></td>
+                                        <td>15:45<strong>(<?=$list1[0][0]->getCIU_ABR()?>)</strong></td>
                                         <td>01:20 hrs.</td>
                                         <td><input name="group2" class="with-gap" type="radio" id="a<?= $v->getVUE_ID() ?><?= $v->getVUE_ID() ?>" value="<?= $v->getVUE_ID() ?>"><label for="a<?= $v->getVUE_ID() ?><?= $v->getVUE_ID() ?>"></label></td>
                                     </tr>

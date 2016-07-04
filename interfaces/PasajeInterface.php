@@ -17,4 +17,5 @@ interface PasajeInterface {
     function delete($key);
     function update(PASAJE $entidad);
     function read($key);
+    function read2(PASAJE $entidad);
 }

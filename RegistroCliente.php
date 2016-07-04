@@ -27,7 +27,7 @@ and open the template in the editor.
     </head>
     <body>
         <div id="carton" class="row ">
-            <form class="col s10 offset-s1"  role="form" method="post" action=""> 
+            <form class="col s10 offset-s1"  role="form" method="get" action="VentaController.php"> 
 
                 <input type="hidden" name="op" value="4" />
 
@@ -41,13 +41,13 @@ and open the template in the editor.
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="apellido" maxlength="35" onkeypress="return soloLetras(event)" required="" name="apellido" type="text" >
-                        <label for="apellido">Apellido Paterno</label>
+                        <input id="apellidop" name="app" maxlength="35" onkeypress="return soloLetras(event)" required="" type="text" >
+                        <label for="apellidop">Apellido Paterno</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="apellido" maxlength="35" onkeypress="return soloLetras(event)" required="" name="apellido" type="text" >
-                        <label for="apellido">Apellido Materno</label>
+                        <input id="apellidom" name="apm" maxlength="35" onkeypress="return soloLetras(event)" required="" type="text" >
+                        <label for="apellidom">Apellido Materno</label>
                     </div>
                     <div class="input-field col s12 m6">
                         <i class="material-icons prefix">perm_identify</i>

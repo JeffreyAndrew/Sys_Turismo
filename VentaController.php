@@ -27,7 +27,9 @@ if ($_GET) {
             $origen = $_GET['origen'];
             $destino = $_GET['destino'];
             $fechaTI = $_GET['rutai'];
+            $lista8[] = $fechaTI;
             $fechaTV = $_GET['rutaii'];
+            $lista8[] = $fechaTV;
             $fechaI = $_GET['rutai_submit'];
             $fechaV = $_GET['rutaii_submit'];
             $vueloI = new Vuelo();
@@ -49,8 +51,8 @@ if ($_GET) {
             ob_start();
             $_SESSION['lista'] = $lista;
             $_SESSION['lista1'] = $lista1;
-            $_SESSION['lista2'] = $lista2;
             $_SESSION['lista3'] = $lista3;
+            $_SESSION['lista8'] = $lista8;
             $_SESSION['eleccion'] = "Ida " . $fechaTI . ": " . $lista1[0][0]->getCIU_NOM() . "/" . $lista1[1][0]->getCIU_NOM() . "";
             if ($fechaTV != "") {
                 $vueloD = new Vuelo();
@@ -62,6 +64,7 @@ if ($_GET) {
                     $lista4 = $avi->read($lista[$i]->getAVI_ID());
                     $lista5[] = $lista4;
                 }
+                $_SESSION['lista2'] = $lista2;
                 $_SESSION['lista5'] = $lista5;
                 $_SESSION['eleccion2'] = "Vuelta " . $fechaTV . ": " . $lista1[1][0]->getCIU_NOM() . "/" . $lista1[0][0]->getCIU_NOM() . "";
             }
@@ -69,27 +72,95 @@ if ($_GET) {
             break;
         case 3:
             $id = $_GET['group1'];
+            session_start();
+            ob_start();
+            $_SESSION['id'] = $id;
+            header('location: RegistroCliente.php');
+            break;
+        case 4:
             $nombre = $_GET['nombre'];
-            $apellido = $_GET['apellido'];
+            $app = $_GET['app'];
+            $apm = $_GET['apm'];
             $tipo = $_GET['tipo'];
             $address = $_GET['direccion'];
             $email = $_GET['email'];
             $telefono = $_GET['telefono'];
             $dni = $_GET['dni'];
             $c->setCLI_NOM($nombre);
-            $c->setCLI_APP($apellido);
+            $c->setCLI_APP($app);
+            $c->setCLI_APM($apm);
             $c->setCLI_DNI($dni);
             $c->setCLI_TIP($tipo);
-            header('location: RegistroCliente.php');
-            break;
-        case 4:
+            session_start();
+            ob_start();
+            $id = $_SESSION['id'];
+            $lista = $_SESSION['lista'];
+            $_SESSION['c'] = $c;
+            $v = new VueloDAO();
+            $avi = new AvionDAO();
+            $lista6 = $v->readId($id);
+            $avi_id = $lista[0]->getAVI_ID();
+            $lista7 = $avi->read($avi_id);
+            $_SESSION['lista6'] = $lista6;
+            $_SESSION['lista7'] = $lista7;
             header('location: PrecioItenerario.php');
             break;
         case 5:
+            $tipo=$_GET['tipo'];
+            $vue_id=$_GET['vue_id'];
+            $v=new VueloDAO();
+            $result=$v->readId($vue_id);
+            $pas_aer=new Pas_Aer();
+            $pas_aer->setVUE_ID($vue_id);
+            if($tipo==1){
+                $tip="Económico";
+            }if($tipo==2){
+                $tip="Ejecutivo";
+            }if($tipo==3){
+                $tip="Privado";
+            }if($tipo==4){
+                $tip="Turista";
+            }if($tipo==5){
+                $tip="Business";
+            }
+            session_start();
+            ob_start();
+            $_SESSION['result']=$result;
+            $pas_aer->setPAS_AER_TIP($tip);
+            $_SESSION['pas_aer']=$pas_aer;
             header('location: SeleccionaPago.php');
             break;
         case 6:
             header('location: Confirmacion.php');
+            break;
+        case 7:
+            session_start();
+            ob_start();
+            $c=$_SESSION['c'];
+            $cli=new ClienteDAO();
+            $cli->create($c);
+            $listac=$cli->readDni($c->getCLI_DNI());
+            $pas_aer=$_SESSION['pas_aer'];
+            $pas_aer->setCLI_ID($listac[0]->getCLI_ID());
+            $aer=new Pas_AerDAO();
+            $aer->create($pas_aer);
+            $listap=$aer->readByDni($pas_aer);
+            $p=new PASAJE();
+            $pas=new PasajeDAO();
+            $p->setPAS_AER_ID($listap[0]->getPAS_AER_ID());
+            $lista=$_SESSION['lista'];
+            $p->setPAS_FECH($lista[0]->getVUE_FECH());
+            $pas->create($p);
+            $listapas=$pas->read2($p);
+            $venta=new Venta();
+            $venta->setCLI_ID($listap[0]->getCLI_ID());
+            $venta->setPAS_ID($listapas[0]->getPAS_ID());
+            $ven=new VentaDAO();
+            $ven->create($venta);
+            header('location: index.php');
+            break;
+        case 8:
+            header('location: index.php');
             break;
     }
 }
