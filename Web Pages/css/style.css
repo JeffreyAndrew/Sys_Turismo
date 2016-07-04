@@ -784,8 +784,12 @@ footer h2 {
     .bx-controls-direction {
         right: 30px;
     }
-    .slider-caption {
-        display: none;
+    .slider-caption h2{
+        font-size: 40px;
+        text-align: center;
+    }
+    .slider-caption p{
+        font-size: 15px;
     }
 }
 
