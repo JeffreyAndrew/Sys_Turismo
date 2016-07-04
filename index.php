@@ -426,10 +426,10 @@
 
                     <!-- Section title
                     ================================================== -->
-                    <div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 wow fadeInUp">
+                    <div class=" col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 wow fadeInUp">
                         <div class="section-title">
                             <h5 class="wow bounceIn">Aventuras Unicas</h5>
-                            <h1 class="heading color-white">Aprovecha Nuestras Promociones</h1>
+                            <h2 class="heading color-white">Aprovecha Nuestras Promociones</h2>
                             <hr>
                             <p class="color-white" style="text-align: justify;">Viaja por el Perú a un precio cómodo. Aprovecha ahora o nunca nuestras promociones...No te arrepentiras de habe VOLADO con C & C... </p>
                         </div>
@@ -449,8 +449,7 @@
                             </ul>
                             <center>
                                 <div class="plan-button">
-                                    <a href="VentaController.php?op=1"
-                                       ><button class="btn btn-default">Comprar Vuelo</button></a>
+                                    <a href="VentaController.php?op=1"><button dir="rtl" class="btn btn-default">Comprar</button></a>
                                 </div>
                             </center>
                         </div>
@@ -460,17 +459,17 @@
                         <div class="plan">
                             <h2 class="plan-title">Tarapoto</h2>
                             <div class="plan-price">
-                                <h1 class="plan-price-title">$250 / <small>Bussines</small></h1>
+                                <h1 class="plan-price-title">$250 / <small>Busines</small></h1>
                             </div>
                             <ul class="plan-list">
                                 <li>45 minutos de vuelo</li>
                                 <li>Atencion Prerencial</li>
-                                <li>Centro de entretenimiento</li>
+                                <li>Entretenimiento abordo</li>
                                 <li>2 asientos por fila</li>
                             </ul>
                             <center>
                                 <div class="plan-button">
-                                    <a href="VentaController.php?op=1"><button class="btn btn-default">Comprar Vuelo</button></a>
+                                    <a href="VentaController.php?op=1"><button dir="rtl" class="btn btn-default">Comprar</button></a>
                                 </div>
                             </center>
                         </div>
@@ -490,7 +489,7 @@
                             </ul>
                             <center>
                                 <div class="plan-button">
-                                    <a href="VentaController.php?op=1"><button class="btn btn-default">Comprar Vuelo</button></a>
+                                    <a href="VentaController.php?op=1"><button dir="rtl" class="btn btn-default">Comprar</button></a>
                                 </div>
                             </center>
                         </div>
