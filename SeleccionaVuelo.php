@@ -10,11 +10,6 @@ include './dao/VentaDAO.php';
 include './dao/VueloDAO.php';
 ?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -36,15 +31,15 @@ and open the template in the editor.
                     <div class="itinerario">
                         <h4>Selecciona tu Vuelo</h4>
                         <?php
-                        session_start();
-                        ob_start();
-                        $list = $_SESSION['lista'];
-                        $list1 = $_SESSION['lista1'];
-                        $list2=$_SESSION['lista2'];
-                        $info = $_SESSION['eleccion'];
-                        $info2= $_SESSION['eleccion2'];
-                        $list3 = $_SESSION['lista3'];
-                        $list5=$_SESSION['lista5'];
+                            session_start();
+                            ob_start();
+                            $list = $_SESSION['lista'];
+                            $list1 = $_SESSION['lista1'];
+                            $list2=$_SESSION['lista2'];
+                            $info = $_SESSION['eleccion'];
+                            $info2= $_SESSION['eleccion2'];
+                            $list3 = $_SESSION['lista3'];
+                            $list5=$_SESSION['lista5'];
                         ?>
                         <p><?= $info ?></p>
                         <table class="table-responsive striped">

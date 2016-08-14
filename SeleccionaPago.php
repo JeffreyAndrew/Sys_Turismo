@@ -9,12 +9,6 @@ include './dao/TourDAO.php';
 include './dao/VentaDAO.php';
 include './dao/VueloDAO.php';
 ?>
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -34,21 +28,21 @@ and open the template in the editor.
                 <div class="pago">
                     <h4>Tarifa en dólares americanos</h4>
                     <?php
-                    session_start();
-                    ob_start();
-                    $result=$_SESSION['result'];
-                    $pas_aer=$_SESSION['pas_aer'];
-                    if($pas_aer->getPAS_AER_TIP()=='Económico'){
-                        $tipo=$result[0]->getVUE_PRICE_ECO();
-                    }if($pas_aer->getPAS_AER_TIP()=='Ejecutivo'){
-                        $tipo=$result[0]->getVUE_PRICE_EJE();
-                    }if($pas_aer->getPAS_AER_TIP()=='Privado'){
-                        $tipo=$result[0]->getVUE_PRICE_PRI();
-                    }if($pas_aer->getPAS_AER_TIP()=='Turista'){
-                        $tipo=$result[0]->getVUE_PRICE_TUR();
-                    }if($pas_aer->getPAS_AER_TIP()=='Business'){
-                        $tipo=$result[0]->getVUE_PRICE_BUS();
-                    }
+                        session_start();
+                        ob_start();
+                        $result=$_SESSION['result'];
+                        $pas_aer=$_SESSION['pas_aer'];
+                        if($pas_aer->getPAS_AER_TIP()=='Económico'){
+                            $tipo=$result[0]->getVUE_PRICE_ECO();
+                        }if($pas_aer->getPAS_AER_TIP()=='Ejecutivo'){
+                            $tipo=$result[0]->getVUE_PRICE_EJE();
+                        }if($pas_aer->getPAS_AER_TIP()=='Privado'){
+                            $tipo=$result[0]->getVUE_PRICE_PRI();
+                        }if($pas_aer->getPAS_AER_TIP()=='Turista'){
+                            $tipo=$result[0]->getVUE_PRICE_TUR();
+                        }if($pas_aer->getPAS_AER_TIP()=='Business'){
+                            $tipo=$result[0]->getVUE_PRICE_BUS();
+                        }
                     ?>
                     <table class="table-responsive striped">
                         <thead>
