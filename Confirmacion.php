@@ -112,13 +112,16 @@ and open the template in the editor.
                     </table>
                 </div>
             </center>
-            <form method="get" action="VentaController.php">
+            <form method="get" action="VentaController.php" id="finalform">
                 <input type="hidden" name="op" value="7">
                 <center>
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Confirmar
+                    <button class="btn waves-effect waves-light" id="hola" name="action">Confirmar
                         <i class="material-icons right">send</i>
                     </button><br><br><br>
                 </center>
+                <div id="mensaje" class="modal-content" style="opacity:0;">
+                    <h1>Compra Exitosa!!!!</h1>
+                </div>
             </form>
             <form method="get" action="VentaController.php">
                 <input type="hidden" name="op" value="8">

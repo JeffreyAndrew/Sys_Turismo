@@ -24,8 +24,6 @@ $(document).ready(function () {
         $("#tarjeta").show();
     });
     var a = 0;
-    function disabler(a) {
-    }
 
 });
 //validando formularios
@@ -67,3 +65,10 @@ function soloNumeros(e) {
         return false;
     }
 }
+$("#hola").click(function(){
+    $("#mensaje").animate({
+        opacity:1
+    },5000,function(){
+        $("#finalform").submit();
+    });
+});
